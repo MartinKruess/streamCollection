@@ -1,42 +1,94 @@
+:root{
+  font-size: 62.5%;
+  --primary: #ededed;
+  --secondary: #242628;
+  --secondaryShaddow: #24262899;
+  --hightlight: #772321;
+  --smallSpacer: 0.5rem;
+  --normalSpacer: 1rem;
+  --bigSpacer: 1.5rem;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4{
+  padding: var(--bigSpacer) var(--normalSpacer,)
+}
+
+h1{
+  color: var(--primary);
+  font-size: 5rem;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  background: var(--secondary);
+  color: var(--primary);
+  width: 100%;
+  height: 5rem;
   display: flex;
-  flex-direction: column;
+  justify-content: end;
   align-items: center;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40rem;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-size: 1.6rem;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+section{
+  width: 90%;
+  margin-top: var(--smallSpacer);
+  padding: var(--normalSpacer);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+article{
+  margin-top: var(--bigSpacer);
+  padding: var(--normalSpacer);
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+#startPanel{
+  background: var(--secondary);
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
+button, input{
+  margin: var(--smallSpacer);
+  padding: var(--smallSpacer) var(--normalSpacer);
+  border-radius: var(--smallSpacer);
+}
+
+#signIn{
+  font-size: 2.5rem;
+  padding: var(--normalSpacer) var(--bigSpacer);
+  border-radius: var(--bigSpacer);
+}
+

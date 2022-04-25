@@ -1,4 +1,5 @@
-export const navi = () => {
+export const Navi = ({logedIn}) => {
+
     return (
         <nav>
             <div id="navLogo"></div>
