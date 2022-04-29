@@ -3,7 +3,7 @@
   --primary: #ededed;
   --secondary: #242628;
   --secondaryShaddow: #24262899;
-  --hightlight: #772321;
+  --hightlight: #6a2597;
   --smallSpacer: 0.5rem;
   --normalSpacer: 1rem;
   --bigSpacer: 1.5rem;
@@ -14,13 +14,61 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  cursor: url(./assets/images/cursor_red.cur),auto;
+}
+
+.dark{
+  color: var(--secondary);
+}
+
+.light{
+  color: var(--primary);
+}
+
 h1, h2, h3, h4{
+  color: var(--primary);
+  width: 100%;
   padding: var(--bigSpacer) var(--normalSpacer,)
 }
 
 h1{
-  color: var(--primary);
   font-size: 5rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+a{
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+nav a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+nav a:hover:after { 
+  width: 100%; 
+  left: 0; 
 }
 
 .App {
@@ -35,6 +83,9 @@ nav{
   display: flex;
   justify-content: end;
   align-items: center;
+  position: fixed;
+  z-index: 3;
+  padding-right: var(--bigSpacer);
 }
 
 nav ul{
@@ -43,12 +94,16 @@ nav ul{
   align-items: center;
   width: 40rem;
   list-style: none;
+}
+
+ul li a{
+  color: var(--primary);
   text-decoration: none;
 }
 
 body{
   background-color: var(--primary);
-  color: var(--secondary);
+  color: var(--primary);
   font-size: 1.6rem;
 }
 
@@ -62,8 +117,9 @@ main{
 
 section{
   width: 90%;
-  margin-top: var(--smallSpacer);
+  margin-top: 5rem;
   padding: var(--normalSpacer);
+  border: solid red;
 }
 
 article{
@@ -72,7 +128,7 @@ article{
 }
 
 #startPanel{
-  background: var(--secondary);
+  background: #000;
   height: 80vh;
   display: flex;
   justify-content: center;
@@ -80,10 +136,30 @@ article{
   flex-wrap: wrap;
   flex-direction: column;
 }
+
+.bgIMG{
+  width: 30rem;
+  position: relative;
+  top: 0rem;
+  left: -19rem;
+  overflow: hidden;
+}
+
+.panelContent{
+  position: absolute;
+  z-index: 2;
+}
+
 button, input{
   margin: var(--smallSpacer);
   padding: var(--smallSpacer) var(--normalSpacer);
   border-radius: var(--smallSpacer);
+}
+
+input[type="button"]{
+  background-color: var(--hightlight);
+  color: var(--primary);
+  font-weight: 600;
 }
 
 #signIn{
@@ -92,3 +168,194 @@ button, input{
   border-radius: var(--bigSpacer);
 }
 
+.panel{
+  background: var(--secondaryShaddow);
+}
+
+.textContainer{
+  width: 95%;
+  display: flex;
+  margin: var(--bigSpacer) 0;
+  padding: var(--bigSpacer);
+}
+
+.textContainer img{
+  width: 24rem;
+  height: 16rem;
+  margin: 0 var(--normalSpacer);
+  border: solid;
+}
+
+.cardContainer{
+  background-color: var(--secondaryShaddow);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  padding: var(--normalSpacer);
+  perspective: 1000px;
+}
+
+.card{
+  background-color: var(--secondaryShaddow);
+  width: 25rem;
+  margin: var(--bigSpacer) 0;
+  padding: var(--normalSpacer);
+  border: solid var(--primary);
+  border-radius: var(--normalSpacer);
+}
+
+p{
+  
+  margin: var(--normalSpacer) 0;
+}
+
+.offer{
+  background: url("./assets/images/arrowButton.png") no-repeat center/contain;
+  width: 7rem;
+  height: 4rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: var(--bigSpacer);
+}
+
+footer{
+  background-color: var(--secondary);
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  padding: var(--normalSpacer) var(--bigSpacer);
+  margin-top: var(--bigSpacer);
+}
+
+.content01{
+  width: 40rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content01 ul{
+  font-size: 2rem;
+  list-style: none;
+  margin: var(--bigSpacer) var(--smallSpacer);
+  line-height: 2.5rem;
+}
+
+.spacer{
+  width: clamp(0.5rem, 50%, 70rem);
+}
+
+.icons{
+  width: 20rem;
+  align-items: center;
+}
+
+.icons a{
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.icons a:hover{
+  color: var(--hightlight);
+}
+
+i{
+  transform: scale(1.5);
+  margin: 4rem var(--bigSpacer);
+}
+
+// Login and Register
+
+.signArticle{
+  color: var(--secondary);
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+}
+
+.signContainer{
+  width: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: var(--normalSpacer);
+}
+
+form{
+  width: 25rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  padding: var(--normalSpacer);
+  border-radius: var(--normalSpacer);
+}
+
+form input, .box{
+  margin:  var(--smallSpacer) 0 var(--bigSpacer) 0;
+}
+
+.alternativeLogin{
+  width: 25rem;
+  padding: var(--smallSpacer);
+}
+
+.boxContainer{
+  width: 90%;
+}
+
+.box{
+  background-color: #fff;
+  width: 100%;
+  font-weight: 500;
+  padding: var(--normalSpacer);
+  border: solid 1px;
+}
+
+.checkbox{
+  width: 75%;
+  display: inline-block;
+  margin-left: var(--bigSpacer);
+  padding-left: var(--smallSpacer)
+}
+
+input[type="checkbox"]{
+  width: 10%;
+  transform: scale(1.5);
+}
+
+
+// Page 404
+
+.errorSection{
+  color: var(--secondary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.errorSection h1, .errorSection h2, .errorSection h3{
+  color: var(--secondary);
+}
+
+.h1{
+  font-size: 10rem;
+  width: 50%;
+  padding: 0;
+  margin:0;
+}
+
+.h2{
+  width: auto;
+  margin: auto 0;
+}
+
+hr{
+  width: 100%;
+}
+
+.h3{
+  font-size: 3rem;
+  margin: var(--bigSpacer);
+}
