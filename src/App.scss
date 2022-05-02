@@ -119,12 +119,12 @@ section{
   width: 90%;
   margin-top: 5rem;
   padding: var(--normalSpacer);
-  border: solid red;
 }
 
 article{
   margin-top: var(--bigSpacer);
   padding: var(--normalSpacer);
+  border: solid green;
 }
 
 #startPanel{
@@ -323,6 +323,55 @@ form input, .box{
 input[type="checkbox"]{
   width: 10%;
   transform: scale(1.5);
+}
+
+// privateSides
+
+.pSection{
+  width: 100%;
+  display: flex;
+  padding: 0;
+}
+
+aside{
+  background-color: var(--secondary);
+  width: 15%;
+  height: 100%;
+}
+
+.pArticle{
+  background-color: var(--secondaryShaddow);
+  width: 85%;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--bigSpacer);
+}
+
+.pArticle div{
+  background-color: var(--secondaryShaddow);
+  margin: 0 var(--normalSpacer);
+  padding: 0;
+  border: solid 1px var(--secondary);
+}
+
+.smallBox{
+  width: 30.3rem;
+  height: 22rem;
+}
+
+.mediumBox{
+  width: 24rem;
+  height: 44rem;
+}
+
+.bigBox{
+  width: 70.3rem;
+  height: 44rem;
+}
+
+.medium{
+  width: 44rem;
 }
 
 

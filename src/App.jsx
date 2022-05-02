@@ -10,6 +10,7 @@ import { Footer } from "./comps/footer"
 import { Page404 } from "./comps/404page"
 import { PrivateRoute } from "./comps/privateRoute"
 import { Dashboard } from "./comps/dashboard"
+import { Testside } from "./comps/testside"
 
 var vid = document.querySelector("iframe.src");
 function enableAutoplay() { 
@@ -19,13 +20,15 @@ function enableAutoplay() {
 
 
 function App() {
-  const [logedIn, setLogedIn] = useState(true)
+  const [logedIn, setLogedIn] = useState(false)
 
   return (
     <main className="App">
       <Router>
         <Navi logedIn={logedIn}/>
         <Routes>
+          {/*Temporär*/} <Route path="/testside" element={<Testside />} />
+          <Route path="/" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
