@@ -225,7 +225,7 @@ footer{
   display: flex;
   justify-content: center;
   padding: var(--normalSpacer) var(--bigSpacer);
-  margin-top: var(--bigSpacer);
+  
 }
 
 .content01{
@@ -330,48 +330,127 @@ input[type="checkbox"]{
 .pSection{
   width: 100%;
   display: flex;
+  justify-content: center;
   padding: 0;
 }
 
 aside{
   background-color: var(--secondary);
-  width: 15%;
-  height: 100%;
+  width: clamp(8rem, 15%, 20rem);
+  height: 100vh;
+  font-size: 2rem;
+  text-align: start;
+  padding: var(--bigSpacer) var(--bigSpacer);
+  margin-right: var(--bigSpacer);
+}
+
+aside ul li{
+  color: var(--primary);
+  font-family: 'Arial';
+  list-style: none;
+  line-height: 2.5rem;
+  letter-spacing: normal;
+  text-transform: none; 
+}
+
+.navLogo{
+  height: 5rem;
+  border: solid #ccc 3px;
+  margin: var(--bigSpacer) 0;
+}
+
+.liHeader{
+  font-weight: 600;
+  line-height: 3.5rem;
+  margin-top: var(--bigSpacer);
+  text-decoration: dotted underline;
+}
+
+.liHeader:hover{
+  text-decoration: dotted underline;
+}
+
+.liBody{
+  margin-left: var(--bigSpacer);
+}
+
+.liBody li{
+  line-height: 2.7rem;
+}
+
+.liBody li:hover, aside ul li:hover{
+  text-decoration: underline var(--primary);
 }
 
 .pArticle{
   background-color: var(--secondaryShaddow);
-  width: 85%;
+  width: 80%;
   height: 90vh;
   display: flex;
   flex-wrap: wrap;
-  margin: var(--bigSpacer);
+  row-gap: var(--bigSpacer);
+  column-gap: var(--bigSpacer);
+  margin: auto;
+  overflow: auto;
+  
 }
 
 .pArticle div{
   background-color: var(--secondaryShaddow);
-  margin: 0 var(--normalSpacer);
   padding: 0;
   border: solid 1px var(--secondary);
 }
 
 .smallBox{
-  width: 30.3rem;
-  height: 22rem;
+  width: 15.5rem;
 }
 
 .mediumBox{
-  width: 24rem;
-  height: 44rem;
+  width: 32rem;
+  height: 40rem;
 }
 
 .bigBox{
-  width: 70.3rem;
-  height: 44rem;
+  width: 72rem;
+  height: 40rem;
 }
 
 .medium{
-  width: 44rem;
+  width: 46rem;
+}
+
+
+// Dashboard
+
+#lineChart{
+  width: 60rem;
+  height: 30rem;
+  border:solid;
+}
+
+// Activity Feed
+
+.activityFeedContainer{
+  width: 50rem;
+  height: 70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.feedContainer{
+  width: 90%;
+  min-height: 5rem;
+  margin-top: var(--smallSpacer);
+}
+
+.feedReset{
+  
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  margin-top: var(--smallSpacer);
 }
 
 
@@ -407,4 +486,8 @@ hr{
 .h3{
   font-size: 3rem;
   margin: var(--bigSpacer);
+}
+
+.h4{
+  padding: var(--bigSpacer) 0;
 }

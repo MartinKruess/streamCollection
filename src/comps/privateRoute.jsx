@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export const PrivateRoute = ({logedIn, children}) => {
     return logedIn ? children : <Navigate to="/login" replace/>
