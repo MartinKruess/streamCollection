@@ -4,7 +4,7 @@ export const Navi = ({logedIn}) => {
 
     return (
         <nav>
-            <div id="navLogo"></div>
+            <div id="navLogo">IMG</div>
             <ul>
             <li><a href="/#about">About</a></li>
             {/* <li><Link to={{pathname:"/", hash:"#about"}}/></li> */}

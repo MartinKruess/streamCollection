@@ -1,7 +1,5 @@
 import { Aside } from "./aside";
-import { DashboardChart } from "./charts/chart"
-
-
+import TTV_YTLinechart from "./charts/yt_twitch_chart"
 
 export const Dashboard = () => {
     return (
@@ -25,9 +23,9 @@ export const Dashboard = () => {
                 <div className="smallBox"><h4 className="h4">YT Super Chat</h4><div className="feedOut">123</div></div>
                 <div className="smallBox"><h4 className="h4">Connected</h4><div className="feedOut">123</div></div>
 
-                <div className="bigBox">
+                <div className="bigBox chartContainer">
                     <h4 className="h4">Statistics</h4>
-                    <DashboardChart />
+                    <TTV_YTLinechart />
                 </div>
                 <div className="mediumBox medium">ChatBox</div>
                 

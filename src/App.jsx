@@ -10,7 +10,6 @@ import { Home } from "./comps/home";
 import { Footer } from "./comps/footer";
 import { Page404 } from "./comps/404page";
 import { PrivateRoute } from "./comps/privateRoute";
-import { Testside } from "./comps/testside";
 
 import { Dashboard } from "./comps/logedIn/dashboard";
 import { ActivityFeed } from "./comps/logedIn/activityfeed";
@@ -26,6 +25,12 @@ import { ChatDock } from "./comps/logedIn/chatdock";
 import { ActivityDock } from "./comps/logedIn/activitydock";
 import { AlertDock } from "./comps/logedIn/alertdock";
 
+// Datenbank
+const userData = [{
+  uid: '001',
+  name: 'Martin',
+  password: '1234',
+}]
 
 
 function App() {
@@ -36,7 +41,6 @@ function App() {
       <Router>
         <Navi logedIn={logedIn}/>
         <Routes>
-          {/*Temporär*/} <Route path="/testside" element={<Testside />} />
           <Route path="/" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

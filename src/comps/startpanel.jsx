@@ -1,4 +1,5 @@
 import danceBG from "../assets/images/danceBG.gif"
+import { Link } from "react-router-dom"
 
 export const Startpanel = () => {
     return (
@@ -9,7 +10,9 @@ export const Startpanel = () => {
         
         <div className="panelContent">
           <h1>Welcome @ StreamCollection</h1>
-          <button id="signIn">Sign In</button>
+          <Link to="/login">
+            <button id="signIn">Sign In</button>
+          </Link>
         </div>
       </article>
     )

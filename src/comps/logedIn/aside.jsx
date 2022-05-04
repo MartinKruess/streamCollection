@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 export const Aside = () => {
     return (
         <aside>
-                <div className="navLogo">LOGO</div>
                 <ul>
                 <Link to="/dashboard">
                     <li>Dashboard</li>
