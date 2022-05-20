@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from 'react';
 import "./App.scss";
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import { Login } from "./comps/login";
-import { Register } from "./comps/register";
-import { RegisterCon } from "./comps/registerCon";
-import { Navi } from "./comps/nav";
+import { Login } from "./comps/login/login";
+import { Register } from "./comps/register/register";
+import { Navi } from "./comps/reuseables/nav";
 import { Home } from "./comps/home";
-import { Footer } from "./comps/footer";
+import { Footer } from "./comps/reuseables/footer";
 import { Page404 } from "./comps/404page";
 import { PrivateRoute } from "./comps/privateRoute";
 
@@ -25,16 +24,10 @@ import { ChatDock } from "./comps/logedIn/chatdock";
 import { ActivityDock } from "./comps/logedIn/activitydock";
 import { AlertDock } from "./comps/logedIn/alertdock";
 
-// Datenbank
-const userData = [{
-  uid: '001',
-  name: 'Martin',
-  password: '1234',
-}]
-
+export const fetchURL = "http://localhost:3232"
 
 function App() {
-  const [logedIn, setLogedIn] = useState(true)
+  const [logedIn, setLogedIn] = useState(false)
 
   return (
     <main className="App">
@@ -45,7 +38,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/registerCon" element={<RegisterCon />} />
           <Route path="/dashboard" element={
             <PrivateRoute logedIn={logedIn}>
               <Dashboard />
