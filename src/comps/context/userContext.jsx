@@ -1,27 +1,26 @@
-import { createContext, useRef, useState } from "react";
-import { registerStates } from "../register/registerStates"
+import { createContext, useState, useEffect } from "react";
 
-const AppContext = createContext()
+export const AppContext = createContext()
+
+//LOAD loginToken
+const savedLoginToken = localStorage.getItem("loginToken")
 
 export const UserProvider = ({children}) => {
     
-    const [userID, setUserID] = useState("")
-    const getUserId = async ()  => {
-        const res = await fetch("http://localhost:3232/register",
-            {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(registerData)
-            }
-        )
-        console.log(registerRefs().registerUserNameRef.current.value)
-        setUserID(await res.JSON())
-    }
+    const [loginToken, setLoginToken] = useState(savedLoginToken || false)
+
+    // Handle by change
+    useEffect(()=>{
+        //SAVE Token to LocalStorage
+        localStorage.setItem('loginToken', loginToken)
+    }, [loginToken])
+
+    // LOGOUT - delete loginToken
+    // clear localStorage by Logout
+    //loginToken === false ? window.localStorage.clear()
 
     return(
-        <AppContext.Provider value={{userID, setUserID}}>
+        <AppContext.Provider value={{loginToken, setLoginToken}}>
             {children}
         </AppContext.Provider>
     )

@@ -92,13 +92,29 @@ nav ul{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 40rem;
+  min-width: 40rem;
   list-style: none;
 }
 
 ul li a{
   color: var(--primary);
   text-decoration: none;
+}
+
+ul li a:active{
+  color: orange;
+}
+
+#navLogo{
+  position:absolute;
+  left: 1.5rem;
+  top: 0.50rem;
+}
+
+#navLogo img{
+  background-color: #ccc;
+  width: 9rem;
+  border-radius: 0.5rem 2rem;
 }
 
 body{

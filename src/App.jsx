@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useState, useContext } from 'react';
+import { AppContext } from './comps/context/userContext';
 import "./App.scss";
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
@@ -27,67 +28,68 @@ import { AlertDock } from "./comps/logedIn/alertdock";
 export const fetchURL = "http://localhost:3232"
 
 function App() {
-  const [logedIn, setLogedIn] = useState(false)
+  const {loginToken} = useContext(AppContext)
+  console.log("loginToken", loginToken)
 
   return (
     <main className="App">
       <Router>
-        <Navi logedIn={logedIn}/>
+        <Navi loginToken={loginToken}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Register />}/>
           <Route path="/dashboard" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <Dashboard />
             </PrivateRoute>} />
           <Route path="/activityfeed" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <ActivityFeed />
             </PrivateRoute>} />
           <Route path="/alerts" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <Alerts />
             </PrivateRoute>} />
           <Route path="/media" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <Media />
             </PrivateRoute>} />
           <Route path="/overlays" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <Overlays />
             </PrivateRoute>} />
           <Route path="/autocommands" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <AutoCommands />
             </PrivateRoute>} />
           <Route path="/chatcommands" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <ChatCommands />
             </PrivateRoute>} />
           <Route path="/spamfilter" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <SpamFilter />
             </PrivateRoute>} />
           <Route path="/yourfilter" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <YourFilter />
             </PrivateRoute>} />
           <Route path="/bossfight" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <BossFight />
             </PrivateRoute>} />
           <Route path="/chatdock" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <ChatDock />
             </PrivateRoute>} />
           <Route path="/activitydock" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <ActivityDock />
             </PrivateRoute>} />
           <Route path="/alertdock" element={
-            <PrivateRoute logedIn={logedIn}>
+            <PrivateRoute loginToken={loginToken}>
               <AlertDock />
             </PrivateRoute>} />
           <Route path="*" element={<Page404 />}/>

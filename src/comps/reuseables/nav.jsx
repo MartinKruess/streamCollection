@@ -1,17 +1,18 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import liveLogo from '../../assets/images/liveLogo.png'
 
-export const Navi = ({logedIn}) => {
+export const Navi = ({loginToken}) => {
 
     return (
         <nav>
-            <div id="navLogo">IMG</div>
+            <div id="navLogo"><img src={liveLogo} alt="" /></div>
             <ul>
-            <li><a href="/#about">About</a></li>
-            {/* <li><Link to={{pathname:"/", hash:"#about"}}/></li> */}
-                <li>Learn</li>
+            <li><NavLink to="/#about">About-Test</NavLink></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#learn">Learn</a></li>
                 <li><a href="#membership">Membership</a></li>
             </ul>
-            {logedIn === false
+            {loginToken === false
                 ? (<div id="navButtons">
                 <Link to="/login">
                     <input className="linkBtn" type="button" value="Login"/>
