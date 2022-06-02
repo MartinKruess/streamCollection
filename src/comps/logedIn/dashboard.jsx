@@ -1,4 +1,4 @@
-import { Aside } from "./aside";
+import { Aside } from "../reusable/aside"
 import TTV_YTLinechart from "./charts/yt_twitch_chart"
 import axios from "axios"
 import { useState, useEffect } from "react";

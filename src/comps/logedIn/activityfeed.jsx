@@ -1,4 +1,4 @@
-import { Aside } from "./aside";
+import { Aside } from "../reusable/aside"
 
 export const ActivityFeed = () => {
     return (

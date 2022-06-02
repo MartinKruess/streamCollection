@@ -2,28 +2,30 @@ import { useState, useContext } from 'react';
 import { AppContext } from './comps/context/userContext';
 import "./App.scss";
 
+// Public
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { Login } from "./comps/login/login";
 import { Register } from "./comps/register/register";
-import { Navi } from "./comps/reuseables/nav";
+import { Navi } from "./comps/reusable/nav";
 import { Home } from "./comps/home";
-import { Footer } from "./comps/reuseables/footer";
+import { Footer } from "./comps/reusable/footer";
 import { Page404 } from "./comps/404page";
 import { PrivateRoute } from "./comps/privateRoute";
 
+// LogedIn
 import { Dashboard } from "./comps/logedIn/dashboard";
 import { ActivityFeed } from "./comps/logedIn/activityfeed";
 import { Alerts } from "./comps/logedIn/alerts";
 import { Media } from "./comps/logedIn/media";
 import { Overlays } from "./comps/logedIn/overlays";
-import { AutoCommands } from "./comps/logedIn/autocommands";
-import { ChatCommands } from "./comps/logedIn/chatcommands";
-import { SpamFilter } from "./comps/logedIn/spamfilter";
-import { YourFilter } from "./comps/logedIn/yourfilter";
-import { BossFight } from "./comps/logedIn/bossfight";
-import { ChatDock } from "./comps/logedIn/chatdock";
-import { ActivityDock } from "./comps/logedIn/activitydock";
-import { AlertDock } from "./comps/logedIn/alertdock";
+import { AutoCommands } from "./comps/logedIn/chatbots/autocommands";
+import { ChatCommands } from "./comps/logedIn/chatbots/chatcommands";
+import { SpamFilter } from "./comps/logedIn/chatbots/spamfilter";
+import { YourFilter } from "./comps/logedIn/chatbots/yourfilter";
+import { BossFight } from "./comps/logedIn/chatbots/bossfight";
+import { ChatDock } from "./comps/logedIn/obsDocs/chatdock";
+import { ActivityDock } from "./comps/logedIn/obsDocs/activitydock";
+import { AlertDock } from "./comps/logedIn/obsDocs/alertdock";
 import { AboDonation } from './comps/logedIn/paypal/donabo';
 
 export const fetchURL = "http://localhost:3232"

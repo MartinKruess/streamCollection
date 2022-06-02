@@ -7,7 +7,7 @@ const savedLoginToken = localStorage.getItem("loginToken")
 
 export const UserProvider = ({children}) => {
     
-    const [loginToken, setLoginToken] = useState(savedLoginToken || false)
+    const [loginToken, setLoginToken] = useState(savedLoginToken || null)
 
     // Handle by change
     useEffect(()=>{

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Aside } from "../aside";
+import { Aside } from "../../reusable/aside"
 //import { PaypalModal } from "./order";
 
 // Paypal: login: sb-gxso916492022@personal.example.com

@@ -1,6 +1,6 @@
-import { Aside } from "./aside";
+import { Aside } from "../../reusable/aside"
 
-export const BossFight = () => {
+export const YourFilter = () => {
     return (
             <section className="pSection">
             <Aside />

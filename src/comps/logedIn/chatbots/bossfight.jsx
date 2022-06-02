@@ -1,6 +1,6 @@
-import { Aside } from "./aside";
+import { Aside } from "../../reusable/aside"
 
-export const AutoCommands = () => {
+export const BossFight = () => {
     return (
             <section className="pSection">
             <Aside />

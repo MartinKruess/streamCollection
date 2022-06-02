@@ -1,4 +1,5 @@
-import { Aside } from "../aside";
+import "../../../App.scss";
+import { Aside } from "../../reusable/aside"
 
 export const AlertDock = () => {
     return (

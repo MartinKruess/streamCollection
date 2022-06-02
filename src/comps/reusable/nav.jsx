@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import liveLogo from '../../assets/images/liveLogo.png'
 
 export const Navi = ({loginToken}) => {
@@ -7,7 +7,6 @@ export const Navi = ({loginToken}) => {
         <nav>
             <div id="navLogo"><img src={liveLogo} alt="" /></div>
             <ul>
-            <li><NavLink to="/#about">About-Test</NavLink></li>
                 <li><a href="/#about">About</a></li>
                 <li><a href="/#learn">Learn</a></li>
                 <li><a href="#membership">Membership</a></li>
