@@ -493,10 +493,9 @@ canvas{
 }
 
 .mediaBox{
-  border: solid yellow;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .mediaSettings{
@@ -504,12 +503,6 @@ canvas{
   width: 15rem;
   height: 100%;
   margin: 0;
-}
-
-#mediaSettingForm{
-  input{
-    width: 10rem;
-  }
 }
 
 .uploadSpace{
@@ -521,15 +514,28 @@ canvas{
   inset 2px 2px 3px 3px var(--secondaryShaddow),
   inset 2px 2px 6px 6px var(--secondaryShaddow);
   
+  .uploading{
+    display: none;
+  }
 }
 
-.yourMedia{
+.yourMedia {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   background-color: blue;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
   gap: 1rem;
+  list-style: none;
+  padding: var(--smallSpacer);
+  overflow: hidden;
+
+  li {
+      background-color: #444;
+      color: #eee;
+      padding: 5px;
+      border: solid;
+  }
 }
 
 input[type="range"]{
@@ -572,4 +578,73 @@ hr{
 
 .h4{
   padding: var(--bigSpacer) 0;
+}
+
+// Donation & Abo Page
+
+.paypalContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.donationContainer{
+  border-right: solid;
+}
+
+.donationContainer, .aboContainer{
+  background-color: var(--secondaryShaddow);
+  width: 45rem;
+  height: 30rem;
+  padding: var(--bigSpacer);
+  border: solid red;
+}
+
+.donationContainer ul, .aboContainer ul{
+  list-style: none;
+}
+
+.modalBG{
+  background-color: var(--secondaryShaddow);
+}
+
+.paypalBtns{
+  background-color: var(--secondaryShaddow);
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  height: 100%;
+  //z-index: 1;
+}
+
+.closeBtn{
+  background-color: #dcdcdc;
+  color: var(--hightlight);
+  font-weight: 600;
+  position: fixed;
+  top: 10rem;
+  right: 5rem;
+  z-index: 2;
+  box-shadow:
+  1px 1px 2px var(--hightlight),
+  -1px -1px 2px var(--hightlight),
+  1px -1px 2px var(--hightlight),
+  -1px 1px 2px var(--hightlight);
+}
+
+.closeBtn:hover{
+  background-color: var(--primary)
+}
+
+.paymentOverview{
+  background-color: var(--secondaryShaddow);
+  color: #fff;
+  font-size: 2rem;
+  position: fixed;
+  top: 30%;
+  left: 35%;
+  width: 50rem;
+  padding: var(--normalSpacer);
+  border: solid;
 }

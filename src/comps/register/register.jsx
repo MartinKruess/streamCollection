@@ -24,7 +24,7 @@ export const Register = () => {
     const newPassword = await generatePassword()
     setRegisterData({...registerData, "confirmPassword": newPassword, "password": newPassword })
   };
-  
+
   const password = registerData.password === registerData.confirmPassword && registerData.password.length > 9
   const isFilled = registerData.email.length > 5 && registerData.firstname.length > 2 && registerData.lastname.length > 5 && registerData.username.length > 5
 

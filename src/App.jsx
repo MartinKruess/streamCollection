@@ -24,6 +24,7 @@ import { BossFight } from "./comps/logedIn/bossfight";
 import { ChatDock } from "./comps/logedIn/chatdock";
 import { ActivityDock } from "./comps/logedIn/activitydock";
 import { AlertDock } from "./comps/logedIn/alertdock";
+import { AboDonation } from './comps/logedIn/paypal/donabo';
 
 export const fetchURL = "http://localhost:3232"
 
@@ -91,6 +92,10 @@ function App() {
           <Route path="/alertdock" element={
             <PrivateRoute loginToken={loginToken}>
               <AlertDock />
+            </PrivateRoute>} />
+          <Route path="/donations" element={
+            <PrivateRoute loginToken={loginToken}>
+              <AboDonation />
             </PrivateRoute>} />
           <Route path="*" element={<Page404 />}/>
         </Routes>

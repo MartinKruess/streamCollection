@@ -1,5 +1,5 @@
 import "../../App.scss";
-import { Aside } from "./aside";
+import { Aside } from "../aside";
 
 export const ActivityDock = () => {
     return (

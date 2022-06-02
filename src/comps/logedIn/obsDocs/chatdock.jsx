@@ -1,4 +1,4 @@
-import { Aside } from "./aside";
+import { Aside } from "../aside";
 
 export const ChatDock = () => {
     return (
