@@ -9,7 +9,8 @@ import { Aside } from "../../reusable/aside"
 export const AboDonation = () => {
     const [usage, setUsage] = useState("")
     const [rythm, setRythm] = useState("")
-    const [paymentValue, setPaymentValue] = useState(4.99)
+    //const [paymentValue, setPaymentValue] = useState(4.99)
+    const paymentValueRef = useRef()
     const paypal = useRef()
     const [paypalIsOpen, setPaypalIsOpen] = useState(false)
 
@@ -18,16 +19,18 @@ export const AboDonation = () => {
             console.log(typeof paymentValue, paymentValue)
             if(paymentValue > 1.98){
               setUsage(clickedButton)
-              setPaymentValue(paymentValue)
+              //setPaymentValue(paymentValue)
               setRythm("Einmalig")
               setPaypalIsOpen(true)
-            }else{
-              setPaymentValue("Erfüllt nicht die Mindestsumme.")
             }
+            //else{
+            //   setPaymentValue("Erfüllt nicht die Mindestsumme.")
+            // }
           
         } else if(clickedButton === "Abo"){
           setUsage(clickedButton)
-          setPaymentValue(4.99)
+          //setPaymentValue(4.99)
+          paymentValueRef.current.value = 4.99
           setRythm("monatlich")
           setPaypalIsOpen(true)
         }
@@ -36,16 +39,15 @@ export const AboDonation = () => {
     useEffect(() => {
         window.paypal.Buttons({
             createOrder: (data, actions, err) => {
-              return actions.order.create({
+                return actions.order.create({
                     intent: "CAPTURE",
                     purchase_units: [{
                         amount: {
                             currency_code: "EUR",
-                            value: 4.99,
+                            value: paymentValueRef.current.value,
                         }
                     }]
-                }),
-                console.log("PAYPAL-ERROR:", err)
+                })
             },
             onApprove: async (data, actions) => {
               const order = await actions.order.capture()
@@ -64,7 +66,7 @@ export const AboDonation = () => {
                 console.log("PAYPAL-ERROR:", err)
             }
         }).render(paypal.current)
-    },[paymentValue])
+    },[])
 
 
     return (
@@ -78,8 +80,8 @@ export const AboDonation = () => {
                         <li>+ 50MB Speicherplatz</li>
                         <li>Vorteil A (free)</li>
                     </ul>
-                    <input type="number" onChange={(e) => setPaymentValue(Number(e.target.value))}/>
-                    <button onClick={() => buy("Donation", paymentValue)}>Donation</button>
+                    <input type="number" ref={paymentValueRef} defaultValue={4.99}/>
+                    <button onClick={() => buy("Donation", paymentValueRef.current.value)}>Donation</button>
                 </div>
                 <div className="aboContainer">
                     <h2>Monats-Abonnement</h2>
@@ -96,7 +98,7 @@ export const AboDonation = () => {
                     <div className="paypalBtns" ref={paypal}>
                         <div className="paymentOverview">
                             Zahlungsart: {usage} <br />
-                            Zahlungshöhe: {paymentValue} <br />
+                            Zahlungshöhe: { paymentValueRef.current?.value > 1.98 ? paymentValueRef.current.value : "Erfüllt nicht den Mindestbetrag" } <br />
                             Rythmus: {rythm} <br />
                         </div>
                     </div>

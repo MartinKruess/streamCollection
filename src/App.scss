@@ -439,6 +439,22 @@ canvas{
   border:solid;
 }
 
+.dashboardChartFooter{
+  font-size: 1rem;
+}
+
+.feedOut button{
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-style: none;
+}
+
+.activSettingsDashboard{
+
+}
+
 // Activity Feed
 
 .activityFeedContainer{
