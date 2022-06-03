@@ -1,22 +1,20 @@
-import { useEffect } from "react"
+import { useref, useEffect } from "react"
 
-export const PaypalModal = ({open, children, paymentValue, onClose, usage}) => {
+export const PaypalModal = ({open, children, paymentValueRef, onClose, usage}) => {
     if (!open) return null
 
     useEffect(() => {
         window.paypal.Buttons({
             createOrder: (data, actions, err) => {
-              return actions.order.create({
+                return actions.order.create({
                     intent: "CAPTURE",
                     purchase_units: [{
-                        usage: "usage",
                         amount: {
                             currency_code: "EUR",
-                            value: 4.99,
+                            value: paymentValueRef.current.value,
                         }
                     }]
-                }),
-                console.log("PAYPAL-ERROR:", err)
+                })
             },
             onApprove: async (data, actions) => {
               const order = await actions.order.capture()
@@ -35,7 +33,7 @@ export const PaypalModal = ({open, children, paymentValue, onClose, usage}) => {
                 console.log("PAYPAL-ERROR:", err)
             }
         }).render(paypal.current)
-    },[paymentValue])
+    },[])
 
     return (
         <div className="modalBG">

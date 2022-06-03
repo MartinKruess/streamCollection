@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Aside } from "../../reusable/aside"
-//import { PaypalModal } from "./order";
+import { PaypalModal } from "./order";
 
 // Paypal: login: sb-gxso916492022@personal.example.com
 // Paypal Password: )?6O]j&F
@@ -36,37 +36,7 @@ export const AboDonation = () => {
         }
     }  
 
-    useEffect(() => {
-        window.paypal.Buttons({
-            createOrder: (data, actions, err) => {
-                return actions.order.create({
-                    intent: "CAPTURE",
-                    purchase_units: [{
-                        amount: {
-                            currency_code: "EUR",
-                            value: paymentValueRef.current.value,
-                        }
-                    }]
-                })
-            },
-            onApprove: async (data, actions) => {
-              const order = await actions.order.capture()
-              console.log("Successful order:", order.status)
-              const orderObj = {
-                  paypalID: await order.id,
-                  status: await order.status,
-                  start_date: await order.update_time,
-                  kindOfPayment: await usage,
-              }
-              console.log(orderObj)
-            
-          // -> DB
-            },
-            onError: (err) => {
-                console.log("PAYPAL-ERROR:", err)
-            }
-        }).render(paypal.current)
-    },[])
+    
 
 
     return (
@@ -94,7 +64,7 @@ export const AboDonation = () => {
                     </ul>
                     <button onClick={() => buy("Abo")}>monatliches Abo</button> 
                 </div>
-                {/* <PaypalModal open={paypalIsOpen} paymentValue={paymentValue} onClose={() => setPaypalIsOpen(false)}> */}
+                <PaypalModal open={paypalIsOpen} paymentValue={paymentValueRef} onClose={() => setPaypalIsOpen(false)}> */}
                     <div className="paypalBtns" ref={paypal}>
                         <div className="paymentOverview">
                             Zahlungsart: {usage} <br />
@@ -102,7 +72,7 @@ export const AboDonation = () => {
                             Rythmus: {rythm} <br />
                         </div>
                     </div>
-                {/* </PaypalModal> */}
+                </PaypalModal>
                 
             </article>
         </section>
