@@ -4,8 +4,6 @@ const paypal = "https://www.paypal.com/sdk/js?client-id=AajHqvewdsR8OZ5hqKA14nV3
 
 export const Membership = () => {
 const featureIn = " ✔"
-const featureOut = " ✘"
-
 
   return (
     <article className="cardContainer" >

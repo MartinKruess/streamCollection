@@ -123,6 +123,107 @@ ul li a:active{
   border-radius: 0.5rem 2rem;
 }
 
+.profileBtn{
+  background: url("./assets/images/personal.png") center/cover;
+  background-color: var(--hightlight);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 3rem;
+  box-shadow:
+  1px 1px 1px #6a2597,
+  -1px 1px 1px #6a2597,
+  1px -1px 1px #6a2597,
+  -1px -1px 1px #6a2597;
+}
+
+.profilDrowdown{
+  background-color: var(--secondary);
+  width: 20rem;
+  height: 9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  border: solid 1px;
+  border-radius: 0.5rem;
+  z-index: 2;
+
+  button{
+    background: transparent;
+    color: var(--primary);
+    width: 15rem;
+    height: 2.5rem;
+    margin-top: 0.75rem;
+    padding: 0;
+    border-style: none;
+  }
+
+  button:hover{
+    color: red;
+  }
+
+  li{
+    width: 15rem;
+    margin:0.1rem;
+    padding: 0;
+  }
+}
+
+.accSettings{
+  background-color: var(--secondary);
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: var(--normalSpacer);
+  position: absolute;
+  top:5rem;
+  right: 19rem;
+  z-index: 3;
+  border: solid 1px;
+  border-radius: 0.5rem;
+  z-index: 3;
+  
+  .lockContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+    position: relative;
+    top: -0.75rem;
+  }
+  i{
+    color: rgb(89, 255, 94);
+    margin:0;
+    padding: 0;
+    text-align: right;
+    z-index: 1;
+  }
+
+  div{
+    width: 100%;
+    height: auto;
+  }
+
+  label{
+    float: left;
+    vertical-align: middle;
+  }
+
+  input{
+    width: 10rem;
+    height: 3rem;
+    align-items: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+}
+
 body{
   background-color: var(--primary);
   color: var(--primary);
