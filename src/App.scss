@@ -30,7 +30,7 @@ html {
 h1, h2, h3, h4{
   color: var(--primary);
   width: 100%;
-  padding: var(--bigSpacer) var(--normalSpacer,)
+  padding: var(--bigSpacer) var(--normalSpacer);
 }
 
 h1{
@@ -39,6 +39,12 @@ h1{
 
 h2{
   font-size: 3rem;
+  height: 3.5rem;
+  position: static;
+}
+
+h3{
+  padding: var(--normalSpacer) var(--smallSpacer);
 }
 
 a{
@@ -207,30 +213,35 @@ input[type="button"]{
   flex-wrap: wrap;
   justify-content:space-around;
   padding: var(--normalSpacer);
-  perspective: 1000px;
 }
 
 .card{
   background-color: var(--secondaryShaddow);
-  width: 25rem;
+  width: 35rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: var(--bigSpacer) 0;
   padding: var(--normalSpacer);
+  gap: 1rem;
   border: solid var(--primary);
   border-radius: var(--normalSpacer);
 }
 
-p{
-  
-  margin: var(--normalSpacer) 0;
+.card img{
+  width: 80%;
 }
 
-.offer{
-  background: url("./assets/images/arrowButton.png") no-repeat center/contain;
-  width: 7rem;
-  height: 4rem;
-  border: none;
-  cursor: pointer;
-  margin-bottom: var(--bigSpacer);
+.card ul{
+  width: 90%;
+  height: 27.5rem;
+  list-style:none;
+  padding: var(--smallSpacer);
+
+}
+
+p{
+  margin: var(--normalSpacer) 0;
 }
 
 footer{
@@ -352,7 +363,7 @@ input[type="checkbox"]{
 
 aside{
   background-color: var(--secondary);
-  width: clamp(8rem, 15%, 20rem);
+  min-width: 17rem;
   height: 100%;
   font-size: 2rem;
   text-align: start;
@@ -392,6 +403,17 @@ aside ul li{
   text-decoration: underline var(--primary);
 }
 
+.upgardeButton{
+  background-color: var(--hightlight);
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  position: relative;
+  top: 18rem;
+  left: 0;
+  border: solid;
+  border-radius: 1rem;
+}
+
 .pArticle{
   background-color: var(--secondaryShaddow);
   width: 100%;
@@ -416,7 +438,7 @@ aside ul li{
 
 .mediumBox{
   width: 32rem;
-  height: 40rem;
+  max-height: 40rem;
 }
 
 .bigBox{
@@ -431,12 +453,33 @@ aside ul li{
 
 // Dashboard
 
-canvas{
-  color: var(--primary);
-  width: 65rem;
-  height: 32rem;
-  margin: auto;
-  border:solid;
+.dashboardMainContainer{
+  width: 99%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: auto;
+  gap: 1rem;
+}
+
+.activeControlContainer{
+  width: 100%;
+  max-height: 17rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: var(--bigSpacer);
+  border-bottom: solid;
+}
+
+.specialContainer{
+  width: 100%;
+  max-height: 17rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--normalSpacer);
+  padding-bottom: var(--bigSpacer);
+  border-bottom: solid;
 }
 
 .dashboardChartFooter{
@@ -451,8 +494,41 @@ canvas{
   border-style: none;
 }
 
-.activSettingsDashboard{
+.connectContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding-bottom: var(--bigSpacer);
+  border-bottom: solid;
+}
 
+.viewerContainer{
+  min-height: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+  border: solid red;
+
+  canvas{
+    color: var(--primary);
+    width: 65rem;
+    height: 32rem;
+    margin: auto;
+    border: solid 1px;
+  }
+
+  .newsFeedBox{
+    width: 40%;
+    height: 10rem;
+    background-color: var(--secondaryShaddow);
+
+  }
+}
+
+.blendOut{
+   display: none;
 }
 
 // Activity Feed
@@ -558,6 +634,78 @@ input[type="range"]{
   padding: 0;
 }
 
+
+// Donation & Abo Page
+
+.paypalContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.donationContainer{
+  border-right: solid;
+}
+
+.donationContainer, .aboContainer{
+  background-color: var(--secondaryShaddow);
+  width: 45rem;
+  height: 30rem;
+  padding: var(--bigSpacer);
+  border: solid red;
+}
+
+.donationContainer ul, .aboContainer ul{
+  list-style: none;
+}
+
+.paypalBg{
+  background-color: var(--secondaryShaddow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.modalBG{
+  background-color: var(--secondaryShaddow);
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.3rem;
+  width: 50rem;
+  
+  position: fixed;
+  top: 25rem;
+  padding: var(--bigSpacer);
+  gap: var(--smallSpacer);
+  border: solid;
+  z-index: 4;
+
+  .closeBtn{
+    background-color: #dcdcdc;
+    color: var(--hightlight);
+    font-weight: 600;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.7rem;
+    box-shadow:
+    1px 1px 2px var(--hightlight),
+    -1px -1px 2px var(--hightlight),
+    1px -1px 2px var(--hightlight),
+    -1px 1px 2px var(--hightlight);
+    z-index: 1;
+  }
+  
+  .closeBtn:hover{
+    background-color: var(--primary)
+  }
+
+}
+
+
 // Page 404
 
 .errorSection{
@@ -594,73 +742,4 @@ hr{
 
 .h4{
   padding: var(--bigSpacer) 0;
-}
-
-// Donation & Abo Page
-
-.paypalContainer{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.donationContainer{
-  border-right: solid;
-}
-
-.donationContainer, .aboContainer{
-  background-color: var(--secondaryShaddow);
-  width: 45rem;
-  height: 30rem;
-  padding: var(--bigSpacer);
-  border: solid red;
-}
-
-.donationContainer ul, .aboContainer ul{
-  list-style: none;
-}
-
-.modalBG{
-  background-color: var(--secondaryShaddow);
-}
-
-.paypalBtns{
-  background-color: var(--secondaryShaddow);
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  width: 100%;
-  height: 100%;
-  //z-index: 1;
-}
-
-.closeBtn{
-  background-color: #dcdcdc;
-  color: var(--hightlight);
-  font-weight: 600;
-  position: fixed;
-  top: 10rem;
-  right: 5rem;
-  z-index: 2;
-  box-shadow:
-  1px 1px 2px var(--hightlight),
-  -1px -1px 2px var(--hightlight),
-  1px -1px 2px var(--hightlight),
-  -1px 1px 2px var(--hightlight);
-}
-
-.closeBtn:hover{
-  background-color: var(--primary)
-}
-
-.paymentOverview{
-  background-color: var(--secondaryShaddow);
-  color: #fff;
-  font-size: 2rem;
-  position: fixed;
-  top: 30%;
-  left: 35%;
-  width: 50rem;
-  padding: var(--normalSpacer);
-  border: solid;
 }

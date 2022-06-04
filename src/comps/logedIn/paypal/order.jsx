@@ -1,4 +1,5 @@
-import { useref, useEffect } from "react"
+import { useEffect } from "react"
+
 
 export const PaypalModal = ({open, children, paymentValueRef, onClose, usage}) => {
     if (!open) return null
@@ -36,8 +37,11 @@ export const PaypalModal = ({open, children, paymentValueRef, onClose, usage}) =
     },[])
 
     return (
-        <div className="modalBG">
+        <div className="modalBG" ref={paypal}>
             <button className="closeBtn" onClick={onClose}>X</button>
+            Zahlungsart: {usage} <br />
+            Zahlungshöhe: {/* { paymentValueRef.current?.value > 1.98 ? paymentValueRef.current.value : "Erfüllt nicht den Mindestbetrag" }*/} <br /> 
+            Rythmus:  {/*{rythm}*/}<br /><br />
             {children}
         </div>
     )

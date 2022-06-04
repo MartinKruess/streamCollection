@@ -64,15 +64,11 @@ export const AboDonation = () => {
                     </ul>
                     <button onClick={() => buy("Abo")}>monatliches Abo</button> 
                 </div>
-                <PaypalModal open={paypalIsOpen} paymentValue={paymentValueRef} onClose={() => setPaypalIsOpen(false)}> */}
-                    <div className="paypalBtns" ref={paypal}>
-                        <div className="paymentOverview">
-                            Zahlungsart: {usage} <br />
-                            Zahlungshöhe: { paymentValueRef.current?.value > 1.98 ? paymentValueRef.current.value : "Erfüllt nicht den Mindestbetrag" } <br />
-                            Rythmus: {rythm} <br />
-                        </div>
-                    </div>
+                
+                <PaypalModal open={paypalIsOpen} paymentValue={paymentValueRef} onClose={() => setPaypalIsOpen(false)}>
+                <div className="paypalBg" />
                 </PaypalModal>
+                
                 
             </article>
         </section>
