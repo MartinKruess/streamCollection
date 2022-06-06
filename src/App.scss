@@ -222,6 +222,11 @@ ul li a:active{
     margin-bottom: 0;
   }
 
+  input[type="button"]{
+    background-color: var(--primary);
+    color: var(--secondary);
+  }
+
 }
 
 body{

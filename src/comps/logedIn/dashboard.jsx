@@ -1,7 +1,7 @@
 import { Aside } from "../reusable/aside"
 import TTV_YTLinechart from "./charts/yt_twitch_chart"
 import axios from "axios"
-import { useState, useEffect, startTransition } from "react";
+import { useState, useEffect } from "react";
 
 export const Dashboard = () => {
     const [liveData, setData] = useState([])
@@ -25,20 +25,6 @@ export const Dashboard = () => {
     const activeColor7 = {color: connections.specialIsActive ? "#f7022a" : ""}
     const activeColor8 = {color: connections.newsFeedIsActive ? "#f7022a" : ""}
 
-    
-
-
-    //const [twitchIsConnected, setTwitchIsConnected] = useState(false)
-
-    // function getTwitchData(){
-    //     axios.get('https://api.twitch.tv/helix/streams?user_login=Monstercat', {
-    //         headers: {
-    //             Authorization: 'Bearer gcxdq6488vdwqsoyjj8b1y2vthcsjh',
-    //             'Client-ID': 'ldhmjq6ih4k1e7uto56fi9nnzga7ua'
-    //         }
-    //     // }).then(res => console.log(res.data))
-    //     }).then(res => setData(res.data))
-    // }
 
     const getTwitchData = async () => {
         try {
@@ -52,7 +38,6 @@ export const Dashboard = () => {
         } catch (err) {
             console.error(err);
         }
-        
       }
 
     useEffect(()=> {
@@ -71,7 +56,8 @@ export const Dashboard = () => {
                         <div className="feedOut">Youtube</div>
                     </div>
                     <div className="smallBox"><h4 className="h4">Bots</h4>
-                        <div className="feedOut"><button style={activeColor4} onClick={() => setConnections({...connections, "twitchBotIsActive": !connections.twitchBotIsActive })}>Twitch Bot</button></div>
+                        <div className="feedOut"><button style={activeColor4} onClick={() => setSideSettings({...sideSettings, "botIsActive": !sideSettings.twitch.botIsActive })}>Twitch Bot Global</button></div>
+                        <div className="feedOut"><button style={activeColor4} onClick={() => setConnections({...connections, "twitchBotIsActive": !connections.twitchBotIsActive })}>Twitch Bot Local</button></div>
                         <div className="feedOut"><button style={activeColor5} onClick={() => setConnections({...connections, "youtubeBotIsActive": !connections.youtubeBotIsActive })}>Youtube Bot</button></div>
                     </div>
                     <div className="smallBox"><h4 className="h4">Connections</h4>

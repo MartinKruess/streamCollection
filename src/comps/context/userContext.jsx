@@ -18,9 +18,39 @@ export const UserProvider = ({children}) => {
     // LOGOUT - delete loginToken
     // clear localStorage by Logout
     //loginToken === false ? window.localStorage.clear()
+ 
 
     return(
-        <AppContext.Provider value={{loginToken, setLoginToken}}>
+        <AppContext.Provider value={{loginToken, setLoginToken}} >
+            {children}
+        </AppContext.Provider>
+    )
+}
+
+
+// ----------------- SETTINGS -----------------
+
+export const savedSettings = ({children}) => {
+    const [sideSettings, setSideSettings] = useState({
+        isLocked: false,
+        mode: "Dark",
+        lang: "DE",
+        twitch: {
+            isConnected: false,
+            botIsActive: false,
+        },
+        youtube: {
+            isConnected: false,
+            botIsActive: false,
+        },
+        obsIsConnected: false,
+        chartIsActive: false,
+        specialIsActive: false,
+        newsFeedIsActive: false,
+    })
+
+    return(
+        <AppContext.Provider sideSettings={{sideSettings, setSideSettings}}>
             {children}
         </AppContext.Provider>
     )
