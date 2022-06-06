@@ -30,7 +30,7 @@ const {setLoginToken, loginToken} = useContext(AppContext)
         body: JSON.stringify(loginData)
     })
     const data = await response.json()
-    console.log(data)
+    console.log("Data", {data})
     setLoginToken(data.generateToken)
     
     return <Navigate to="/dashboard" />

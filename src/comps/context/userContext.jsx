@@ -12,7 +12,7 @@ export const UserProvider = ({children}) => {
     // Handle by change
     useEffect(()=>{
         //SAVE Token to LocalStorage
-        localStorage.setItem('loginToken', loginToken)
+        loginToken ? localStorage.setItem('loginToken', loginToken) : localStorage.removeItem("loginToken")
     }, [loginToken])
 
     // LOGOUT - delete loginToken

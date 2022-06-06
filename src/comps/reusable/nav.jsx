@@ -33,7 +33,7 @@ console.log("savedSideSettings", savedSideSettings)
 
     if(dropDown === false && settings === true){setSettings(false)}
 
-    //dropDown === false ? setSettings(false) : do nothing!
+    //dropDown === false && setSettings(false)
 
     return (
         <nav>
@@ -65,11 +65,11 @@ console.log("savedSideSettings", savedSideSettings)
                             <div>
                                 <label>Dark/Light Mode</label>
                                 <input type="button" value={sideSettings.mode}
-                                onClick={() => sideSettings.isLocked === false
-                                    ? sideSettings.mode === "Dark"
+                                onClick={() => sideSettings.isLocked === false && (
+                                    sideSettings.mode === "Dark"
                                     ? setSideSettings({...sideSettings, "mode": "Light"})
                                     : setSideSettings({...sideSettings, "mode": "Dark"})
-                                : setSideSettings({...sideSettings, "mode": sideSettings.mode})}/>
+                                    )}/>
                             </div>
                             <div>
                                 <label>Sprache</label>

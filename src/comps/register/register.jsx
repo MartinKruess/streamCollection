@@ -36,8 +36,8 @@ export const Register = () => {
 
   const getUserId = async (e) => {
     e.preventDefault()
-    const isValidatated = validateData(registerData)
-    if (isValidatated === false) return
+    // const isValidatated = validateData(registerData)
+    // if (isValidatated === false) return
 
     const result = await fetch(`${fetchURL}/register`,
       {
