@@ -14,6 +14,7 @@ export const Media = () => {
         size: "",
         type: "",
         }
+    let imagesFromDB = []
 
     useEffect(() => {
         if (image) {
@@ -45,8 +46,10 @@ export const Media = () => {
         body: JSON.stringify(imgData)
     })
     const data = await response.json()
-    console.log("Data", {data})
-    }
+    imagesFromDB = data
+    console.log(imagesFromDB)
+}
+    
 
     return (
             <section className="pSection">
@@ -82,6 +85,17 @@ export const Media = () => {
                         <label htmlFor="">Volume:</label>
                         <input type="range" name="volumePercentage" min="0" max="100"/>
                     </form>
+                    <div>
+                        {imagesFromDB.map((image, i, key)=>{
+                            return(
+                                <div>
+                                    <div key={key}>{image[i].name}</div>
+                                    <img key={key} src={image[i].view} alt="" />
+                                </div>
+                            )}
+                        )}
+                        
+                    </div>
                     <ul className="yourMedia">
                         <li>sound 1.title01.feat.end</li>
                         <li>sound 1.title01.feat.end</li>
@@ -103,40 +117,9 @@ export const Media = () => {
                         <li>sound 1.title01.feat.end</li>
                         <li>sound 1.title01.feat.end</li>
                         <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1.title01.feat.end</li>
-                        <li>sound 1</li>
                     </ul>
                 </div>
             </article>
         </section>
     )
 }
-
-
-/*
-1 Minute Video 30FPS 720p ~ 40MB
-10 Videos / User = 600MB
-1 Minuten Track ~ 1,5MB
-
-650MB / User
-
-10.000 User ~ 6.500.000 MB (6.500GB ~ 6.5TB)
-*/

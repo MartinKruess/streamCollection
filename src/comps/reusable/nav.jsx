@@ -1,36 +1,20 @@
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import liveLogo from '../../assets/images/liveLogo.png'
-import { AppContext } from "../context/userContext";
+import { AppContext, SettingsContext } from "../context/userContext";
 
 export const Navi = () => {
 
     const {setLoginToken, loginToken} = useContext(AppContext)
+    const  {sideSettings, setSideSettings} = useContext(SettingsContext)
     
     const [dropDown, setDropDown] = useState(false)
     const [settings, setSettings] = useState(false)
-    const savedSideSettings = JSON.parse(localStorage.getItem("sideSettings")) //WHY??? Unexpected token o in JSON
-    console.log("savedSideSettings", savedSideSettings)
-    const [sideSettings, setSideSettings] = useState({
-        isLocked: false,
-        mode: "Dark",
-        lang: "DE",
-        twitch: {
-            isConnected: false,
-            botIsActive: false,
-        },
-        youtube: {
-            isConnected: false,
-            botIsActive: false,
-        },
-        obsIsConnected: false,
-        chartIsActive: false,
-        specialIsActive: false,
-        newsFeedIsActive: false,
-    })
+    const savedSideSettings = JSON.parse(localStorage.getItem("sideSettings"))
 
     useEffect(()=>{
         localStorage.setItem('sideSettings', JSON.stringify(sideSettings))
+        console.log("sideSettings", sideSettings)
     }, [sideSettings])
     
 

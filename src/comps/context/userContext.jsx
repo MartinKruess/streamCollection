@@ -17,11 +17,6 @@ export const UserProvider = ({children}) => {
         loginToken ? localStorage.setItem('loginToken', loginToken) : localStorage.removeItem("loginToken")
     }, [loginToken])
 
-    // LOGOUT - delete loginToken
-    // clear localStorage by Logout
-    //loginToken === false ? window.localStorage.clear()
-    
-
     return(
         <AppContext.Provider value={{loginToken, setLoginToken}} >
             {children}
@@ -32,7 +27,7 @@ export const UserProvider = ({children}) => {
 
 // ----------------- SETTINGS -----------------
 
-export const savedSettings = ({children}) => {
+export const SettingsProvider = ({children}) => {
     const [sideSettings, setSideSettings] = useState({
         isLocked: false,
         mode: "Dark",
@@ -52,7 +47,7 @@ export const savedSettings = ({children}) => {
     })
 
     return(
-        <SettingsContext.Provider sideSettings={{sideSettings, setSideSettings}}>
+        <SettingsContext.Provider value={{sideSettings, setSideSettings}}>
             {children}
         </SettingsContext.Provider>)
 }
