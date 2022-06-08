@@ -30,7 +30,7 @@ html {
 h1, h2, h3, h4{
   color: var(--primary);
   width: 100%;
-  padding: var(--bigSpacer) var(--normalSpacer,)
+  padding: var(--bigSpacer) var(--normalSpacer);
 }
 
 h1{
@@ -39,6 +39,12 @@ h1{
 
 h2{
   font-size: 3rem;
+  height: 3.5rem;
+  position: static;
+}
+
+h3{
+  padding: var(--normalSpacer) var(--smallSpacer);
 }
 
 a{
@@ -92,13 +98,135 @@ nav ul{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 40rem;
+  min-width: 40rem;
   list-style: none;
 }
 
 ul li a{
   color: var(--primary);
   text-decoration: none;
+}
+
+ul li a:active{
+  color: orange;
+}
+
+#navLogo{
+  position:absolute;
+  left: 1.5rem;
+  top: 0.50rem;
+}
+
+#navLogo img{
+  background-color: #ccc;
+  width: 9rem;
+  border-radius: 0.5rem 2rem;
+}
+
+.profileBtn{
+  background: url("./assets/images/personal.png") center/cover;
+  background-color: var(--hightlight);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 3rem;
+  box-shadow:
+  1px 1px 1px #6a2597,
+  -1px 1px 1px #6a2597,
+  1px -1px 1px #6a2597,
+  -1px -1px 1px #6a2597;
+}
+
+.profilDrowdown{
+  background-color: var(--secondary);
+  width: 20rem;
+  height: 9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  border: solid 1px;
+  border-radius: 0.5rem;
+  z-index: 2;
+
+  button{
+    background: transparent;
+    color: var(--primary);
+    width: 15rem;
+    height: 2.5rem;
+    margin-top: 0.75rem;
+    padding: 0;
+    border-style: none;
+  }
+
+  button:hover{
+    color: red;
+  }
+
+  li{
+    width: 15rem;
+    margin:0.1rem;
+    padding: 0;
+  }
+}
+
+.accSettings{
+  background-color: var(--secondary);
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: var(--normalSpacer);
+  position: absolute;
+  top:5rem;
+  right: 19rem;
+  z-index: 3;
+  border: solid 1px;
+  border-radius: 0.5rem;
+  z-index: 3;
+  
+  .lockContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+    position: relative;
+    top: -0.75rem;
+  }
+  i{
+    color: rgb(89, 255, 94);
+    margin:0;
+    padding: 0;
+    text-align: right;
+    z-index: 1;
+  }
+
+  div{
+    width: 100%;
+    height: auto;
+  }
+
+  label{
+    float: left;
+    vertical-align: middle;
+  }
+
+  input{
+    width: 10rem;
+    height: 3rem;
+    align-items: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  input[type="button"]{
+    background-color: var(--primary);
+    color: var(--secondary);
+  }
+
 }
 
 body{
@@ -191,30 +319,35 @@ input[type="button"]{
   flex-wrap: wrap;
   justify-content:space-around;
   padding: var(--normalSpacer);
-  perspective: 1000px;
 }
 
 .card{
   background-color: var(--secondaryShaddow);
-  width: 25rem;
+  width: 35rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: var(--bigSpacer) 0;
   padding: var(--normalSpacer);
+  gap: 1rem;
   border: solid var(--primary);
   border-radius: var(--normalSpacer);
 }
 
-p{
-  
-  margin: var(--normalSpacer) 0;
+.card img{
+  width: 80%;
 }
 
-.offer{
-  background: url("./assets/images/arrowButton.png") no-repeat center/contain;
-  width: 7rem;
-  height: 4rem;
-  border: none;
-  cursor: pointer;
-  margin-bottom: var(--bigSpacer);
+.card ul{
+  width: 90%;
+  height: 27.5rem;
+  list-style:none;
+  padding: var(--smallSpacer);
+
+}
+
+p{
+  margin: var(--normalSpacer) 0;
 }
 
 footer{
@@ -336,7 +469,7 @@ input[type="checkbox"]{
 
 aside{
   background-color: var(--secondary);
-  width: clamp(8rem, 15%, 20rem);
+  min-width: 17rem;
   height: 100%;
   font-size: 2rem;
   text-align: start;
@@ -376,6 +509,17 @@ aside ul li{
   text-decoration: underline var(--primary);
 }
 
+.upgardeButton{
+  background-color: var(--hightlight);
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  position: relative;
+  top: 18rem;
+  left: 0;
+  border: solid;
+  border-radius: 1rem;
+}
+
 .pArticle{
   background-color: var(--secondaryShaddow);
   width: 100%;
@@ -400,7 +544,7 @@ aside ul li{
 
 .mediumBox{
   width: 32rem;
-  height: 40rem;
+  max-height: 40rem;
 }
 
 .bigBox{
@@ -415,12 +559,82 @@ aside ul li{
 
 // Dashboard
 
-canvas{
+.dashboardMainContainer{
+  width: 99%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: auto;
+  gap: 1rem;
+}
+
+.activeControlContainer{
+  width: 100%;
+  max-height: 17rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: var(--bigSpacer);
+  border-bottom: solid;
+}
+
+.specialContainer{
+  width: 100%;
+  max-height: 17rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--normalSpacer);
+  padding-bottom: var(--bigSpacer);
+  border-bottom: solid;
+}
+
+.dashboardChartFooter{
+  font-size: 1rem;
+}
+
+.feedOut button{
+  background-color: transparent;
   color: var(--primary);
-  width: 65rem;
-  height: 32rem;
-  margin: auto;
-  border:solid;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-style: none;
+}
+
+.connectContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding-bottom: var(--bigSpacer);
+  border-bottom: solid;
+}
+
+.viewerContainer{
+  min-height: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+  border: solid red;
+
+  canvas{
+    color: var(--primary);
+    width: 65rem;
+    height: 32rem;
+    margin: auto;
+    border: solid 1px;
+  }
+
+  .newsFeedBox{
+    width: 40%;
+    height: 10rem;
+    background-color: var(--secondaryShaddow);
+
+  }
+}
+
+.blendOut{
+   display: none;
 }
 
 // Activity Feed
@@ -477,10 +691,9 @@ canvas{
 }
 
 .mediaBox{
-  border: solid yellow;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .mediaSettings{
@@ -488,12 +701,6 @@ canvas{
   width: 15rem;
   height: 100%;
   margin: 0;
-}
-
-#mediaSettingForm{
-  input{
-    width: 10rem;
-  }
 }
 
 .uploadSpace{
@@ -505,20 +712,123 @@ canvas{
   inset 2px 2px 3px 3px var(--secondaryShaddow),
   inset 2px 2px 6px 6px var(--secondaryShaddow);
   
+  .uploading{
+    display: none;
+  }
 }
 
-.yourMedia{
-  background-color: blue;
-  height: 100%;
+.imgUploadSpace{
+  width: 100%;
+  height: 15rem;
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 2px 2px 3px 3px var(--secondaryShaddow),
+  inset 2px 2px 3px 3px var(--secondaryShaddow),
+  inset 2px 2px 6px 6px var(--secondaryShaddow);
+
+  .imgSpace{
+    height: 14rem;
+    margin: 0 var(--bigSpacer);
+  }
+}
+
+
+
+.yourMedia {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  background-color: blue;
   gap: 1rem;
+  list-style: none;
+  padding: var(--smallSpacer);
+  overflow: hidden;
+
+  li {
+      background-color: #444;
+      color: #eee;
+      padding: 5px;
+      border: solid;
+  }
 }
 
 input[type="range"]{
   padding: 0;
 }
+
+
+// Donation & Abo Page
+
+.paypalContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.donationContainer{
+  border-right: solid;
+}
+
+.donationContainer, .aboContainer{
+  background-color: var(--secondaryShaddow);
+  width: 45rem;
+  height: 30rem;
+  padding: var(--bigSpacer);
+  border: solid red;
+}
+
+.donationContainer ul, .aboContainer ul{
+  list-style: none;
+}
+
+.paypalBg{
+  background-color: var(--secondaryShaddow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.modalBG{
+  background-color: var(--secondaryShaddow);
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.3rem;
+  width: 50rem;
+  
+  position: fixed;
+  top: 25rem;
+  padding: var(--bigSpacer);
+  gap: var(--smallSpacer);
+  border: solid;
+  z-index: 4;
+
+  .closeBtn{
+    background-color: #dcdcdc;
+    color: var(--hightlight);
+    font-weight: 600;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.7rem;
+    box-shadow:
+    1px 1px 2px var(--hightlight),
+    -1px -1px 2px var(--hightlight),
+    1px -1px 2px var(--hightlight),
+    -1px 1px 2px var(--hightlight);
+    z-index: 1;
+  }
+  
+  .closeBtn:hover{
+    background-color: var(--primary)
+  }
+
+}
+
 
 // Page 404
 
