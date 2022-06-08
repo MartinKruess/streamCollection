@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-import { AppContext } from './comps/context/userContext';
 import "./App.scss";
 
 // Public
@@ -31,72 +30,71 @@ import { AboDonation } from './comps/logedIn/paypal/donabo';
 export const fetchURL = "http://localhost:3232"
 
 function App() {
-  const {loginToken} = useContext(AppContext)
-  console.log("loginToken", loginToken)
+  
 
   return (
     <main className="App">
       <Router>
-        <Navi loginToken={loginToken}/>
+        <Navi />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />}/>
           <Route path="/dashboard" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute>
               <Dashboard />
             </PrivateRoute>} />
           <Route path="/activityfeed" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute>
               <ActivityFeed />
             </PrivateRoute>} />
           <Route path="/alerts" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <Alerts />
             </PrivateRoute>} />
           <Route path="/media" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <Media />
             </PrivateRoute>} />
           <Route path="/overlays" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <Overlays />
             </PrivateRoute>} />
           <Route path="/autocommands" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <AutoCommands />
             </PrivateRoute>} />
           <Route path="/chatcommands" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <ChatCommands />
             </PrivateRoute>} />
           <Route path="/spamfilter" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <SpamFilter />
             </PrivateRoute>} />
           <Route path="/yourfilter" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <YourFilter />
             </PrivateRoute>} />
           <Route path="/bossfight" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <BossFight />
             </PrivateRoute>} />
           <Route path="/chatdock" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <ChatDock />
             </PrivateRoute>} />
           <Route path="/activitydock" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <ActivityDock />
             </PrivateRoute>} />
           <Route path="/alertdock" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <AlertDock />
             </PrivateRoute>} />
           <Route path="/donations" element={
-            <PrivateRoute loginToken={loginToken}>
+            <PrivateRoute >
               <AboDonation />
             </PrivateRoute>} />
           <Route path="*" element={<Page404 />}/>

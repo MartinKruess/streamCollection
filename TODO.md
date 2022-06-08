@@ -8,20 +8,21 @@ noch keine Ahnung: ???
 
 ## User Management
 
-- userGroup an Aside geben (mit JWT)
+- JWT einrichten und im LocalStorage speichern ✔
+- Paypal feinschliff: Zahlungsfunktion
 - userGroup bei Donation und Abo response an Backend und DB geben
 
 ### Login Complete
 
-- JWT statt Login true/false
+- JWT statt Login true/false ✔
 - nav update nach Login (User-/Accountverwaltung)
 - delete Account after time
 
 ### Side Settings
 
-- Setzen @ Dropdown via Click
-- save to LocalStorage (Cookie) ???
-- verknüpfe Dashboard randomization mit Cookie
+- Setzen @ Dropdown via Click ✔
+- save sideSettings to LocalStorage ✔
+- verknüpfe Dashboard randomization mit SettingsObject
 
 
 ## Aside Complete
@@ -34,7 +35,7 @@ noch keine Ahnung: ???
 
 ### Alerts
 
-- MediaDB's verwendbar machen (Load: imageDB, musicDB, videoDB mit Voschau)
+- MediaDB's verwendbar machen (Load: imageDB ✔, musicDB, videoDB mit Voschau)
 - Verwendung via Drag and Drop und frei platzierbar ???
 - Ergebnis speichern in alertDB ???
 
@@ -48,7 +49,7 @@ noch keine Ahnung: ???
 
 - Twitch token Auth + Handy ???
 - Twitch Account auslesen
-- Daten Ausgaben
+- Daten Ausgeben
 - Datan mit Chart verbinden ???
 
 

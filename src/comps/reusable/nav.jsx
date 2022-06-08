@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import liveLogo from '../../assets/images/liveLogo.png'
+import { AppContext } from "../context/userContext";
 
-export const Navi = ({loginToken}) => {
+export const Navi = () => {
 
+    const {setLoginToken, loginToken} = useContext(AppContext)
+    
     const [dropDown, setDropDown] = useState(false)
     const [settings, setSettings] = useState(false)
     const savedSideSettings = JSON.parse(localStorage.getItem("sideSettings")) //WHY??? Unexpected token o in JSON
-console.log("savedSideSettings", savedSideSettings)
+    console.log("savedSideSettings", savedSideSettings)
     const [sideSettings, setSideSettings] = useState({
         isLocked: false,
         mode: "Dark",
@@ -35,6 +38,10 @@ console.log("savedSideSettings", savedSideSettings)
 
     //dropDown === false && setSettings(false)
 
+    const logout = () => {
+        setLoginToken(false)
+    }
+
     return (
         <nav>
             <div id="navLogo"><img src={liveLogo} alt="" /></div>
@@ -43,7 +50,7 @@ console.log("savedSideSettings", savedSideSettings)
                 <li><a href="/#learn">Learn</a></li>
                 <li><a href="#membership">Membership</a></li>
             </ul>
-            {loginToken === false
+            {loginToken === null
                 ? (<div id="navButtons">
                 <Link to="/login">
                     <input className="linkBtn" type="button" value="Login"/>
@@ -96,7 +103,7 @@ console.log("savedSideSettings", savedSideSettings)
                     </div>)
                     : (<div className="blendOut"></div>)}
                     <Link to="/">
-                        <input type="button" value="Logout"/>
+                        <input type="button" value="Logout" onClick={logout}/>
                     </Link> 
                 </>)
             }

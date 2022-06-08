@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { fetchURL } from "../../App";
 import { Aside } from "../reusable/aside"
 
 export const Media = () => {
@@ -6,18 +7,46 @@ export const Media = () => {
     const fileInputRef = useRef()
     const [image, setImage] = useState()
     const [preview, setPreview] = useState()
+    const imgData = {
+        userID: 'new ObjectId("629db3da45ed1f32964ffb0c"', //localStorage.getItem(loginToken.userID),
+        view: "",
+        name: "",
+        size: "",
+        type: "",
+        }
 
     useEffect(() => {
         if (image) {
             const reader = new FileReader()
             reader.onloadend = () => {
-                setPreview(reader.result) // Muss String sein!
+                setPreview(reader.result) // ???
             }
             reader.readAsDataURL(image)
         } else {
             setPreview(null)
         }
     }, [image])
+
+    const imgFetch = async (e) => {
+            imgData.view = preview,
+            imgData.name = image.name
+            imgData.size = image.size
+            imgData.type = image.type
+    
+        console.log(imgData)
+        
+        const response = await fetch(`${fetchURL}/imageUpload`,
+    {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(imgData)
+    })
+    const data = await response.json()
+    console.log("Data", {data})
+    }
 
     return (
             <section className="pSection">
@@ -27,17 +56,21 @@ export const Media = () => {
                     <div className="switchBox">Images</div>
                     <div className="switchBox">Sounds</div>
                     <div className="switchBox">Videos</div>
-                    {preview ? (<img src={preview} alt="" />)
+                    {preview ? (
+                    <div className="imgUploadSpace">
+                        <img className="imgSpace" src={preview} alt="" />
+                        <button onClick={imgFetch}>Upload</button>
+                    </div>)
                     : (<button className="uploadSpace" onClick={() => {
                         //e.preventDefault()
                         fileInputRef.current.click()
-                        console.log("clicked")
                     }} >
                         <input className="uploading" type="file" ref={fileInputRef}
                         accept = "image/*"
                         onChange={(e) => {
                             const file = e.target.files[0]
                             if(file && file.type.substring(0, 5) === "image") {setImage(file)} else {setImage(null)}
+                            
                         }}/>
                     </button>
                     )}

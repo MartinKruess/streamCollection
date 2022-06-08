@@ -11,7 +11,6 @@ const {setLoginToken, loginToken} = useContext(AppContext)
   const loginRef = useRef();
   const loginPasswordRef = useRef()
 
-
   const getLoginData = async (e)  => {
     e.preventDefault()
 
@@ -33,7 +32,7 @@ const {setLoginToken, loginToken} = useContext(AppContext)
     console.log("Data", {data})
     setLoginToken(data.generateToken)
     
-    return <Navigate to="/dashboard" />
+    //return <Navigate to="/dashboard" />
   }
 
     return (

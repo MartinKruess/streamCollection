@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 
 export const AppContext = createContext()
+export const SettingsContext = createContext()
 
 //LOAD loginToken
 const savedLoginToken = localStorage.getItem("loginToken")
@@ -12,13 +13,14 @@ export const UserProvider = ({children}) => {
     // Handle by change
     useEffect(()=>{
         //SAVE Token to LocalStorage
+        console.log(loginToken)
         loginToken ? localStorage.setItem('loginToken', loginToken) : localStorage.removeItem("loginToken")
     }, [loginToken])
 
     // LOGOUT - delete loginToken
     // clear localStorage by Logout
     //loginToken === false ? window.localStorage.clear()
- 
+    
 
     return(
         <AppContext.Provider value={{loginToken, setLoginToken}} >
@@ -50,8 +52,7 @@ export const savedSettings = ({children}) => {
     })
 
     return(
-        <AppContext.Provider sideSettings={{sideSettings, setSideSettings}}>
+        <SettingsContext.Provider sideSettings={{sideSettings, setSideSettings}}>
             {children}
-        </AppContext.Provider>
-    )
+        </SettingsContext.Provider>)
 }

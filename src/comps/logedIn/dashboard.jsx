@@ -56,7 +56,6 @@ export const Dashboard = () => {
                         <div className="feedOut">Youtube</div>
                     </div>
                     <div className="smallBox"><h4 className="h4">Bots</h4>
-                        <div className="feedOut"><button style={activeColor4} onClick={() => setSideSettings({...sideSettings, "botIsActive": !sideSettings.twitch.botIsActive })}>Twitch Bot Global</button></div>
                         <div className="feedOut"><button style={activeColor4} onClick={() => setConnections({...connections, "twitchBotIsActive": !connections.twitchBotIsActive })}>Twitch Bot Local</button></div>
                         <div className="feedOut"><button style={activeColor5} onClick={() => setConnections({...connections, "youtubeBotIsActive": !connections.youtubeBotIsActive })}>Youtube Bot</button></div>
                     </div>
