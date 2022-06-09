@@ -17,10 +17,7 @@ export const Navi = () => {
         console.log("sideSettings", sideSettings)
     }, [sideSettings])
     
-
     if(dropDown === false && settings === true){setSettings(false)}
-
-    //dropDown === false && setSettings(false)
 
     const logout = () => {
         setLoginToken(false)

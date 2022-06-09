@@ -343,7 +343,6 @@ input[type="button"]{
   height: 27.5rem;
   list-style:none;
   padding: var(--smallSpacer);
-
 }
 
 p{
@@ -733,8 +732,6 @@ aside ul li{
   }
 }
 
-
-
 .yourMedia {
   width: 80%;
   display: grid;
@@ -826,7 +823,6 @@ input[type="range"]{
   .closeBtn:hover{
     background-color: var(--primary)
   }
-
 }
 
 
@@ -837,6 +833,7 @@ input[type="range"]{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 .errorSection h1, .errorSection h2, .errorSection h3{
@@ -866,4 +863,13 @@ hr{
 
 .h4{
   padding: var(--bigSpacer) 0;
+}
+
+// Responsive
+
+@media screen and (max-width: 992px) {
+  .bgIMG{
+    width: 0;
+  } 
+  
 }
