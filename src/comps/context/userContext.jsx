@@ -5,20 +5,23 @@ export const SettingsContext = createContext()
 
 //LOAD loginToken
 const savedLoginToken = localStorage.getItem("loginToken")
+const savedUserData = localStorage.getItem("logedUserData")
 
 export const UserProvider = ({children}) => {
     
     const [loginToken, setLoginToken] = useState(savedLoginToken || null)
+    const [logedUserData, setLogedUserData] = useState(savedUserData || null)
 
     // Handle by change
     useEffect(()=>{
         //SAVE Token to LocalStorage
-        console.log(loginToken)
+        console.log("Token", loginToken, "UserData", logedUserData)
         loginToken ? localStorage.setItem('loginToken', loginToken) : localStorage.removeItem("loginToken")
+        logedUserData ? localStorage.setItem('logedUserData', logedUserData) : localStorage.removeItem("logedUserData")
     }, [loginToken])
 
     return(
-        <AppContext.Provider value={{loginToken, setLoginToken}} >
+        <AppContext.Provider value={{loginToken, setLoginToken, logedUserData, setLogedUserData}} >
             {children}
         </AppContext.Provider>
     )

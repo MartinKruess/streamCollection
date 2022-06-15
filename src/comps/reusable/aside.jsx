@@ -3,13 +3,13 @@ export const Aside = () => {
     const group = "user"
     return (
         <aside>
-                <ul>
-                <Link to="/dashboard">
+            <ul>
+                <NavLink to="/dashboard" >
                     <li>Dashboard</li>
-                </Link>
-                <Link to="/activityfeed">
+                </NavLink>
+                <NavLink to="/activityfeed">
                     <li>Activity Feed</li>
-                </Link>
+                </NavLink>
                     <li></li>
                     <li className="liHeader">Streaming Tools</li>
                         <ul className="liBody">
@@ -73,8 +73,7 @@ export const Aside = () => {
                             <li className="upgardeButton">Upgrade</li>
                         </NavLink>)
                     }
-                    
-                </ul>
-            </aside>
+            </ul>
+        </aside>
     )
 }

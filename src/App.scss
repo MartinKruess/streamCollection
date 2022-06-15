@@ -468,21 +468,25 @@ input[type="checkbox"]{
 
 aside{
   background-color: var(--secondary);
-  min-width: 17rem;
+  width: 23rem;
   height: 100%;
   font-size: 2rem;
   text-align: start;
   padding: var(--bigSpacer) var(--bigSpacer);
   margin: 5rem 0 0 0;
-}
 
-aside ul li{
-  color: var(--primary);
-  font-family: 'Arial';
-  list-style: none;
-  line-height: 2.5rem;
-  letter-spacing: normal;
-  text-transform: none; 
+  ul li{
+    color: var(--primary);
+    font-family: 'Arial';
+    list-style: none;
+    line-height: 2.5rem;
+    letter-spacing: normal;
+    text-transform: none; 
+  }
+  
+  .active{
+    color: red;
+  }
 }
 
 .liHeader{

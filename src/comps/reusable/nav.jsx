@@ -1,12 +1,12 @@
 import { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import liveLogo from '../../assets/images/liveLogo.png'
 import { AppContext, SettingsContext } from "../context/userContext";
 
 export const Navi = () => {
 
-    const {setLoginToken, loginToken} = useContext(AppContext)
-    const  {sideSettings, setSideSettings} = useContext(SettingsContext)
+    const {setLoginToken, loginToken, setLogedUserData} = useContext(AppContext)
+    const  {sideSettings, setSideSettings, logedUserData} = useContext(SettingsContext)
     
     const [dropDown, setDropDown] = useState(false)
     const [settings, setSettings] = useState(false)
@@ -21,17 +21,20 @@ export const Navi = () => {
 
     const logout = () => {
         setLoginToken(false)
+        setLogedUserData(false)
+        return <Navigate to="/"></Navigate>
     }
 
+    
     return (
         <nav>
             <div id="navLogo"><img src={liveLogo} alt="" /></div>
             <ul>
                 <li><a href="/#about">About</a></li>
                 <li><a href="/#learn">Learn</a></li>
-                <li><a href="#membership">Membership</a></li>
+                <li><a href="/#membership">Membership</a></li>
             </ul>
-            {loginToken === null
+            {loginToken === null || !loginToken
                 ? (<div id="navButtons">
                 <Link to="/login">
                     <input className="linkBtn" type="button" value="Login"/>
@@ -44,6 +47,7 @@ export const Navi = () => {
                     <button className="profileBtn" onClick={() => setDropDown(!dropDown)}></button>
                     {dropDown
                     ? (<div className="profilDrowdown">
+                                <label>{logedUserData.username}</label>
                                 <button>Account Details</button>
                                 <button onClick={()=> setSettings(!settings)}>Account Settings</button>
                         {settings ? (<div className="accSettings">

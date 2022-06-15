@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 
 export const Login = () => {
 
-const {setLoginToken, loginToken} = useContext(AppContext)
+const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(AppContext)
 
   const loginRef = useRef();
   const loginPasswordRef = useRef()
@@ -29,10 +29,13 @@ const {setLoginToken, loginToken} = useContext(AppContext)
         body: JSON.stringify(loginData)
     })
     const data = await response.json()
-    console.log("Data", {data})
     setLoginToken(data.generateToken)
-    
-    //return <Navigate to="/dashboard" />
+    console.log(data.userData)
+    setLogedUserData(data.userData)
+
+    if(loginToken && logedUserData){
+      return <Navigate from="/login" to="/dashboard" replace /> // useNavigate
+    } 
   }
 
     return (
