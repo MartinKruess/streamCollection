@@ -146,6 +146,10 @@ ul li a:active{
   position: absolute;
   top: 5rem;
   right: 5rem;
+<<<<<<< HEAD
+=======
+  padding: var(--normalSpacer);
+>>>>>>> twitchDashboard
   border: solid 1px;
   border-radius: 0.5rem;
   z-index: 2;
@@ -173,8 +177,13 @@ ul li a:active{
 
 .accSettings{
   background-color: var(--secondary);
+<<<<<<< HEAD
   width: 25rem;
   height: 25rem;
+=======
+  width: 30rem;
+  height: 35rem;
+>>>>>>> twitchDashboard
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -194,6 +203,10 @@ ul li a:active{
     position: relative;
     top: -0.75rem;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> twitchDashboard
   i{
     color: rgb(89, 255, 94);
     margin:0;
@@ -202,11 +215,32 @@ ul li a:active{
     z-index: 1;
   }
 
+<<<<<<< HEAD
+=======
+  label{
+    width: 50%;
+    text-align: start;
+  }
+
+>>>>>>> twitchDashboard
   div{
     width: 100%;
     height: auto;
   }
 
+<<<<<<< HEAD
+=======
+  .connectButton{
+    width: auto;
+  }
+
+  img{
+    color: #ccc;
+    width: 2.5rem;
+    margin: auto;
+  }
+
+>>>>>>> twitchDashboard
   label{
     float: left;
     vertical-align: middle;
@@ -343,7 +377,10 @@ input[type="button"]{
   height: 27.5rem;
   list-style:none;
   padding: var(--smallSpacer);
+<<<<<<< HEAD
 
+=======
+>>>>>>> twitchDashboard
 }
 
 p{
@@ -469,21 +506,29 @@ input[type="checkbox"]{
 
 aside{
   background-color: var(--secondary);
+<<<<<<< HEAD
   min-width: 17rem;
+=======
+  width: 23rem;
+>>>>>>> twitchDashboard
   height: 100%;
   font-size: 2rem;
   text-align: start;
   padding: var(--bigSpacer) var(--bigSpacer);
   margin: 5rem 0 0 0;
-}
 
-aside ul li{
-  color: var(--primary);
-  font-family: 'Arial';
-  list-style: none;
-  line-height: 2.5rem;
-  letter-spacing: normal;
-  text-transform: none; 
+  ul li{
+    color: var(--primary);
+    font-family: 'Arial';
+    list-style: none;
+    line-height: 2.5rem;
+    letter-spacing: normal;
+    text-transform: none; 
+  }
+  
+  .active{
+    color: red;
+  }
 }
 
 .liHeader{
@@ -682,8 +727,9 @@ aside ul li{
 
 .switchBox{
   background-color: var(--hightlight);
+  color: var(--primary);
   min-width: 18rem;
-  width: 32%;
+  width: 30%;
   height: 7rem;
   font-size: 3rem;
   border: solid 1px var(--secondaryShaddow);
@@ -733,8 +779,11 @@ aside ul li{
   }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> twitchDashboard
 .yourMedia {
   width: 80%;
   display: grid;
@@ -758,6 +807,118 @@ input[type="range"]{
   padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+.imagesCon{
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: var(--normalSpacer);
+  overflow-y: scroll;
+
+  .imgCard{
+    background-color: var(--secondaryShaddow);
+    width: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: var(--smallSpacer);
+    padding: var(--normalSpacer);
+    border: solid 0.2rem;
+    border-radius: 0.5rem;
+  
+    .imgName{
+      width: 80%;
+      height: 2rem;
+      overflow: hidden;
+    }
+
+    .deleteBtn{
+      background-color: var(--hightlight);
+      width: 2rem;
+      height: 2rem;
+      position: relative;
+      top: -0.3rem;
+      right: -1rem;
+      border: solid 0.2rem;
+      border-radius: 2rem;
+      z-index: 1;
+    }
+
+    img{
+      width: 50%;
+    }
+  
+  }
+}
+
+
+// Alerts
+
+.buildContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+
+  .assetsPanel{
+    background-color: red;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0 0 var(--normalSpacer) 0;
+    
+    .soundSelect, .imageSelect, .videoSelect, .textSelect{
+      width: 20%;
+      margin: 0 var(--normalSpacer);
+
+      select{
+        width: 80%;
+        text-align: center;
+        padding: var(--smallSpacer);
+      }
+    }
+
+    .soundSelect{
+      background-color: violet;
+    }
+
+    .imageSelect{
+      background-color: gray;
+    }
+  
+    .videoSelect{
+      background-color: green;
+    }
+
+    .textSelect{
+      background-color:yellow;
+    }  
+  }
+
+  canvas{
+    background-image: paint(squares);
+    width: 115.2rem;
+    height: 64.8rem;
+    border: 2px solid black;
+  }
+  .buildCanvas{
+    
+    background-image: paint(squares);
+    width: 90%;
+    height: 100%;
+    border: 2px solid black;
+  }
+}
+
+
+
+>>>>>>> twitchDashboard
 
 // Donation & Abo Page
 
@@ -826,7 +987,10 @@ input[type="range"]{
   .closeBtn:hover{
     background-color: var(--primary)
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> twitchDashboard
 }
 
 
@@ -837,6 +1001,7 @@ input[type="range"]{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 .errorSection h1, .errorSection h2, .errorSection h3{
@@ -866,4 +1031,13 @@ hr{
 
 .h4{
   padding: var(--bigSpacer) 0;
+}
+
+// Responsive
+
+@media screen and (max-width: 992px) {
+  .bgIMG{
+    width: 0;
+  } 
+  
 }
