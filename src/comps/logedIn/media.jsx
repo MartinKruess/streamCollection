@@ -8,7 +8,16 @@ export const Media = () => {
 
     const {mediaData, setMediaData} = useContext(MediaContext)
     const {logedUserData} = useContext(AppContext)
-    
+    const loginToken = localStorage
+
+    fetch(`${fetchURL}/getAllImages`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'oAuthToken': {loginToken},
+            },
+    })
+
     const MDI = mediaData[0].images
     const MDV = mediaData[0].videos
     const MDS = mediaData[0].sounds
