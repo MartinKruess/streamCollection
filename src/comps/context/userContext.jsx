@@ -10,14 +10,13 @@ const savedUserData = localStorage.getItem("logedUserData")
 export const UserProvider = ({children}) => {
     
     const [loginToken, setLoginToken] = useState(savedLoginToken || null)
-    const [logedUserData, setLogedUserData] = useState(savedUserData || null)
+    const [logedUserData, setLogedUserData] = useState(JSON.parse(savedUserData) || null)
 
     // Handle by change
     useEffect(()=>{
         //SAVE Token to LocalStorage
-        console.log("Token", loginToken, "UserData", logedUserData)
         loginToken ? localStorage.setItem('loginToken', loginToken) : localStorage.removeItem("loginToken")
-        logedUserData ? localStorage.setItem('logedUserData', logedUserData) : localStorage.removeItem("logedUserData")
+        logedUserData ? localStorage.setItem('logedUserData', JSON.stringify(logedUserData)) : localStorage.removeItem("logedUserData")
     }, [loginToken])
 
     return(

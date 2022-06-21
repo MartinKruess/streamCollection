@@ -146,6 +146,7 @@ ul li a:active{
   position: absolute;
   top: 5rem;
   right: 5rem;
+  padding: var(--normalSpacer);
   border: solid 1px;
   border-radius: 0.5rem;
   z-index: 2;
@@ -173,8 +174,8 @@ ul li a:active{
 
 .accSettings{
   background-color: var(--secondary);
-  width: 25rem;
-  height: 25rem;
+  width: 30rem;
+  height: 35rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -194,6 +195,7 @@ ul li a:active{
     position: relative;
     top: -0.75rem;
   }
+
   i{
     color: rgb(89, 255, 94);
     margin:0;
@@ -202,9 +204,24 @@ ul li a:active{
     z-index: 1;
   }
 
+  label{
+    width: 50%;
+    text-align: start;
+  }
+
   div{
     width: 100%;
     height: auto;
+  }
+
+  .connectButton{
+    width: auto;
+  }
+
+  img{
+    color: #ccc;
+    width: 2.5rem;
+    margin: auto;
   }
 
   label{
@@ -685,8 +702,9 @@ aside{
 
 .switchBox{
   background-color: var(--hightlight);
+  color: var(--primary);
   min-width: 18rem;
-  width: 32%;
+  width: 30%;
   height: 7rem;
   font-size: 3rem;
   border: solid 1px var(--secondaryShaddow);
@@ -758,6 +776,115 @@ aside{
 input[type="range"]{
   padding: 0;
 }
+
+.imagesCon{
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: var(--normalSpacer);
+  overflow-y: scroll;
+
+  .imgCard{
+    background-color: var(--secondaryShaddow);
+    width: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: var(--smallSpacer);
+    padding: var(--normalSpacer);
+    border: solid 0.2rem;
+    border-radius: 0.5rem;
+  
+    .imgName{
+      width: 80%;
+      height: 2rem;
+      overflow: hidden;
+    }
+
+    .deleteBtn{
+      background-color: var(--hightlight);
+      width: 2rem;
+      height: 2rem;
+      position: relative;
+      top: -0.3rem;
+      right: -1rem;
+      border: solid 0.2rem;
+      border-radius: 2rem;
+      z-index: 1;
+    }
+
+    img{
+      width: 50%;
+    }
+  
+  }
+}
+
+
+// Alerts
+
+.buildContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+
+  .assetsPanel{
+    background-color: red;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0 0 var(--normalSpacer) 0;
+    
+    .soundSelect, .imageSelect, .videoSelect, .textSelect{
+      width: 20%;
+      margin: 0 var(--normalSpacer);
+
+      select{
+        width: 80%;
+        text-align: center;
+        padding: var(--smallSpacer);
+      }
+    }
+
+    .soundSelect{
+      background-color: violet;
+    }
+
+    .imageSelect{
+      background-color: gray;
+    }
+  
+    .videoSelect{
+      background-color: green;
+    }
+
+    .textSelect{
+      background-color:yellow;
+    }  
+  }
+
+  canvas{
+    background-image: paint(squares);
+    width: 115.2rem;
+    height: 64.8rem;
+    border: 2px solid black;
+  }
+  .buildCanvas{
+    
+    background-image: paint(squares);
+    width: 90%;
+    height: 100%;
+    border: 2px solid black;
+  }
+}
+
+
 
 
 // Donation & Abo Page
