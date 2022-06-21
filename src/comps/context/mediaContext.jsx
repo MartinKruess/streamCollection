@@ -9,7 +9,7 @@ const savedUserData = localStorage.getItem("logedUserData")
 export const MediaProvider = ({children}) => {
     
     const [mediaData, setMediaData] = useState([{
-        images: ["abc.png"],
+        images: [],
         videos: [],
         sounds: [],
 }])

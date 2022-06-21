@@ -14,6 +14,7 @@ export const Navi = () => {
     const [settings, setSettings] = useState(false)
     const savedSideSettings = JSON.parse(localStorage.getItem("sideSettings"))
     const savedLogedUserData = JSON.parse(localStorage.getItem("logedUserData"))
+    const twitchXAuthURL = 'http://localhost:3232/auth/twitch'
 
     useEffect(()=>{
         localStorage.setItem('sideSettings', JSON.stringify(sideSettings))
@@ -30,6 +31,9 @@ export const Navi = () => {
 
     // console.log("USERDATA", savedLogedUserData)
 
+    const twitchXAuth = () => {
+        
+    }
     
     return (
         <nav>
@@ -79,14 +83,14 @@ export const Navi = () => {
                             </div>
                             <div>
                                 <label>Twitch Account</label>
-                                <div className="connectButton" onClick={() => setSideSettings({...sideSettings, "isLocked":!sideSettings.isLocked})}>
-                                       {sideSettings.isLocked ? (<img src={connected}></img>) : (<img src={disconnected}></img>)}
+                                <div className="connectButton" onClick={() => setSideSettings({...sideSettings, "isAuthTwitch":!sideSettings.isAuthTwitch})}>
+                                       {sideSettings.isAuthTwitch ? (<img src={connected}></img>) : (<a href={twitchXAuthURL}><img src={disconnected}></img></a>)}
                                 </div>
                             </div>
                             <div>
                                 <label>Youtube Account</label>
                                 <div className="connectButton" onClick={() => setSideSettings({...sideSettings, "isLocked":!sideSettings.isLocked})}>
-                                       {sideSettings.isLocked ? (<img src={connected}></img>) : (<img src={disconnected}></img>)}
+                                       {sideSettings.isLocked ? (<img src={connected}></img>) : (<a href=""><img src={disconnected}></img></a>)}
                                 </div>
                             </div>
                             <div>

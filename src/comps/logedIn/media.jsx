@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useContext, createContext } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { fetchURL } from "../../App";
 import { Aside } from "../reusable/aside"
 import { AppContext } from '../context/userContext'
@@ -8,14 +8,19 @@ export const Media = () => {
 
     const {mediaData, setMediaData} = useContext(MediaContext)
     const {logedUserData} = useContext(AppContext)
-    console.log(mediaData)
+    
     const MDI = mediaData[0].images
+    const MDV = mediaData[0].videos
+    const MDS = mediaData[0].sounds
+    console.log("MDI", MDI)
     
     const fileInputRef = useRef()
     const [image, setImage] = useState()
     const [preview, setPreview] = useState()
     const [tab, setTab] = useState("images")
-    const userID = localStorage.getItem(logedUserData.userID)
+    const userData = JSON.parse(localStorage.getItem('logedUserData'))
+    
+    const userID = userData.userID
     const imgData = {
         userID: userID,
         view: "",
@@ -24,7 +29,6 @@ export const Media = () => {
         type: "",
     }
     
-
     useEffect(() => {
         if (image) {
             const reader = new FileReader()
@@ -42,7 +46,7 @@ export const Media = () => {
         imgData.name = image.name
         imgData.size = image.size
         imgData.type = image.type
-
+        
         fetch(`${fetchURL}/imageUpload`, {
             method: "POST",
             headers: {
@@ -52,11 +56,10 @@ export const Media = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
-            mediaData.images.push(data.ImagesFromDB)
+            console.log("MEDIA-DATA", mediaData)
+            mediaData[0].images.push(data.ImagesFromDB)
             setMediaData([...mediaData])
-            console.log(imagesFromDB)
-        })
+        })        
         .catch(console.log)
     }
 
@@ -98,7 +101,7 @@ export const Media = () => {
 
                     {tab === "images" &&
                         <div className="imagesCon">
-                            {MDI.map((image, i) => {
+                            {MDI.length > 0 && MDI[0].map((image, i) => {
                                 return (
                                     <div className="imgCard" id={image._id} key={i}>
                                         <div className="imgName">{image.name}</div>
