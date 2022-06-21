@@ -1,4 +1,3 @@
-import { useState, useContext } from 'react';
 import "./App.scss";
 
 // Public
@@ -30,11 +29,10 @@ import { AboDonation } from './comps/logedIn/paypal/donabo';
 export const fetchURL = "http://localhost:3232"
 
 function App() {
-  
 
   return (
     <main className="App">
-      <Router>
+      {/* <Router> */}
         <Navi />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -99,7 +97,7 @@ function App() {
             </PrivateRoute>} />
           <Route path="*" element={<Page404 />}/>
         </Routes>
-      </Router>
+      {/* </Router> */}
       <Footer />
     </main>
   )

@@ -5,6 +5,7 @@ import { PaypalModal } from "./order";
 // Paypal: login: sb-gxso916492022@personal.example.com
 // Paypal Password: )?6O]j&F
 
+<<<<<<< HEAD
 
 export const AboDonation = () => {
     const [usage, setUsage] = useState("")
@@ -12,10 +13,17 @@ export const AboDonation = () => {
     //const [paymentValue, setPaymentValue] = useState(4.99)
     const paymentValueRef = useRef()
     const paypal = useRef()
+=======
+export const AboDonation = () => {
+    const [usage, setUsage] = useState("")
+    const [rythm, setRythm] = useState("")
+    const paymentValueRef = useRef()
+>>>>>>> twitchDashboard
     const [paypalIsOpen, setPaypalIsOpen] = useState(false)
 
     const buy = (clickedButton, paymentValue) => {
         if(clickedButton === "Donation"){
+<<<<<<< HEAD
             console.log(typeof paymentValue, paymentValue)
             if(paymentValue > 1.98){
               setUsage(clickedButton)
@@ -30,14 +38,28 @@ export const AboDonation = () => {
         } else if(clickedButton === "Abo"){
           setUsage(clickedButton)
           //setPaymentValue(4.99)
+=======
+            if(paymentValue > 1.98){
+              setUsage(clickedButton)
+              setRythm("Einmalig")
+              setPaypalIsOpen(true)
+            }
+          
+        } else if(clickedButton === "Abo"){
+          setUsage(clickedButton)
+>>>>>>> twitchDashboard
           paymentValueRef.current.value = 4.99
           setRythm("monatlich")
           setPaypalIsOpen(true)
         }
+<<<<<<< HEAD
     }  
 
     
 
+=======
+    }
+>>>>>>> twitchDashboard
 
     return (
         <section className="pSection">
@@ -55,7 +77,11 @@ export const AboDonation = () => {
                 </div>
                 <div className="aboContainer">
                     <h2>Monats-Abonnement</h2>
+<<<<<<< HEAD
                     <p>Lorem rupti.</p>
+=======
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+>>>>>>> twitchDashboard
                     <ul>
                         <li>+ 200MB Speicherplatz</li>
                         <li>Vorteil A (free)</li>
@@ -65,8 +91,13 @@ export const AboDonation = () => {
                     <button onClick={() => buy("Abo")}>monatliches Abo</button> 
                 </div>
                 
+<<<<<<< HEAD
                 <PaypalModal open={paypalIsOpen} paymentValue={paymentValueRef} onClose={() => setPaypalIsOpen(false)}>
                 <div className="paypalBg" />
+=======
+                <PaypalModal open={paypalIsOpen} paymentValueRef={paymentValueRef} usage={usage} rythm={rythm} onClose={() => setPaypalIsOpen(false)}>
+                    <div className="paypalBg" />
+>>>>>>> twitchDashboard
                 </PaypalModal>
                 
                 
