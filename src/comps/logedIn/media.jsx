@@ -23,7 +23,6 @@ export const Media = () => {
         console.log("Data Start side", data)
     }
     
-
     const MDI = mediaData[0].images
     const MDV = mediaData[0].videos
     const MDS = mediaData[0].sounds

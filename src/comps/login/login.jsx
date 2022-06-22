@@ -2,7 +2,7 @@ import "../../App.scss";
 import { useRef, useContext } from 'react';
 import { fetchURL } from "../../App";
 import { AppContext } from '../context/userContext'
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 
@@ -10,15 +10,14 @@ const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(
 
   const loginRef = useRef();
   const loginPasswordRef = useRef()
+  const navigate = useNavigate()
 
   const getLoginData = async (e)  => {
     e.preventDefault()
-
     const loginData = {
       username: loginRef.current.value,
       password: loginPasswordRef.current.value
     }
-    console.log(loginData)
     const response = await fetch(`${fetchURL}/login`,
     {
         method: "POST",
@@ -30,12 +29,8 @@ const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(
     })
     const data = await response.json()
     setLoginToken(data.generateToken)
-    console.log(data.userData)
     setLogedUserData(data.userData)
-
-    if(loginToken && logedUserData){
-      return <Navigate from="/login" to="/dashboard" replace /> // useNavigate
-    } 
+    navigate( "/dashboard", {replace:true})
   }
 
     return (
