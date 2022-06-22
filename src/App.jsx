@@ -1,4 +1,6 @@
 import "./App.scss";
+import dotenv from "dotenv"
+dotenv.config()
 
 // Public
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
@@ -26,7 +28,7 @@ import { ActivityDock } from "./comps/logedIn/obsDocs/activitydock";
 import { AlertDock } from "./comps/logedIn/obsDocs/alertdock";
 import { AboDonation } from './comps/logedIn/paypal/donabo';
 
-export const fetchURL = "http://localhost:3232"
+export const fetchURL = process.env.fetchURL || "http://localhost:3232"
 
 function App() {
 

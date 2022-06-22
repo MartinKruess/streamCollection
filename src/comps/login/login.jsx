@@ -29,12 +29,6 @@ const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(
         body: JSON.stringify(loginData)
     })
     const data = await response.json()
-<<<<<<< HEAD
-    console.log("Data", {data})
-    setLoginToken(data.generateToken)
-    
-    //return <Navigate to="/dashboard" />
-=======
     setLoginToken(data.generateToken)
     console.log(data.userData)
     setLogedUserData(data.userData)
@@ -42,7 +36,6 @@ const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(
     if(loginToken && logedUserData){
       return <Navigate from="/login" to="/dashboard" replace /> // useNavigate
     } 
->>>>>>> twitchDashboard
   }
 
     return (

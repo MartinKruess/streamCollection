@@ -146,10 +146,7 @@ ul li a:active{
   position: absolute;
   top: 5rem;
   right: 5rem;
-<<<<<<< HEAD
-=======
   padding: var(--normalSpacer);
->>>>>>> twitchDashboard
   border: solid 1px;
   border-radius: 0.5rem;
   z-index: 2;
@@ -177,13 +174,8 @@ ul li a:active{
 
 .accSettings{
   background-color: var(--secondary);
-<<<<<<< HEAD
-  width: 25rem;
-  height: 25rem;
-=======
   width: 30rem;
   height: 35rem;
->>>>>>> twitchDashboard
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -203,10 +195,6 @@ ul li a:active{
     position: relative;
     top: -0.75rem;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> twitchDashboard
   i{
     color: rgb(89, 255, 94);
     margin:0;
@@ -215,21 +203,16 @@ ul li a:active{
     z-index: 1;
   }
 
-<<<<<<< HEAD
-=======
   label{
     width: 50%;
     text-align: start;
   }
 
->>>>>>> twitchDashboard
   div{
     width: 100%;
     height: auto;
   }
 
-<<<<<<< HEAD
-=======
   .connectButton{
     width: auto;
   }
@@ -240,7 +223,6 @@ ul li a:active{
     margin: auto;
   }
 
->>>>>>> twitchDashboard
   label{
     float: left;
     vertical-align: middle;
@@ -377,10 +359,6 @@ input[type="button"]{
   height: 27.5rem;
   list-style:none;
   padding: var(--smallSpacer);
-<<<<<<< HEAD
-
-=======
->>>>>>> twitchDashboard
 }
 
 p{
@@ -506,11 +484,7 @@ input[type="checkbox"]{
 
 aside{
   background-color: var(--secondary);
-<<<<<<< HEAD
-  min-width: 17rem;
-=======
   width: 23rem;
->>>>>>> twitchDashboard
   height: 100%;
   font-size: 2rem;
   text-align: start;
@@ -779,11 +753,6 @@ aside{
   }
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> twitchDashboard
 .yourMedia {
   width: 80%;
   display: grid;
@@ -807,8 +776,6 @@ input[type="range"]{
   padding: 0;
 }
 
-<<<<<<< HEAD
-=======
 .imagesCon{
   width: 100%;
   height: 50rem;
@@ -916,10 +883,6 @@ input[type="range"]{
   }
 }
 
-
-
->>>>>>> twitchDashboard
-
 // Donation & Abo Page
 
 .paypalContainer{
@@ -987,10 +950,6 @@ input[type="range"]{
   .closeBtn:hover{
     background-color: var(--primary)
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> twitchDashboard
 }
 
 
@@ -1039,5 +998,4 @@ hr{
   .bgIMG{
     width: 0;
   } 
-  
 }

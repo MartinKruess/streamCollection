@@ -8,15 +8,21 @@ export const Media = () => {
 
     const {mediaData, setMediaData} = useContext(MediaContext)
     const {logedUserData} = useContext(AppContext)
-    const loginToken = localStorage
+    const loginToken = localStorage.getItem('loginToken')
 
-    fetch(`${fetchURL}/getAllImages`, {
+    const fetchImgFromDB = async () => {
+        const res = await fetch(`${fetchURL}/getAllImages`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
                 'oAuthToken': {loginToken},
-            },
-    })
+            }
+        })
+        const data = await res.json();
+        console.log(typeof res)
+        console.log("Data Start side", data)
+    }
+    
 
     const MDI = mediaData[0].images
     const MDV = mediaData[0].videos
@@ -47,6 +53,7 @@ export const Media = () => {
             reader.readAsDataURL(image)
         } else {
             setPreview(null)
+            fetchImgFromDB()
         }
     }, [image])
 
