@@ -29,7 +29,6 @@ export const Dashboard = () => {
               'Client-ID': 'ldhmjq6ih4k1e7uto56fi9nnzga7ua'
           }
         })
-            console.log(twitchData.data);
         } catch (err) {
             console.error(err);
         }

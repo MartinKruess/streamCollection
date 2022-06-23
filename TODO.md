@@ -1,4 +1,4 @@
-# My TODO'S bis Donnerstag ProjektWoche
+# My TODO'S bis 30.06
 
 geschafft: ✔
 
@@ -9,33 +9,55 @@ noch keine Ahnung: ???
 ## User Management
 
 - JWT einrichten und im LocalStorage speichern ✔
-- Paypal feinschliff: Zahlungsfunktion **fehlt**
-- userGroup bei Donation und Abo response an Backend und DB geben **fehlt**
+- Paypal feinschliff: Zahlungsfunktion ✔
+- update userGroup bei Donation oder Abo response an Backend und DB geben ✘
 
 ### Login Complete
 
-- JWT statt Login true/false ✔
 - nav update nach Login (User-/Accountverwaltung) ✔
+- login -> dashboard ✔
 - delete Account after time ✘
 
 ### Side Settings
 
-- Setzen @ Dropdown via Click ✔
+- Settings @ Dropdown via Click ✔
 - save sideSettings to LocalStorage ✔
 - verknüpfe Dashboard randomization mit SettingsObject ✔
+- twitch oAuth by Click ✘
 
-
-## Aside Complete
 
 ### Media
 
-- img Button -> img Upload -> BackEnd -> imageDB ✔
-- Music Upload and save -> BackEnd -> musicDB ???
-- Video Upload an save -> BackEnd -> videoDB ???
+- img Button -> img Upload to BackEnd -> imageDB ✔
+- show all images of user after Upload ✔
+- show all images of user by loading side ✘
+- sound Upload and save -> BackEnd -> musicDB ??? ✘
+- show all sounds of user ✘
+- Video Upload an save -> BackEnd -> videoDB ??? ✘
+- show all videos of user ✘
 
 ### Alerts
 
-- imageDB's verwendbar machen (Load: imageDB) ✔
+- load images, videos and sounds to build alerts ✘
+- Verwendung via Drag and Drop und frei platzierbar ??? ✘
+- Ergebnis speichern in alertDB ??? ✘
+
+### My Overlays
+
+- Alerts verwendbar machen ✘
+- Verwendung: via Drag and Drop und frei platzierbar ??? ✘
+- Ergebnise zusammenführen und speichern in overlayDB ✘
+=======
+- img Button -> img Upload -> BackEnd -> imageDB ✔
+- show all images of user
+- sound Upload and save -> BackEnd -> musicDB ???
+- show all sounds of user
+- Video Upload an save -> BackEnd -> videoDB ???
+- show all videos of user
+
+### Alerts
+
+- load images, videos and sounds to build alerts
 - Verwendung via Drag and Drop und frei platzierbar ???
 - Ergebnis speichern in alertDB ???
 
@@ -43,15 +65,14 @@ noch keine Ahnung: ???
 
 - Alerts verwendbar machen
 - Verwendung: via Drag and Drop und frei platzierbar ???
-- Ergebnis speichern in overlayDB
+- Ergebnise zusammenführen und speichern in overlayDB
 
 ### Activity Feed / Dashboard
 
-- Twitch token Auth + Handy ???
-- Twitch Account auslesen
-- Daten Ausgeben
-- Datan mit Chart verbinden ???
-
+- Twitch token Auth + Handy ??? ✘
+- Twitch Account auslesen ✘
+- Daten Ausgeben ✘
+- Datan mit Chart verbinden ??? ✘
 
 ### Learn Side
 

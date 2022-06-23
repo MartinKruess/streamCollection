@@ -1,37 +1,49 @@
 import { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import liveLogo from '../../assets/images/liveLogo.png'
 import { AppContext, SettingsContext } from "../context/userContext";
+import connected from "../../assets/images/connected.svg"
+import disconnected from "../../assets/images/disconnected.svg"
 
 export const Navi = () => {
 
-    const {setLoginToken, loginToken} = useContext(AppContext)
-    const  {sideSettings, setSideSettings} = useContext(SettingsContext)
+    const {setLoginToken, loginToken, setLogedUserData} = useContext(AppContext)
+    const  {sideSettings, setSideSettings, logedUserData} = useContext(SettingsContext)
     
     const [dropDown, setDropDown] = useState(false)
     const [settings, setSettings] = useState(false)
     const savedSideSettings = JSON.parse(localStorage.getItem("sideSettings"))
+    const savedLogedUserData = JSON.parse(localStorage.getItem("logedUserData"))
+    const twitchXAuthURL = 'http://localhost:3232/auth/twitch'
 
     useEffect(()=>{
         localStorage.setItem('sideSettings', JSON.stringify(sideSettings))
-        console.log("sideSettings", sideSettings)
+        // console.log("sideSettings", sideSettings)
     }, [sideSettings])
     
     if(dropDown === false && settings === true){setSettings(false)}
 
     const logout = () => {
         setLoginToken(false)
+        setLogedUserData(false)
+        return <Navigate to="/"></Navigate>
     }
 
+    // console.log("USERDATA", savedLogedUserData)
+
+    const twitchXAuth = () => {
+        
+    }
+    
     return (
         <nav>
             <div id="navLogo"><img src={liveLogo} alt="" /></div>
             <ul>
                 <li><a href="/#about">About</a></li>
                 <li><a href="/#learn">Learn</a></li>
-                <li><a href="#membership">Membership</a></li>
+                <li><a href="/#membership">Membership</a></li>
             </ul>
-            {loginToken === null
+            {loginToken === null || !loginToken
                 ? (<div id="navButtons">
                 <Link to="/login">
                     <input className="linkBtn" type="button" value="Login"/>
@@ -44,6 +56,7 @@ export const Navi = () => {
                     <button className="profileBtn" onClick={() => setDropDown(!dropDown)}></button>
                     {dropDown
                     ? (<div className="profilDrowdown">
+                                <label>Hallo {savedLogedUserData.username}</label>
                                 <button>Account Details</button>
                                 <button onClick={()=> setSettings(!settings)}>Account Settings</button>
                         {settings ? (<div className="accSettings">
@@ -70,11 +83,15 @@ export const Navi = () => {
                             </div>
                             <div>
                                 <label>Twitch Account</label>
-                                <input type="text" />
+                                <div className="connectButton" onClick={() => setSideSettings({...sideSettings, "isAuthTwitch":!sideSettings.isAuthTwitch})}>
+                                       {sideSettings.isAuthTwitch ? (<img src={connected}></img>) : (<a href={twitchXAuthURL}><img src={disconnected}></img></a>)}
+                                </div>
                             </div>
                             <div>
                                 <label>Youtube Account</label>
-                                <input type="text" />
+                                <div className="connectButton" onClick={() => setSideSettings({...sideSettings, "isLocked":!sideSettings.isLocked})}>
+                                       {sideSettings.isLocked ? (<img src={connected}></img>) : (<a href=""><img src={disconnected}></img></a>)}
+                                </div>
                             </div>
                             <div>
                                 <label>OBS Schlüssel</label>
