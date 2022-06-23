@@ -21,7 +21,8 @@ export const Login = () => {
     console.log(loginData)
     const response = await fetch(`${fetchURL}/user/login`,
       {
-        method: "POST",
+        method: "post",
+        withCredentials: true,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -29,20 +30,13 @@ export const Login = () => {
         body: JSON.stringify(loginData)
       })
     const data = await response.json()
-<<<<<<< HEAD
-    console.log("Data", { data })
-    setLoginToken(data.generateToken)
-
-    //return <Navigate to="/dashboard" />
-=======
     setLoginToken(data.generateToken)
     console.log(data.userData)
     setLogedUserData(data.userData)
 
-    if(loginToken && logedUserData){
+    if (loginToken && logedUserData) {
       return <Navigate from="/login" to="/dashboard" replace /> // useNavigate
     }
->>>>>>> twitchDashboard
   }
 
   return (

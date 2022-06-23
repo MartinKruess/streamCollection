@@ -33,70 +33,70 @@ function App() {
   return (
     <main className="App">
       {/* <Router> */}
-        <Navi />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />}/>
-          <Route path="/dashboard" element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>} />
-          <Route path="/activityfeed" element={
-            <PrivateRoute>
-              <ActivityFeed />
-            </PrivateRoute>} />
-          <Route path="/alerts" element={
-            <PrivateRoute >
-              <Alerts />
-            </PrivateRoute>} />
-          <Route path="/media" element={
-            <PrivateRoute >
-              <Media />
-            </PrivateRoute>} />
-          <Route path="/overlays" element={
-            <PrivateRoute >
-              <Overlays />
-            </PrivateRoute>} />
-          <Route path="/autocommands" element={
-            <PrivateRoute >
-              <AutoCommands />
-            </PrivateRoute>} />
-          <Route path="/chatcommands" element={
-            <PrivateRoute >
-              <ChatCommands />
-            </PrivateRoute>} />
-          <Route path="/spamfilter" element={
-            <PrivateRoute >
-              <SpamFilter />
-            </PrivateRoute>} />
-          <Route path="/yourfilter" element={
-            <PrivateRoute >
-              <YourFilter />
-            </PrivateRoute>} />
-          <Route path="/bossfight" element={
-            <PrivateRoute >
-              <BossFight />
-            </PrivateRoute>} />
-          <Route path="/chatdock" element={
-            <PrivateRoute >
-              <ChatDock />
-            </PrivateRoute>} />
-          <Route path="/activitydock" element={
-            <PrivateRoute >
-              <ActivityDock />
-            </PrivateRoute>} />
-          <Route path="/alertdock" element={
-            <PrivateRoute >
-              <AlertDock />
-            </PrivateRoute>} />
-          <Route path="/donations" element={
-            <PrivateRoute >
-              <AboDonation />
-            </PrivateRoute>} />
-          <Route path="*" element={<Page404 />}/>
-        </Routes>
+      <Navi />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>} />
+        <Route path="/activityfeed" element={
+          <PrivateRoute>
+            <ActivityFeed />
+          </PrivateRoute>} />
+        <Route path="/alerts" element={
+          <PrivateRoute >
+            <Alerts />
+          </PrivateRoute>} />
+        <Route path="/media" element={
+          <PrivateRoute >
+            <Media />
+          </PrivateRoute>} />
+        <Route path="/overlays" element={
+          <PrivateRoute >
+            <Overlays />
+          </PrivateRoute>} />
+        <Route path="/autocommands" element={
+          <PrivateRoute >
+            <AutoCommands />
+          </PrivateRoute>} />
+        <Route path="/chatcommands" element={
+          <PrivateRoute >
+            <ChatCommands />
+          </PrivateRoute>} />
+        <Route path="/spamfilter" element={
+          <PrivateRoute >
+            <SpamFilter />
+          </PrivateRoute>} />
+        <Route path="/yourfilter" element={
+          <PrivateRoute >
+            <YourFilter />
+          </PrivateRoute>} />
+        <Route path="/bossfight" element={
+          <PrivateRoute >
+            <BossFight />
+          </PrivateRoute>} />
+        <Route path="/chatdock" element={
+          <PrivateRoute >
+            <ChatDock />
+          </PrivateRoute>} />
+        <Route path="/activitydock" element={
+          <PrivateRoute >
+            <ActivityDock />
+          </PrivateRoute>} />
+        <Route path="/alertdock" element={
+          <PrivateRoute >
+            <AlertDock />
+          </PrivateRoute>} />
+        <Route path="/donations" element={
+          <PrivateRoute >
+            <AboDonation />
+          </PrivateRoute>} />
+        <Route path="*" element={<Page404 />} />
+      </Routes>
       {/* </Router> */}
       <Footer />
     </main>

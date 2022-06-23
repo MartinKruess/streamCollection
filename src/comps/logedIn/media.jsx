@@ -10,7 +10,7 @@ export const Media = () => {
     const { logedUserData } = useContext(AppContext)
     const loginToken = localStorage
 
-    fetch(`${fetchURL}/image/getAllImages`, {
+    fetch(`${fetchURL}/media/getAllImages`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ export const Media = () => {
         imgData.size = image.size
         imgData.type = image.type
 
-        fetch(`${fetchURL}/image/imageUpload`, {
+        fetch(`${fetchURL}/media/imageUpload`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
