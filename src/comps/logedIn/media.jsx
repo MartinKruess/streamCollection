@@ -6,17 +6,16 @@ import { MediaContext } from "../context/mediaContext";
 
 export const Media = () => {
 
-
     const {mediaData, setMediaData} = useContext(MediaContext)
     const {logedUserData} = useContext(AppContext)
     const loginToken = localStorage.getItem('loginToken')
 
     const fetchImgFromDB = async () => {
-        const res = await fetch(`${fetchURL}/getAllImages`, {
+        const res = await fetch(`${fetchURL}/media/getAllImages`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
-                'oAuthToken': { loginToken },
+                'oAuthToken': { loginToken }
             }
         })
         const data = await res.json();
