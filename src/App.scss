@@ -1,4 +1,4 @@
-:root{
+:root {
   font-size: 62.5%;
   --primary: #ededed;
   --secondary: #242628;
@@ -9,45 +9,48 @@
   --bigSpacer: 1.5rem;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
-  cursor: url(./assets/images/cursor_red.cur),auto;
+  cursor: url(./assets/images/cursor_red.cur), auto;
 }
 
-.dark{
+.dark {
   color: var(--secondary);
 }
 
-.light{
+.light {
   color: var(--primary);
 }
 
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
   color: var(--primary);
   width: 100%;
   padding: var(--bigSpacer) var(--normalSpacer);
 }
 
-h1{
+h1 {
   font-size: 5rem;
 }
 
-h2{
+h2 {
   font-size: 3rem;
   height: 3.5rem;
   position: static;
 }
 
-h3{
+h3 {
   padding: var(--normalSpacer) var(--smallSpacer);
 }
 
-a{
+a {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -59,7 +62,7 @@ nav a {
   position: relative;
 }
 
-nav a:after {    
+nav a:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -72,16 +75,16 @@ nav a:after {
   width: 0;
 }
 
-nav a:hover:after { 
-  width: 100%; 
-  left: 0; 
+nav a:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .App {
   text-align: center;
 }
 
-nav{
+nav {
   background: var(--secondary);
   color: var(--primary);
   width: 100%;
@@ -94,7 +97,7 @@ nav{
   padding-right: var(--bigSpacer);
 }
 
-nav ul{
+nav ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -102,41 +105,41 @@ nav ul{
   list-style: none;
 }
 
-ul li a{
+ul li a {
   color: var(--primary);
   text-decoration: none;
 }
 
-ul li a:active{
+ul li a:active {
   color: orange;
 }
 
-#navLogo{
-  position:absolute;
+#navLogo {
+  position: absolute;
   left: 1.5rem;
   top: 0.50rem;
 }
 
-#navLogo img{
+#navLogo img {
   background-color: #ccc;
   width: 9rem;
   border-radius: 0.5rem 2rem;
 }
 
-.profileBtn{
+.profileBtn {
   background: url("./assets/images/personal.png") center/cover;
   background-color: var(--hightlight);
   width: 4rem;
   height: 4rem;
   border-radius: 3rem;
   box-shadow:
-  1px 1px 1px #6a2597,
-  -1px 1px 1px #6a2597,
-  1px -1px 1px #6a2597,
-  -1px -1px 1px #6a2597;
+    1px 1px 1px #6a2597,
+    -1px 1px 1px #6a2597,
+    1px -1px 1px #6a2597,
+    -1px -1px 1px #6a2597;
 }
 
-.profilDrowdown{
+.profilDrowdown {
   background-color: var(--secondary);
   width: 20rem;
   height: 9rem;
@@ -146,15 +149,12 @@ ul li a:active{
   position: absolute;
   top: 5rem;
   right: 5rem;
-<<<<<<< HEAD
-=======
   padding: var(--normalSpacer);
->>>>>>> twitchDashboard
   border: solid 1px;
   border-radius: 0.5rem;
   z-index: 2;
 
-  button{
+  button {
     background: transparent;
     color: var(--primary);
     width: 15rem;
@@ -164,89 +164,75 @@ ul li a:active{
     border-style: none;
   }
 
-  button:hover{
+  button:hover {
     color: red;
   }
 
-  li{
+  li {
     width: 15rem;
-    margin:0.1rem;
+    margin: 0.1rem;
     padding: 0;
   }
 }
 
-.accSettings{
+.accSettings {
   background-color: var(--secondary);
-<<<<<<< HEAD
-  width: 25rem;
-  height: 25rem;
-=======
   width: 30rem;
   height: 35rem;
->>>>>>> twitchDashboard
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: var(--normalSpacer);
   position: absolute;
-  top:5rem;
+  top: 5rem;
   right: 19rem;
   z-index: 3;
   border: solid 1px;
   border-radius: 0.5rem;
   z-index: 3;
-  
-  .lockContainer{
+
+  .lockContainer {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 0.5rem;
     position: relative;
     top: -0.75rem;
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> twitchDashboard
-  i{
+  i {
     color: rgb(89, 255, 94);
-    margin:0;
+    margin: 0;
     padding: 0;
     text-align: right;
     z-index: 1;
   }
 
-<<<<<<< HEAD
-=======
-  label{
+  label {
     width: 50%;
     text-align: start;
   }
 
->>>>>>> twitchDashboard
-  div{
+  div {
     width: 100%;
     height: auto;
   }
 
-<<<<<<< HEAD
-=======
-  .connectButton{
+  .connectButton {
     width: auto;
   }
 
-  img{
+  img {
     color: #ccc;
     width: 2.5rem;
     margin: auto;
   }
 
->>>>>>> twitchDashboard
-  label{
+  label {
     float: left;
     vertical-align: middle;
   }
 
-  input{
+  input {
     width: 10rem;
     height: 3rem;
     align-items: left;
@@ -256,39 +242,39 @@ ul li a:active{
     margin-bottom: 0;
   }
 
-  input[type="button"]{
+  input[type="button"] {
     background-color: var(--primary);
     color: var(--secondary);
   }
 
 }
 
-body{
+body {
   background-color: var(--primary);
   color: var(--primary);
   font-size: 1.6rem;
 }
 
-main{
+main {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
+
 }
 
-section{
+section {
   width: 90%;
   margin-top: 5rem;
   padding: var(--normalSpacer);
 }
 
-article{
+article {
   margin-top: var(--bigSpacer);
   padding: var(--normalSpacer);
 }
 
-#startPanel{
+#startPanel {
   background: #000;
   height: 80vh;
   display: flex;
@@ -298,7 +284,7 @@ article{
   flex-direction: column;
 }
 
-.bgIMG{
+.bgIMG {
   width: 30rem;
   position: relative;
   top: 0rem;
@@ -306,56 +292,57 @@ article{
   overflow: hidden;
 }
 
-.panelContent{
+.panelContent {
   position: absolute;
   z-index: 2;
 }
 
-button, input{
+button,
+input {
   margin: var(--smallSpacer);
   padding: var(--smallSpacer) var(--normalSpacer);
   border-radius: var(--smallSpacer);
 }
 
-input[type="button"]{
+input[type="button"] {
   background-color: var(--hightlight);
   color: var(--primary);
   font-weight: 600;
 }
 
-#signIn{
+#signIn {
   font-size: 2.5rem;
   padding: var(--normalSpacer) var(--bigSpacer);
   border-radius: var(--bigSpacer);
 }
 
-.panel{
+.panel {
   background: var(--secondaryShaddow);
 }
 
-.textContainer{
+.textContainer {
   width: 95%;
   display: flex;
   margin: var(--bigSpacer) 0;
   padding: var(--bigSpacer);
 }
 
-.textContainer img{
+.textContainer img {
   width: 24rem;
   height: 16rem;
   margin: 0 var(--normalSpacer);
   border: solid;
 }
 
-.cardContainer{
+.cardContainer {
   background-color: var(--secondaryShaddow);
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around;
+  justify-content: space-around;
   padding: var(--normalSpacer);
 }
 
-.card{
+.card {
   background-color: var(--secondaryShaddow);
   width: 35rem;
   display: flex;
@@ -368,26 +355,22 @@ input[type="button"]{
   border-radius: var(--normalSpacer);
 }
 
-.card img{
+.card img {
   width: 80%;
 }
 
-.card ul{
+.card ul {
   width: 90%;
   height: 27.5rem;
-  list-style:none;
+  list-style: none;
   padding: var(--smallSpacer);
-<<<<<<< HEAD
-
-=======
->>>>>>> twitchDashboard
 }
 
-p{
+p {
   margin: var(--normalSpacer) 0;
 }
 
-footer{
+footer {
   background-color: var(--secondary);
   width: 100%;
   height: 10rem;
@@ -397,45 +380,45 @@ footer{
   margin: 0;
 }
 
-.content01{
+.content01 {
   width: 40rem;
   display: flex;
   justify-content: space-around;
 }
 
-.content01 ul{
+.content01 ul {
   font-size: 2rem;
   list-style: none;
   margin: var(--bigSpacer) var(--smallSpacer);
   line-height: 2.5rem;
 }
 
-.spacer{
+.spacer {
   width: clamp(0.5rem, 50%, 70rem);
 }
 
-.icons{
+.icons {
   width: 20rem;
   align-items: center;
 }
 
-.icons a{
+.icons a {
   color: var(--primary);
   text-decoration: none;
 }
 
-.icons a:hover{
+.icons a:hover {
   color: var(--hightlight);
 }
 
-i{
+i {
   transform: scale(1.5);
   margin: 4rem var(--bigSpacer);
 }
 
 // Login and Register
 
-.signArticle{
+.signArticle {
   color: var(--secondary);
   height: 80vh;
   display: flex;
@@ -445,7 +428,7 @@ i{
   border: solid;
 }
 
-.signContainer{
+.signContainer {
   width: 30rem;
   display: flex;
   flex-wrap: wrap;
@@ -453,7 +436,7 @@ i{
   border-radius: var(--normalSpacer);
 }
 
-form{
+form {
   width: 25rem;
   font-size: 2rem;
   line-height: 3rem;
@@ -461,20 +444,21 @@ form{
   border-radius: var(--normalSpacer);
 }
 
-form input, .box{
-  margin:  var(--smallSpacer) 0 var(--bigSpacer) 0;
+form input,
+.box {
+  margin: var(--smallSpacer) 0 var(--bigSpacer) 0;
 }
 
-.alternativeLogin{
+.alternativeLogin {
   width: 25rem;
   padding: var(--smallSpacer);
 }
 
-.boxContainer{
+.boxContainer {
   width: 90%;
 }
 
-.box{
+.box {
   background-color: #fff;
   width: 100%;
   font-weight: 500;
@@ -482,21 +466,21 @@ form input, .box{
   border: solid 1px;
 }
 
-.checkbox{
+.checkbox {
   width: 75%;
   display: inline-block;
   margin-left: var(--bigSpacer);
   padding-left: var(--smallSpacer)
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   width: 10%;
   transform: scale(1.5);
 }
 
 // privateSides
 
-.pSection{
+.pSection {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -504,57 +488,54 @@ input[type="checkbox"]{
   margin: 0;
 }
 
-aside{
+aside {
   background-color: var(--secondary);
-<<<<<<< HEAD
-  min-width: 17rem;
-=======
   width: 23rem;
->>>>>>> twitchDashboard
   height: 100%;
   font-size: 2rem;
   text-align: start;
   padding: var(--bigSpacer) var(--bigSpacer);
   margin: 5rem 0 0 0;
 
-  ul li{
+  ul li {
     color: var(--primary);
     font-family: 'Arial';
     list-style: none;
     line-height: 2.5rem;
     letter-spacing: normal;
-    text-transform: none; 
+    text-transform: none;
   }
-  
-  .active{
+
+  .active {
     color: red;
   }
 }
 
-.liHeader{
+.liHeader {
   font-weight: 600;
   line-height: 3.5rem;
   margin-top: var(--bigSpacer);
   text-decoration: dotted underline;
 }
 
-.liHeader:hover{
+.liHeader:hover {
   text-decoration: dotted underline;
 }
 
-.liBody{
+.liBody {
   margin-left: var(--bigSpacer);
 }
 
-.liBody li{
+.liBody li {
   line-height: 2.7rem;
 }
 
-.liBody li:hover, aside ul li:hover{
+.liBody li:hover,
+aside ul li:hover {
   text-decoration: underline var(--primary);
 }
 
-.upgardeButton{
+.upgardeButton {
   background-color: var(--hightlight);
   text-align: center;
   padding: 0.5rem 1.5rem;
@@ -565,7 +546,7 @@ aside{
   border-radius: 1rem;
 }
 
-.pArticle{
+.pArticle {
   background-color: var(--secondaryShaddow);
   width: 100%;
   height: 100vh;
@@ -577,34 +558,37 @@ aside{
   overflow: auto;
 }
 
-.smallBox, .mediumBox, .bigBox, .medium{
+.smallBox,
+.mediumBox,
+.bigBox,
+.medium {
   background-color: var(--secondaryShaddow);
   padding: 0;
   border: solid 1px var(--secondary);
 }
 
-.smallBox{
+.smallBox {
   width: 15.5rem;
 }
 
-.mediumBox{
+.mediumBox {
   width: 32rem;
   max-height: 40rem;
 }
 
-.bigBox{
+.bigBox {
   width: 72rem;
   height: 40rem;
 }
 
-.medium{
+.medium {
   width: 46rem;
 }
 
 
 // Dashboard
 
-.dashboardMainContainer{
+.dashboardMainContainer {
   width: 99%;
   display: flex;
   flex-wrap: wrap;
@@ -613,7 +597,7 @@ aside{
   gap: 1rem;
 }
 
-.activeControlContainer{
+.activeControlContainer {
   width: 100%;
   max-height: 17rem;
   display: flex;
@@ -623,7 +607,7 @@ aside{
   border-bottom: solid;
 }
 
-.specialContainer{
+.specialContainer {
   width: 100%;
   max-height: 17rem;
   display: flex;
@@ -633,11 +617,11 @@ aside{
   border-bottom: solid;
 }
 
-.dashboardChartFooter{
+.dashboardChartFooter {
   font-size: 1rem;
 }
 
-.feedOut button{
+.feedOut button {
   background-color: transparent;
   color: var(--primary);
   font-size: 1.6rem;
@@ -645,7 +629,7 @@ aside{
   border-style: none;
 }
 
-.connectContainer{
+.connectContainer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -654,7 +638,7 @@ aside{
   border-bottom: solid;
 }
 
-.viewerContainer{
+.viewerContainer {
   min-height: 30rem;
   display: flex;
   flex-wrap: wrap;
@@ -662,7 +646,7 @@ aside{
   gap: 1rem;
   border: solid red;
 
-  canvas{
+  canvas {
     color: var(--primary);
     width: 65rem;
     height: 32rem;
@@ -670,7 +654,7 @@ aside{
     border: solid 1px;
   }
 
-  .newsFeedBox{
+  .newsFeedBox {
     width: 40%;
     height: 10rem;
     background-color: var(--secondaryShaddow);
@@ -678,13 +662,13 @@ aside{
   }
 }
 
-.blendOut{
-   display: none;
+.blendOut {
+  display: none;
 }
 
 // Activity Feed
 
-.activityFeedContainer{
+.activityFeedContainer {
   width: 50rem;
   height: 70rem;
   display: flex;
@@ -693,14 +677,14 @@ aside{
   overflow: auto;
 }
 
-.feedContainer{
+.feedContainer {
   width: 90%;
   min-height: 5rem;
   margin-top: var(--smallSpacer);
 }
 
-.feedReset{
-  
+.feedReset {
+
   width: 90%;
   display: flex;
   justify-content: end;
@@ -710,12 +694,12 @@ aside{
 
 // Media
 
-.mediaArticle{
- padding: 0;
- overflow: hidden;
+.mediaArticle {
+  padding: 0;
+  overflow: hidden;
 }
 
-.mediaSwitch{
+.mediaSwitch {
   width: 100%;
   height: 25rem;
   display: flex;
@@ -725,7 +709,7 @@ aside{
   gap: var(--normalSpacer);
 }
 
-.switchBox{
+.switchBox {
   background-color: var(--hightlight);
   color: var(--primary);
   min-width: 18rem;
@@ -736,54 +720,49 @@ aside{
   border-radius: var(--smallSpacer);
 }
 
-.mediaBox{
+.mediaBox {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.mediaSettings{
+.mediaSettings {
   background-color: red;
   width: 15rem;
   height: 100%;
   margin: 0;
 }
 
-.uploadSpace{
+.uploadSpace {
   background-color: var(--secondaryShaddow);
   width: 100%;
   height: 15rem;
   border-bottom: solid var(--secondaryShaddow);
   box-shadow: inset 2px 2px 3px 3px var(--secondaryShaddow),
-  inset 2px 2px 3px 3px var(--secondaryShaddow),
-  inset 2px 2px 6px 6px var(--secondaryShaddow);
-  
-  .uploading{
+    inset 2px 2px 3px 3px var(--secondaryShaddow),
+    inset 2px 2px 6px 6px var(--secondaryShaddow);
+
+  .uploading {
     display: none;
   }
 }
 
-.imgUploadSpace{
+.imgUploadSpace {
   width: 100%;
   height: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: inset 2px 2px 3px 3px var(--secondaryShaddow),
-  inset 2px 2px 3px 3px var(--secondaryShaddow),
-  inset 2px 2px 6px 6px var(--secondaryShaddow);
+    inset 2px 2px 3px 3px var(--secondaryShaddow),
+    inset 2px 2px 6px 6px var(--secondaryShaddow);
 
-  .imgSpace{
+  .imgSpace {
     height: 14rem;
     margin: 0 var(--bigSpacer);
   }
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> twitchDashboard
 .yourMedia {
   width: 80%;
   display: grid;
@@ -796,20 +775,18 @@ aside{
   overflow: hidden;
 
   li {
-      background-color: #444;
-      color: #eee;
-      padding: 5px;
-      border: solid;
+    background-color: #444;
+    color: #eee;
+    padding: 5px;
+    border: solid;
   }
 }
 
-input[type="range"]{
+input[type="range"] {
   padding: 0;
 }
 
-<<<<<<< HEAD
-=======
-.imagesCon{
+.imagesCon {
   width: 100%;
   height: 50rem;
   display: flex;
@@ -818,7 +795,7 @@ input[type="range"]{
   padding: var(--normalSpacer);
   overflow-y: scroll;
 
-  .imgCard{
+  .imgCard {
     background-color: var(--secondaryShaddow);
     width: 20rem;
     display: flex;
@@ -828,14 +805,14 @@ input[type="range"]{
     padding: var(--normalSpacer);
     border: solid 0.2rem;
     border-radius: 0.5rem;
-  
-    .imgName{
+
+    .imgName {
       width: 80%;
       height: 2rem;
       overflow: hidden;
     }
 
-    .deleteBtn{
+    .deleteBtn {
       background-color: var(--hightlight);
       width: 2rem;
       height: 2rem;
@@ -847,24 +824,24 @@ input[type="range"]{
       z-index: 1;
     }
 
-    img{
+    img {
       width: 50%;
     }
-  
+
   }
 }
 
 
 // Alerts
 
-.buildContainer{
+.buildContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: solid;
 
-  .assetsPanel{
+  .assetsPanel {
     background-color: red;
     width: 100%;
     height: 4rem;
@@ -872,43 +849,47 @@ input[type="range"]{
     flex-wrap: nowrap;
     align-items: center;
     margin: 0 0 var(--normalSpacer) 0;
-    
-    .soundSelect, .imageSelect, .videoSelect, .textSelect{
+
+    .soundSelect,
+    .imageSelect,
+    .videoSelect,
+    .textSelect {
       width: 20%;
       margin: 0 var(--normalSpacer);
 
-      select{
+      select {
         width: 80%;
         text-align: center;
         padding: var(--smallSpacer);
       }
     }
 
-    .soundSelect{
+    .soundSelect {
       background-color: violet;
     }
 
-    .imageSelect{
+    .imageSelect {
       background-color: gray;
     }
-  
-    .videoSelect{
+
+    .videoSelect {
       background-color: green;
     }
 
-    .textSelect{
-      background-color:yellow;
-    }  
+    .textSelect {
+      background-color: yellow;
+    }
   }
 
-  canvas{
+  canvas {
     background-image: paint(squares);
     width: 115.2rem;
     height: 64.8rem;
     border: 2px solid black;
   }
-  .buildCanvas{
-    
+
+  .buildCanvas {
+
     background-image: paint(squares);
     width: 90%;
     height: 100%;
@@ -918,21 +899,21 @@ input[type="range"]{
 
 
 
->>>>>>> twitchDashboard
 
 // Donation & Abo Page
 
-.paypalContainer{
+.paypalContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.donationContainer{
+.donationContainer {
   border-right: solid;
 }
 
-.donationContainer, .aboContainer{
+.donationContainer,
+.aboContainer {
   background-color: var(--secondaryShaddow);
   width: 45rem;
   height: 30rem;
@@ -940,11 +921,12 @@ input[type="range"]{
   border: solid red;
 }
 
-.donationContainer ul, .aboContainer ul{
+.donationContainer ul,
+.aboContainer ul {
   list-style: none;
 }
 
-.paypalBg{
+.paypalBg {
   background-color: var(--secondaryShaddow);
   position: fixed;
   top: 0;
@@ -954,14 +936,14 @@ input[type="range"]{
   z-index: -1;
 }
 
-.modalBG{
+.modalBG {
   background-color: var(--secondaryShaddow);
   color: var(--primary);
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 2.3rem;
   width: 50rem;
-  
+
   position: fixed;
   top: 25rem;
   padding: var(--bigSpacer);
@@ -969,7 +951,7 @@ input[type="range"]{
   border: solid;
   z-index: 4;
 
-  .closeBtn{
+  .closeBtn {
     background-color: #dcdcdc;
     color: var(--hightlight);
     font-weight: 600;
@@ -977,26 +959,22 @@ input[type="range"]{
     top: 0.3rem;
     right: 0.7rem;
     box-shadow:
-    1px 1px 2px var(--hightlight),
-    -1px -1px 2px var(--hightlight),
-    1px -1px 2px var(--hightlight),
-    -1px 1px 2px var(--hightlight);
+      1px 1px 2px var(--hightlight),
+      -1px -1px 2px var(--hightlight),
+      1px -1px 2px var(--hightlight),
+      -1px 1px 2px var(--hightlight);
     z-index: 1;
   }
-  
-  .closeBtn:hover{
+
+  .closeBtn:hover {
     background-color: var(--primary)
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> twitchDashboard
 }
 
 
 // Page 404
 
-.errorSection{
+.errorSection {
   color: var(--secondary);
   display: flex;
   flex-wrap: wrap;
@@ -1004,40 +982,42 @@ input[type="range"]{
 
 }
 
-.errorSection h1, .errorSection h2, .errorSection h3{
+.errorSection h1,
+.errorSection h2,
+.errorSection h3 {
   color: var(--secondary);
 }
 
-.h1{
+.h1 {
   font-size: 10rem;
   width: 50%;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
-.h2{
+.h2 {
   width: auto;
   margin: auto 0;
 }
 
-hr{
+hr {
   width: 100%;
 }
 
-.h3{
+.h3 {
   font-size: 3rem;
   margin: var(--bigSpacer);
 }
 
-.h4{
+.h4 {
   padding: var(--bigSpacer) 0;
 }
 
 // Responsive
 
 @media screen and (max-width: 992px) {
-  .bgIMG{
+  .bgIMG {
     width: 0;
-  } 
-  
+  }
+
 }
