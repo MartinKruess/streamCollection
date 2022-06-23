@@ -12,18 +12,18 @@ export const AboDonation = () => {
     const [paypalIsOpen, setPaypalIsOpen] = useState(false)
 
     const buy = (clickedButton, paymentValue) => {
-        if (clickedButton === "Donation") {
-            if (paymentValue > 1.98) {
-                setUsage(clickedButton)
-                setRythm("Einmalig")
-                setPaypalIsOpen(true)
+        if(clickedButton === "Donation"){
+            if(paymentValue > 1.98){
+              setUsage(clickedButton)
+              setRythm("Einmalig")
+              setPaypalIsOpen(true)
             }
-
-        } else if (clickedButton === "Abo") {
-            setUsage(clickedButton)
-            paymentValueRef.current.value = 4.99
-            setRythm("monatlich")
-            setPaypalIsOpen(true)
+          
+        } else if(clickedButton === "Abo"){
+          setUsage(clickedButton)
+          paymentValueRef.current.value = 4.99
+          setRythm("monatlich")
+          setPaypalIsOpen(true)
         }
     }
 

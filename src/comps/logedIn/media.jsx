@@ -6,17 +6,23 @@ import { MediaContext } from "../context/mediaContext";
 
 export const Media = () => {
 
-    const { mediaData, setMediaData } = useContext(MediaContext)
-    const { logedUserData } = useContext(AppContext)
-    const loginToken = localStorage
 
-    fetch(`${fetchURL}/media/getAllImages`, {
-        method: "GET",
-        headers: {
-            'Content-Type': 'application/json',
-            'oAuthToken': { loginToken },
-        },
-    })
+    const {mediaData, setMediaData} = useContext(MediaContext)
+    const {logedUserData} = useContext(AppContext)
+    const loginToken = localStorage.getItem('loginToken')
+
+    const fetchImgFromDB = async () => {
+        const res = await fetch(`${fetchURL}/getAllImages`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'oAuthToken': { loginToken },
+            }
+        })
+        const data = await res.json();
+        console.log(typeof res)
+        console.log("Data Start side", data)
+    }
 
     const MDI = mediaData[0].images
     const MDV = mediaData[0].videos
@@ -47,12 +53,13 @@ export const Media = () => {
             reader.readAsDataURL(image)
         } else {
             setPreview(null)
+            fetchImgFromDB()
         }
     }, [image])
 
     const imgFetch = async (e) => {
         imgData.view = preview,
-            imgData.name = image.name
+        imgData.name = image.name
         imgData.size = image.size
         imgData.type = image.type
 
@@ -63,13 +70,13 @@ export const Media = () => {
             },
             body: JSON.stringify(imgData)
         })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log("MEDIA-DATA", mediaData)
-                mediaData[0].images.push(data.ImagesFromDB)
-                setMediaData([...mediaData])
-            })
-            .catch(console.log)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log("MEDIA-DATA", mediaData)
+            mediaData[0].images.push(data.ImagesFromDB)
+            setMediaData([...mediaData])
+        })        
+        .catch(console.log)
     }
 
     const tabHandler = (tabPrefix) => {
@@ -106,7 +113,7 @@ export const Media = () => {
                                     if (file && file.type.substring(0, 5) === "image") { setImage(file) } else { setImage(null) }
                                 }} />
                         </button>
-                        )}
+                    )}
 
                     {tab === "images" &&
                         <div className="imagesCon">
