@@ -14,6 +14,7 @@ export const Media = () => {
         const res = await fetch(`${fetchURL}/media/getAllImages`, {
             method: "GET",
             headers: {
+                'Access-Control-Allow-Origin': fetchURL,
                 'Content-Type': 'application/json',
                 'oAuthToken': { loginToken }
             }
