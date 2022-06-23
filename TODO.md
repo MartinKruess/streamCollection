@@ -47,6 +47,25 @@ noch keine Ahnung: ???
 - Alerts verwendbar machen ✘
 - Verwendung: via Drag and Drop und frei platzierbar ??? ✘
 - Ergebnise zusammenführen und speichern in overlayDB ✘
+=======
+- img Button -> img Upload -> BackEnd -> imageDB ✔
+- show all images of user
+- sound Upload and save -> BackEnd -> musicDB ???
+- show all sounds of user
+- Video Upload an save -> BackEnd -> videoDB ???
+- show all videos of user
+
+### Alerts
+
+- load images, videos and sounds to build alerts
+- Verwendung via Drag and Drop und frei platzierbar ???
+- Ergebnis speichern in alertDB ???
+
+### My Overlays
+
+- Alerts verwendbar machen
+- Verwendung: via Drag and Drop und frei platzierbar ???
+- Ergebnise zusammenführen und speichern in overlayDB
 
 ### Activity Feed / Dashboard
 
@@ -54,7 +73,6 @@ noch keine Ahnung: ???
 - Twitch Account auslesen ✘
 - Daten Ausgeben ✘
 - Datan mit Chart verbinden ??? ✘
-
 
 ### Learn Side
 

@@ -39,7 +39,7 @@ export const Register = () => {
     // const isValidatated = validateData(registerData)
     // if (isValidatated === false) return
 
-    const result = await fetch(`${fetchURL}/register`,
+    const result = await fetch(`${fetchURL}/user/register`,
       {
         method: "POST",
         headers: {

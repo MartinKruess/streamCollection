@@ -6,6 +6,7 @@ import { MediaContext } from "../context/mediaContext";
 
 export const Media = () => {
 
+
     const {mediaData, setMediaData} = useContext(MediaContext)
     const {logedUserData} = useContext(AppContext)
     const loginToken = localStorage.getItem('loginToken')
@@ -15,25 +16,25 @@ export const Media = () => {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
-                'oAuthToken': {loginToken},
+                'oAuthToken': { loginToken },
             }
         })
         const data = await res.json();
         console.log(typeof res)
         console.log("Data Start side", data)
     }
-    
+
     const MDI = mediaData[0].images
     const MDV = mediaData[0].videos
     const MDS = mediaData[0].sounds
     console.log("MDI", MDI)
-    
+
     const fileInputRef = useRef()
     const [image, setImage] = useState()
     const [preview, setPreview] = useState()
     const [tab, setTab] = useState("images")
     const userData = JSON.parse(localStorage.getItem('logedUserData'))
-    
+
     const userID = userData.userID
     const imgData = {
         userID: userID,
@@ -42,7 +43,7 @@ export const Media = () => {
         size: "",
         type: "",
     }
-    
+
     useEffect(() => {
         if (image) {
             const reader = new FileReader()
@@ -61,8 +62,8 @@ export const Media = () => {
         imgData.name = image.name
         imgData.size = image.size
         imgData.type = image.type
-        
-        fetch(`${fetchURL}/imageUpload`, {
+
+        fetch(`${fetchURL}/media/imageUpload`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

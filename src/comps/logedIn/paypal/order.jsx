@@ -2,6 +2,7 @@ import { createRef, useEffect, useContext } from "react"
 import { AppContext } from "../../context/userContext"
 
 
+
 export const PaypalModal = ({open, children, paymentValueRef, onClose, usage, rythm}) => {
     const paypal = createRef()
     const {setLogedUserData, logedUserData} = useContext(AppContext)
