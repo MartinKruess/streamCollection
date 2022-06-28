@@ -8,47 +8,53 @@ export const Media = () => {
 
     const {mediaData, setMediaData} = useContext(MediaContext)
     const {logedUserData} = useContext(AppContext)
-    const loginToken = localStorage.getItem('loginToken')
+    
+    const fileInputRef = useRef()
+    const [image, setImage] = useState()
+    const [preview, setPreview] = useState()
+    const [tab, setTab] = useState("images")
 
+    const loginToken = localStorage.getItem('loginToken')
+    const userDataOfLS = JSON.parse(localStorage.getItem('logedUserData'))
+    const userID = userDataOfLS.userID
+    
+    const imgData = {
+        userID: userID,
+        view: "", 
+        name: "",
+        size: "",
+        type: "",
+    }
+
+    const MDI = mediaData.images
+    const MDV = mediaData.videos
+    const MDS = mediaData.sounds
+    console.log("MDI", MDI)
     const fetchImgFromDB = async () => {
         const res = await fetch(`${fetchURL}/media/getAllImages`, {
             method: "GET",
             headers: {
                 'Access-Control-Allow-Origin': fetchURL,
                 'Content-Type': 'application/json',
-                'oAuthToken': { loginToken }
+                'authToken': loginToken,
             }
         })
-        const data = await res.json();
-        console.log(typeof res)
-        console.log("Data Start side", data)
-    }
-
-    const MDI = mediaData[0].images
-    const MDV = mediaData[0].videos
-    const MDS = mediaData[0].sounds
-    console.log("MDI", MDI)
-
-    const fileInputRef = useRef()
-    const [image, setImage] = useState()
-    const [preview, setPreview] = useState()
-    const [tab, setTab] = useState("images")
-    const userData = JSON.parse(localStorage.getItem('logedUserData'))
-
-    const userID = userData.userID
-    const imgData = {
-        userID: userID,
-        view: "",
-        name: "",
-        size: "",
-        type: "",
+        
+        try {
+            console.log("Loading...")
+            const data = await res.json();
+            setMediaData({...mediaData, images: data.ImagesFromDB})
+            
+        } catch (error) {
+            console.log("Leider ein Fail", error)
+        }
     }
 
     useEffect(() => {
         if (image) {
             const reader = new FileReader()
             reader.onloadend = () => {
-                setPreview(reader.result) // ???
+                setPreview(reader.result)
             }
             reader.readAsDataURL(image)
         } else {
@@ -66,16 +72,17 @@ export const Media = () => {
         fetch(`${fetchURL}/media/imageUpload`, {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'authToken': loginToken,
             },
             body: JSON.stringify(imgData)
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log("MEDIA-DATA", mediaData)
-            mediaData[0].images.push(data.ImagesFromDB)
-            setMediaData([...mediaData])
-        })        
+            setPreview()
+            setMediaData({...mediaData, images: data.ImagesFromDB})
+            setImage()
+        })
         .catch(console.log)
     }
 
@@ -83,10 +90,17 @@ export const Media = () => {
         setTab(tabPrefix)
     }
 
-    const deleteHandler = (img) => {
+    const deleteHandler = async (img) => {
         console.log("lösche IMG", img)
-        // fetch("/imageUpload" => req, res)
-        // look at container id and delete _id from DB
+        fetch(`${fetchURL}/media/imageUpload`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'authToken': loginToken,
+            },
+            body: JSON.stringify(img)
+        })
+       const res = await res.json()
     }
 
     return (
@@ -117,7 +131,7 @@ export const Media = () => {
 
                     {tab === "images" &&
                         <div className="imagesCon">
-                            {MDI.length > 0 && MDI[0].map((image, i) => {
+                            {MDI.length > 0 && MDI.map((image, i) => {
                                 return (
                                     <div className="imgCard" id={image._id} key={i}>
                                         <div className="imgName">{image.name}</div>

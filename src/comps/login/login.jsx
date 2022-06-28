@@ -17,7 +17,6 @@ const { setLoginToken, loginToken, logedUserData, setLogedUserData } = useContex
       username: loginRef.current.value,
       password: loginPasswordRef.current.value
     }
-    console.log(loginData)
     const response = await fetch(`${fetchURL}/user/login`,
       {
         method: "post",

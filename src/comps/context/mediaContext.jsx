@@ -8,11 +8,11 @@ const savedUserData = localStorage.getItem("logedUserData")
 
 export const MediaProvider = ({children}) => {
     
-    const [mediaData, setMediaData] = useState([{
+    const [mediaData, setMediaData] = useState({
         images: [],
         videos: [],
         sounds: [],
-}])
+    })
 
     // Handle by change
     useEffect(()=>{

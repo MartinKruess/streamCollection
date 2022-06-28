@@ -1,4 +1,4 @@
-# My TODO'S bis 30.06
+# My TODO'S - Zielsetzung in 7 Wochen
 
 geschafft: ✔
 
@@ -12,8 +12,10 @@ noch keine Ahnung: ???
 - Paypal feinschliff: Zahlungsfunktion ✔
 - update userGroup bei Donation oder Abo response an Backend und DB geben ✘
 
-### Login Complete
+### Login / Registration
 
+- bcrypt password hash
+- register create user in DB
 - nav update nach Login (User-/Accountverwaltung) ✔
 - login -> dashboard ✔
 - delete Account after time ✘
@@ -23,14 +25,13 @@ noch keine Ahnung: ???
 - Settings @ Dropdown via Click ✔
 - save sideSettings to LocalStorage ✔
 - verknüpfe Dashboard randomization mit SettingsObject ✔
-- twitch oAuth by Click ✘
-
+- twitch oAuth by Click ~✔
 
 ### Media
 
 - img Button -> img Upload to BackEnd -> imageDB ✔
 - show all images of user after Upload ✔
-- show all images of user by loading side ✘
+- show all images of user by loading side ✔
 - sound Upload and save -> BackEnd -> musicDB ??? ✘
 - show all sounds of user ✘
 - Video Upload an save -> BackEnd -> videoDB ??? ✘

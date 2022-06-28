@@ -791,41 +791,48 @@ input[type="range"] {
   height: 50rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   padding: var(--normalSpacer);
   overflow-y: scroll;
 
   .imgCard {
     background-color: var(--secondaryShaddow);
-    width: 20rem;
+    width: 13rem;
+    height: 13rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: var(--smallSpacer);
-    padding: var(--normalSpacer);
+    padding: var(--smallSpacer);
     border: solid 0.2rem;
     border-radius: 0.5rem;
 
     .imgName {
       width: 80%;
       height: 2rem;
+      font-size: 1.2rem;
       overflow: hidden;
+      border-bottom: solid 1px;
     }
 
     .deleteBtn {
       background-color: var(--hightlight);
-      width: 2rem;
-      height: 2rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       top: -0.3rem;
-      right: -1rem;
+      right: -0.3rem;
       border: solid 0.2rem;
       border-radius: 2rem;
       z-index: 1;
     }
 
     img {
-      width: 50%;
+      width: 75%;
+      padding: var(--smallSpacer)
     }
 
   }
@@ -881,12 +888,12 @@ input[type="range"] {
     }
   }
 
-  canvas {
-    background-image: paint(squares);
-    width: 115.2rem;
-    height: 64.8rem;
-    border: 2px solid black;
-  }
+  // canvas {
+  //   background-image: paint(squares);
+  //   width: 115.2rem;
+  //   height: 64.8rem;
+  //   border: 2px solid black;
+  // }
 
   .buildCanvas {
 
