@@ -219,13 +219,23 @@ ul li a:active {
 
   .connectButton {
     width: auto;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+
+    .settingsImgContainer{
+      width: 50%;
+
+      img {
+        color: #ccc;
+        width: 2.5rem;
+        margin: auto;
+      }
+    }
+    
   }
 
-  img {
-    color: #ccc;
-    width: 2.5rem;
-    margin: auto;
-  }
+  
 
   label {
     float: left;
@@ -490,15 +500,17 @@ input[type="checkbox"] {
 
 aside {
   background-color: var(--secondary);
-  width: 23rem;
   height: 100%;
+  display: flex;
   font-size: 2rem;
   text-align: start;
-  padding: var(--bigSpacer) var(--bigSpacer);
+  padding: var(--bigSpacer) var(--smallSpacer) var(--bigSpacer) var(--bigSpacer);
   margin: 5rem 0 0 0;
+  z-index: 1;
 
   ul li {
     color: var(--primary);
+    min-width: 5rem;
     font-family: 'Arial';
     list-style: none;
     line-height: 2.5rem;
@@ -509,6 +521,37 @@ aside {
   .active {
     color: red;
   }
+
+  i{
+    width: 2rem;
+    font-size: 1.5rem;
+    margin: 1.3rem;
+    padding: 0;
+  }
+}
+
+.menuChanger{
+  width: 0;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+  border-left: 2rem solid var(--secondaryShaddow);
+  border-bottom: 1rem solid transparent;
+  border-top: 1rem solid transparent;
+  z-index: 1;
+
+  i{
+    font-size: 1rem;
+    position: relative;
+    left:-1rem;
+  }
+}
+
+.menuChanger:hover{
+  border-left: 2rem solid #ededed11;
 }
 
 .liHeader {
@@ -537,13 +580,17 @@ aside ul li:hover {
 
 .upgardeButton {
   background-color: var(--hightlight);
+  width: 70%;
   text-align: center;
+  margin: 3rem 1.5rem;
   padding: 0.5rem 1.5rem;
-  position: relative;
-  top: 18rem;
-  left: 0;
   border: solid;
   border-radius: 1rem;
+}
+
+.ugSmall{
+  margin: 3rem 0;
+  padding: var(--smallSpacer)
 }
 
 .pArticle {
@@ -1015,6 +1062,58 @@ hr {
 
 .h4 {
   padding: var(--bigSpacer) 0;
+}
+.errorIMG{
+  width: 60%;
+}
+
+.errorIMG img{
+  margin: var(--bigSpacer),
+}
+
+#game{
+  background: url("./assets/images/game/desertBG.jpg") center/cover;
+  width: 60rem;
+  height: 30rem;
+  margin: auto;
+  border: solid;
+  overflow: hidden;
+}
+
+#character{
+  background: url("./assets/images/game/player.gif")center/cover;
+  width: 10rem;
+  height: 6rem;
+  position: relative;
+  top: 25rem;
+}
+
+.animate{
+  animation: jump 500ms;
+}
+
+@keyframes jump{
+  0%{top: 25rem;}
+  30%{top: 19rem;}
+  50%{top: 16rem;}
+  60%{top: 20rem;}
+  100%{top: 25rem;}
+}
+
+
+#block{
+  background: url("./assets/images/game/kaktus01.png") center/cover;
+  width: 2.2rem;
+  height: 3.5rem;
+  position: relative;
+  top: 21.5rem;
+  left:58rem;
+  animation: block 3s infinite linear;
+}
+
+@keyframes block{
+  0%{left: 58rem;}
+  100%{left:-2rem;}
 }
 
 // Responsive

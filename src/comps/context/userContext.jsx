@@ -3,9 +3,10 @@ import { createContext, useState, useEffect } from "react";
 export const AppContext = createContext()
 export const SettingsContext = createContext()
 
-//LOAD loginToken
+//LOAD loginToken, userData and sideSettings
 const savedLoginToken = localStorage.getItem("loginToken")
 const savedUserData = localStorage.getItem("logedUserData")
+const savedSideSettings = localStorage.getItem("sideSettings")
 
 export const UserProvider = ({children}) => {
     
@@ -30,10 +31,12 @@ export const UserProvider = ({children}) => {
 // ----------------- SETTINGS -----------------
 
 export const SettingsProvider = ({children}) => {
+    //savedSideSettings || 
     const [sideSettings, setSideSettings] = useState({
         isLocked: false,
         mode: "Dark",
         lang: "DE",
+        isSlide: false,
         twitch: {
             isConnected: false,
             botIsActive: false,

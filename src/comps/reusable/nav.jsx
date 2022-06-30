@@ -81,15 +81,16 @@ export const Navi = () => {
                                             : setSideSettings({ ...sideSettings, "lang": sideSettings.lang })} />
                                 </div>
                                 <div>
-                                    <label>Twitch Account</label>
+                                    
                                     <div className="connectButton" onClick={() => setSideSettings({ ...sideSettings, "isAuthTwitch": !sideSettings.isAuthTwitch })}>
-                                        {sideSettings.isAuthTwitch ? (<img src={connected}></img>) : (<a href={twitchXAuthURL}><img src={disconnected}></img></a>)}
+                                        <label>Twitch Account</label>
+                                        <div className="settingsImgContainer">{sideSettings.isAuthTwitch ? (<img src={connected}></img>) : (<a href={twitchXAuthURL}><img src={disconnected}></img></a>)}</div>
                                     </div>
                                 </div>
                                 <div>
-                                    <label>Youtube Account</label>
                                     <div className="connectButton" onClick={() => setSideSettings({ ...sideSettings, "isLocked": !sideSettings.isLocked })}>
-                                        {sideSettings.isLocked ? (<img src={connected}></img>) : (<a href=""><img src={disconnected}></img></a>)}
+                                        <label>Youtube Account</label>
+                                        <div className="settingsImgContainer">{sideSettings.isLocked ? (<img src={connected}></img>) : (<a href=""><img src={disconnected}></img></a>)}</div>
                                     </div>
                                 </div>
                                 <div>
