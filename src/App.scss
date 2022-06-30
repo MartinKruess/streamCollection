@@ -2,7 +2,7 @@
   font-size: 62.5%;
   --primary: #ededed;
   --secondary: #242628;
-  --secondaryShaddow: #24262899;
+  --secondaryShaddow: #242628f5;
   --hightlight: #6a2597;
   --smallSpacer: 0.5rem;
   --normalSpacer: 1rem;
@@ -1023,6 +1023,73 @@ input[type="range"] {
 }
 
 
+// Chat Commands
+
+.botCommandContainer{
+  background-color: var(--secondaryShaddow);
+  width: 90%;
+  height: 80rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: var(--normalSpacer);
+  border: solid var(--primary) 2px;
+  border-radius: 0.3rem;
+  box-shadow:
+  inset 3px 3px 6px var(--secondary),
+  inset -3px 3px 6px var(--secondary),
+  inset 3px -3px 6px var(--secondary),
+  inset -3px -3px 6px var(--secondary);
+
+  .commandContainer{
+    background-color: #272B37;
+    width: 100%;
+    max-height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.4rem;
+    padding: var(--bigSpacer) 0;
+    gap: var(--smallSpacer);
+    border-bottom: solid var(--primary) 0.1rem;
+
+    .commandLine{
+      background-color: var(--secondaryShaddow);
+      width: 98%;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      padding: var(--smallSpacer);
+      border: var(--secondary);
+      gap: 0.1rem;
+    }
+
+    .head{
+      background-color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .commandValue{
+      background-color: #434343;
+      width: 14rem;
+      height: 100%;
+      margin: auto;
+      padding: var(--smallSpacer) 0;
+      border: solid 0.1rem var(--primary); 
+    }
+
+    .plus{
+      width: 40rem;
+    }
+
+    .minus{
+      width: 10rem;
+    }
+  }
+}
+
+
 // Page 404
 
 .errorSection {
@@ -1115,6 +1182,9 @@ hr {
   0%{left: 58rem;}
   100%{left:-2rem;}
 }
+
+
+
 
 // Responsive
 

@@ -32,7 +32,7 @@ export const UserProvider = ({children}) => {
 
 export const SettingsProvider = ({children}) => {
     //savedSideSettings || 
-    const [sideSettings, setSideSettings] = useState({
+    const [sideSettings, setSideSettings] = useState(JSON.parse(savedSideSettings) ||  {
         isLocked: false,
         mode: "Dark",
         lang: "DE",
