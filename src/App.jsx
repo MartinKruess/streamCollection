@@ -13,13 +13,12 @@ import { PrivateRoute } from "./comps/privateRoute";
 // LogedIn
 import { Dashboard } from "./comps/logedIn/dashboard";
 import { ActivityFeed } from "./comps/logedIn/activityfeed";
+import { ChatManager } from "./comps/logedIn/chatmanager";
 import { Alerts } from "./comps/logedIn/alerts";
 import { Media } from "./comps/logedIn/media";
 import { Overlays } from "./comps/logedIn/overlays";
-import { AutoCommands } from "./comps/logedIn/chatbots/autocommands";
 import { ChatCommands } from "./comps/logedIn/chatbots/chatcommands";
-import { SpamFilter } from "./comps/logedIn/chatbots/spamfilter";
-import { YourFilter } from "./comps/logedIn/chatbots/yourfilter";
+import { Filter } from "./comps/logedIn/chatbots/filter";
 import { BossFight } from "./comps/logedIn/chatbots/bossfight";
 import { ChatDock } from "./comps/logedIn/obsDocs/chatdock";
 import { ActivityDock } from "./comps/logedIn/obsDocs/activitydock";
@@ -32,7 +31,6 @@ function App() {
 
   return (
     <main className="App">
-      {/* <Router> */}
         <Navi />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -47,6 +45,10 @@ function App() {
             <PrivateRoute>
               <ActivityFeed />
             </PrivateRoute>} />
+            <Route path="/chatmanager" element={
+            <PrivateRoute>
+              <ChatManager />
+            </PrivateRoute>} />
           <Route path="/alerts" element={
             <PrivateRoute >
               <Alerts />
@@ -59,21 +61,13 @@ function App() {
             <PrivateRoute >
               <Overlays />
             </PrivateRoute>} />
-          <Route path="/autocommands" element={
-            <PrivateRoute >
-              <AutoCommands />
-            </PrivateRoute>} />
           <Route path="/chatcommands" element={
             <PrivateRoute >
               <ChatCommands />
             </PrivateRoute>} />
-          <Route path="/spamfilter" element={
+          <Route path="/filter" element={
             <PrivateRoute >
-              <SpamFilter />
-            </PrivateRoute>} />
-          <Route path="/yourfilter" element={
-            <PrivateRoute >
-              <YourFilter />
+              <Filter />
             </PrivateRoute>} />
           <Route path="/bossfight" element={
             <PrivateRoute >
@@ -97,7 +91,6 @@ function App() {
             </PrivateRoute>} />
           <Route path="*" element={<Page404 />}/>
         </Routes>
-      {/* </Router> */}
       <Footer />
     </main>
   )

@@ -1,6 +1,7 @@
 export const Footer = () => {
     return (
         <footer>
+        <div className="smallSpacer"></div>
         <div className="content01">
           <ul>
             <li><a href="">Contact</a></li>

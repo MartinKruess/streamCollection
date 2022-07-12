@@ -92,6 +92,9 @@ export const Aside = () => {
                     <NavLink to="/activityfeed">
                         <li>Activity Feed</li>
                     </NavLink>
+                    <NavLink to="/chatmanager">
+                        <li>Chat Manager</li>
+                    </NavLink>
                         <li></li>
                         <li className="liHeader">Streaming Tools</li>
                             <ul className="liBody">

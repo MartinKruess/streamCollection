@@ -393,7 +393,7 @@ footer {
 .content01 {
   width: 40rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .content01 ul {
@@ -403,8 +403,12 @@ footer {
   line-height: 2.5rem;
 }
 
+.smallSpacer {
+  width: clamp(0.5rem, 50%, 30rem);
+}
+
 .spacer {
-  width: clamp(0.5rem, 50%, 70rem);
+  width: 50%;
 }
 
 .icons {
@@ -636,7 +640,7 @@ aside ul li:hover {
 // Dashboard
 
 .dashboardMainContainer {
-  width: 99%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -652,16 +656,140 @@ aside ul li:hover {
   gap: 1rem;
   padding-bottom: var(--bigSpacer);
   border-bottom: solid;
+
+  .smallBox{
+    width: 20rem;
+  }
+}
+
+.connectedContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding-bottom: var(--bigSpacer);
+  border-bottom: solid;
+
+  .smallBox{
+    min-width: 16.44rem;
+    max-width: 19rem;
+    padding: var(--bigSpacer) var(--smallSpacer);
+  }
+
+  .topList, .banList{
+    background-color:var(--secondaryShaddow);
+    height: 40rem;
+    padding: var(--smallSpacer);
+  }
+  
+}
+
+.topList{
+  width: 30rem;
+
+  .listOut{
+    background-color: #435573;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 2rem;
+    margin: var(--smallSpacer) auto;
+    padding: 0.2rem var(--normalSpacer);
+    border-radius: 0.3rem 1.3rem;
+
+    .listRank{
+      width: 20%;
+    }
+
+    .listName{
+      width: 60%;
+      overflow: hidden;
+    }
+
+    .listNumber{
+      width: 20%;
+    }
+  }
+}
+
+.banList{
+  width: 45rem;
+  
+  .banListBox{
+    width: 90%;
+    height: 65%;
+    margin: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: solid var(--hightlight) 0.5px;
+
+    .listOut{
+      background-color: #435573;
+      width: 90%;
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 1.3rem;
+      text-align: center;
+      line-height: 2rem;
+      margin: var(--smallSpacer) auto;
+      padding: 0.2rem;
+      border-radius: 0.3rem 1.3rem;
+    }
+  
+    .listName{
+      width: 50%;
+      overflow: hidden;
+    }
+  
+    .listNumber{
+      width: 40%;
+    }
+  }
+
+  form{
+    width: 90%;
+    height: 8rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: var(--smallSpacer) auto;
+    padding: 0 var(--smallSpacer);
+
+    .inputs{
+      width: 33%;
+    }
+
+    .banBTN{
+      width: 19%;
+    }
+
+    input{
+      width: 15rem;
+      height: 2rem;
+      font-size: 1.3rem;
+      margin:var(--smallSpacer);
+    }
+  
+    button{
+      height: 3.5rem;
+      margin:0;
+      padding: var(--smallSpacer);
+    }
+  }
 }
 
 .specialContainer {
   width: 100%;
-  max-height: 17rem;
+  min-height: 17rem;
   display: flex;
   flex-wrap: wrap;
   gap: var(--normalSpacer);
   padding-bottom: var(--bigSpacer);
   border-bottom: solid;
+
+  
 }
 
 .dashboardChartFooter {
@@ -676,14 +804,7 @@ aside ul li:hover {
   border-style: none;
 }
 
-.connectContainer {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  padding-bottom: var(--bigSpacer);
-  border-bottom: solid;
-}
+
 
 .viewerContainer {
   min-height: 30rem;
@@ -715,29 +836,59 @@ aside ul li:hover {
 
 // Activity Feed
 
+.feedBox{
+  width: 100%;
+
+  .feedReset {
+    width: 95%;
+    display: flex;
+    justify-content: end;
+
+    .activityFilter{
+      width: 9rem;
+      padding: 0;
+      border: solid red;
+    }
+  }
+}
+
+
 .activityFeedContainer {
-  width: 50rem;
+  background-color: #444648;
+  width: 100%;
   height: 70rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: auto;
+    
+  .feedContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 5rem;
+    padding: var(--smallSpacer);
+    margin: var(--smallSpacer);
+    
+    .feed{
+      background-color: var(--secondaryShaddow);
+      width: 85%;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--smallSpacer);
+    }
+    
+    .arrow {
+      width: 0;
+      height: 0;
+      border-top: 3rem solid transparent;
+      border-left: 5rem solid var(--secondaryShaddow);
+      border-bottom: 3rem solid transparent;
+    }
+  }
 }
-
-.feedContainer {
-  width: 90%;
-  min-height: 5rem;
-  margin-top: var(--smallSpacer);
-}
-
-.feedReset {
-
-  width: 90%;
-  display: flex;
-  justify-content: end;
-  margin-top: var(--smallSpacer);
-}
-
 
 // Media
 
@@ -1022,6 +1173,51 @@ input[type="range"] {
   }
 }
 
+// ChatManager
+
+.chatManagerContainer{
+  width: 100%;
+  height: 60rem;
+
+  .chatBoxContainer{
+    background-color:var(--secondaryShaddow);
+    width: 80%;
+    height: 50rem;
+    margin: auto;
+  }
+
+  .chatBox{
+    width: 95%;
+    height: 35.5rem;
+    margin: auto;
+    border: solid 1px var(--hightlight);
+  }
+
+  .chatLine{
+    background-color: #435573;
+    width: 90%;
+    font-size: 1.3rem;
+    text-align: left;
+    line-height: 2rem;
+    margin: var(--normalSpacer) auto;
+    padding: 0.3rem var(--normalSpacer);
+    border-radius: 0.3rem 1.3rem;
+  }
+
+  textarea{
+    width: 95%;
+    min-width: 92%;
+    max-width: 92%;
+    min-height: 6rem;
+    max-height: 6rem;
+    font-size: 1.2rem;
+    margin: var(--normalSpacer);
+    padding: var(--smallSpacer);
+    border-radius: 0.5rem;
+    outline: none;
+    resize: none;
+  }
+}
 
 // Chat Commands
 
@@ -1182,9 +1378,6 @@ hr {
   0%{left: 58rem;}
   100%{left:-2rem;}
 }
-
-
-
 
 // Responsive
 
