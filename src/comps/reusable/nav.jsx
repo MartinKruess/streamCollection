@@ -82,7 +82,8 @@ export const Navi = () => {
                                 </div>
                                 <div>
                                     
-                                    <div className="connectButton" onClick={() => setSideSettings({ ...sideSettings, "isAuthTwitch": !sideSettings.isAuthTwitch })}>
+                                    <div className="connectButton" onClick={() => sideSettings.isLocked === false &&(
+                                        setSideSettings({ ...sideSettings, "isAuthTwitch": !sideSettings.isAuthTwitch }))}>
                                         <label>Twitch Account</label>
                                         <div className="settingsImgContainer">{sideSettings.isAuthTwitch ? (<img src={connected}></img>) : (<a href={twitchXAuthURL}><img src={disconnected}></img></a>)}</div>
                                     </div>

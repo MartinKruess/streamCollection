@@ -56,8 +56,6 @@ export const AboDonation = () => {
                 <PaypalModal open={paypalIsOpen} paymentValueRef={paymentValueRef} usage={usage} rythm={rythm} onClose={() => setPaypalIsOpen(false)}>
                     <div className="paypalBg" />
                 </PaypalModal>
-
-
             </article>
         </section>
     )

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppContext, SettingsContext } from "../context/userContext";
 
 export const Aside = () => {
@@ -12,7 +12,7 @@ export const Aside = () => {
         // console.log("sideSettings", sideSettings)
     }, [sideSettings])
 
-    const group = "suser"
+    const group = "user"
     const [isSlide, setIsSlide] = useState(false)
 
 
@@ -25,76 +25,77 @@ export const Aside = () => {
         <aside>
             {sideSettings.isSlide
                 ?(<ul>
-                    <NavLink to="/dashboard" >
-                        <li><i className="fa-solid fa-chart-line"></i></li>  
-                    </NavLink>
-                    <NavLink to="/activityfeed">
-                        <li><i className="fa-solid fa-clock-rotate-left"></i></li>
-                    </NavLink>
-                        <li></li>
+                    <Link to="/dashboard" >
+                        <li><i className="fa-solid fa-chart-line"></i><span className="tooltiptext">Dashboard</span></li>  
+                    </Link>
+                    <Link to="/activityfeed">
+                        <li><i className="fa-solid fa-clock-rotate-left"></i><span className="tooltiptext">Aktivitäten</span></li>
+                    </Link>
+                        <li className="liSpacer"></li>
                     <Link to="/media">
-                        <li><i className="fa-solid fa-play"></i></li>
+                        <li><i className="fa-solid fa-play"></i><span className="tooltiptext">Media</span></li>
                     </Link>
                     <Link to="/alerts">
-                        <li><i className="fa-solid fa-bell"></i></li>
+                        <li><i className="fa-solid fa-bell"></i><span className="tooltiptext">Alerts</span></li>
                     </Link>
                         <Link to="/overlays">
-                        <li><i className="fa-solid fa-eye"></i></li>
+                        <li><i className="fa-solid fa-eye"></i><span className="tooltiptext">Overlays</span></li>
                     </Link>
+                        <li className="liSpacer"></li>
                     <Link to="/chatcommands">
-                        <li><i className="fa-solid fa-terminal"></i></li>
+                        <li><i className="fa-solid fa-terminal"></i><span className="tooltiptext">Chat Commands</span></li>
                     </Link>
                     <Link to="/filter">
-                        <li><i className="fa-solid fa-filter"></i></li>
+                        <li><i className="fa-solid fa-filter"></i><span className="tooltiptext">Filter</span></li>
                     </Link>
                     <Link to="/chatbot">
-                        <li><i className="fa-solid fa-robot"></i></li>
+                        <li><i className="fa-solid fa-robot"></i><span className="tooltiptext">ChatBot</span></li>
                     </Link>
                     <Link to="/giveaway">
-                        <li><i className="fa-solid fa-gifts"></i></li>
+                        <li><i className="fa-solid fa-gifts"></i><span className="tooltiptext">Giveaway</span></li>
                     </Link>
-                        <li></li>
+                        <li className="liSpacer"></li>
                     <Link to="/bossfight">
-                        <li><i className="fa-solid fa-dragon"></i></li>
+                        <li><i className="fa-solid fa-dragon"></i><span className="tooltiptext">Bossfight</span></li>
                     </Link>
                     <Link to="/chatdock">
-                        <li><i className="fa-solid fa-comment-dots"></i></li>
+                        <li><i className="fa-solid fa-comment-dots"></i><span className="tooltiptext">OBS Chat</span></li>
                     </Link>
                     <Link to="/activitydock">
-                        <li><i className="fa-solid fa-table"></i></li>
+                        <li><i className="fa-solid fa-table"></i><span className="tooltiptext">OBS Activity</span></li>
                     </Link>
                     <Link to="/alertdock">
-                        <li><i className="fa-solid fa-clipboard-question"></i></li>
+                        <li><i className="fa-solid fa-clipboard-question"></i><span className="tooltiptext">Dashboard</span></li>
                     </Link>
-                        <li></li>
+                    <li className="liSpacer"></li>
                         {group === "suser"
                     ? (<>
                         <Link to="/bossfight">
-                            <li><i className="fa-solid fa-keyboard"></i></li>
+                            <li><i className="fa-solid fa-keyboard"></i><span className="tooltiptext">Dashboard</span></li>
                         </Link>
                         <Link to="/chatdock">
-                            <li><i className="fa-solid fa-comment-dots"></i></li>
+                            <li><i className="fa-solid fa-comment-dots"></i><span className="tooltiptext">Dashboard</span></li>
                         </Link>
                         <Link to="/activitydock">
-                            <li>Fe3</li>
+                            <li>Fe3<span className="tooltiptext">Dashboard</span></li>
                         </Link>
-                            <li></li>
+                        <li className="liSpacer"><span className="tooltiptext">Dashboard</span></li>
                         </>)
-                    : ( <NavLink to="/donations">
-                            <li className="upgardeButton ugSmall">Ug</li>
-                        </NavLink>)
+                    : ( <Link to="/donations">
+                            <li className="upgardeButton ugSmall"><i className="fa-solid fa-arrow-turn-up"></i><span className="tooltiptext">Upgrade</span></li>
+                        </Link>)
                     }
                 </ul>)
                 :(<ul>
-                    <NavLink to="/dashboard" >
+                    <Link to="/dashboard" >
                         <li>Dashboard</li>
-                    </NavLink>
-                    <NavLink to="/activityfeed">
+                    </Link>
+                    <Link to="/activityfeed">
                         <li>Activity Feed</li>
-                    </NavLink>
-                    <NavLink to="/chatmanager">
+                    </Link>
+                    <Link to="/chatmanager">
                         <li>Chat Manager</li>
-                    </NavLink>
+                    </Link>
                         <li></li>
                         <li className="liHeader">Streaming Tools</li>
                             <ul className="liBody">
@@ -152,11 +153,11 @@ export const Aside = () => {
                                     <li>Feature 3</li>
                                 </Link>
                                 </ul>
-                            <li></li>
+                                <li className="liSpacer"></li>
                           </>)
-                        : ( <NavLink to="/donations">
+                        : ( <Link to="/donations">
                                 <li className="upgardeButton">Upgrade</li>
-                            </NavLink>)
+                            </Link>)
                         }
                 </ul>)
             }

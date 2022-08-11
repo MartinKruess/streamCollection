@@ -11,7 +11,7 @@ export const Alerts = () => {
     const canvasRef = useRef()
 
     const loadImgToCanvas = () => {
-        
+       
     }
 
     const MDI = mediaData.images
@@ -38,7 +38,6 @@ export const Alerts = () => {
     }
 
     useEffect(() => {
-        
         fetchImgFromDB()
     }, [])
 
@@ -50,8 +49,7 @@ export const Alerts = () => {
         })
         console.log("imgInfo", imgInfo)
 
-        setImgSelect((prev) => [...prev, imgInfo])
-        console.log("Inner Func", imgSelect)
+        setImgSelect((prev) => [...prev, imgInfo.view])
     }
     console.log("global", imgSelect)
     console.log("MDI", MDI)
@@ -91,8 +89,8 @@ export const Alerts = () => {
                         </div>
                         <button>Save</button>
                     </div>
-                    <canvas className="buildCanvas" ref={canvasRef}>
-                        
+                    <canvas className="buildCanvas" ref={canvasRef} value={imgSelect}>
+                        {imgSelect}
                     </canvas>
                 </div>
                 

@@ -1,9 +1,10 @@
 import { Aside } from "../reusable/aside"
 import TTV_YTLinechart from "./charts/yt_twitch_chart"
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { AppContext, SettingsContext } from "../context/userContext";
 import { fetchURL } from "../../App";
 import { TwitchContext } from "../context/mediaContext";
+import { banTwitchUser } from "./dashboard/banTwitchUser";
 
 export const Dashboard = () => {
 
@@ -16,6 +17,8 @@ export const Dashboard = () => {
     const [donations, setDonations] = useState(0)
     const [merches, setMerches] = useState(0)
     const [moneyOut, setMoneyOut] = useState(0)
+    const banUserRef = useRef();
+    const banReasonRef = useRef()
 
     const activeColor1 = { color: sideSettings.obsIsConnected ? "#f7022a" : "" }
     const activeColor2 = { color: sideSettings.twitch.isConnected ? "#f7022a" : "" }
@@ -37,6 +40,7 @@ export const Dashboard = () => {
         })
         console.log("Loading...")
         const data = await res.json();
+        console.log("Data", data)
         !data.error && setTwitchData(data)
     }
 
@@ -55,6 +59,16 @@ export const Dashboard = () => {
             console.log("twitchData is full")
         }
     }, [twitchData])
+
+    const getBannedUser = (e) => {
+        e.preventDefault()
+        const banUser = {
+          username: banUserRef.current.value,
+          reason: banReasonRef.current.value
+        }
+        banTwitchUser(banUser, loginToken)
+    }
+
 
     return (
         <section className="pSection">
@@ -85,12 +99,12 @@ export const Dashboard = () => {
                     {sideSettings.twitch.isConnected
                         ? (<div className="connectedContainer">
                             <h2>TWITCH STATISTICS</h2>
-                            <div className="smallBox"><h4 className="h4">Follows</h4><div className="feedOut">{twitchData ? (`+${twitchData.follows.length}`) : ("loading...")}</div></div>
+                            <div className="smallBox"><h4 className="h4">Follows</h4><div className="feedOut">{twitchData ? `+${twitchData.follows.length}` : sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>
                             <div className="smallBox"><h4 className="h4">Cheers</h4><div className="feedOut">293</div></div>
-                            <div className="smallBox"><h4 className="h4">Subs</h4><div className="feedOut">{twitchData ? twitchData.subList.length : "loading..."}</div></div>
-                            <div className="smallBox"><h4 className="h4">Last Follower</h4><div className="feedOut">{twitchData ? twitchData.follows[0].from_name : "loading..."}</div></div>
-                            <div className="smallBox"><h4 className="h4">Last Cheerer</h4><div className="feedOut">{twitchData ? "no user List" : "loading..."}</div></div>
-                            <div className="smallBox"><h4 className="h4">Last Subscriber</h4><div className="feedOut">{twitchData ? twitchData.subList[0].user_name : "loading..."}</div></div>
+                            <div className="smallBox"><h4 className="h4">Subs</h4><div className="feedOut">{twitchData ? twitchData.subList.length : sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>
+                            <div className="smallBox"><h4 className="h4">Last Follower</h4><div className="feedOut">{twitchData ? twitchData.follows[0].from_name : sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>
+                            <div className="smallBox"><h4 className="h4">Last Cheerer</h4><div className="feedOut">{twitchData ? "no user List" : sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>
+                            <div className="smallBox"><h4 className="h4">Last Subscriber</h4><div className="feedOut">{twitchData ? twitchData.subList[0].user_name : sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>
                             <div className="topList"><h4 className="h4">Top Cheers</h4>
                                 <div className="listOut"><div className="listRank">Rank</div><div className="listName">Username</div><div className="listNumber">Score</div></div>
                                 {twitchData ? twitchData.bitList.map((user, i) => {
@@ -102,7 +116,7 @@ export const Dashboard = () => {
                                         </div>
                                     )
                                 })
-                                    : <div className="listOut"><div className="listRank">loading...</div><div className="listName">loading...</div><div className="listNumber">loading...</div></div>}
+                                    : <div className="listOut"><div className="listRank">{sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div><div className="listName">{sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div><div className="listNumber">{sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>}
                             </div>
                             <div className="topList">
                                 <h4 className="h4">Top Subscriber</h4>
@@ -115,7 +129,7 @@ export const Dashboard = () => {
                                         </div>
                                     )
                                 })
-                                    : <div className="listOut"><div className="listRank">loading...</div><div className="listName">loading...</div></div>}
+                                    : <div className="listOut"><div className="listRank">{sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div><div className="listName">{sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>}
                             </div>
                             <div className=" banList">
                                 <h4 className="h4">Blocklist</h4>
@@ -129,15 +143,13 @@ export const Dashboard = () => {
                                             </div>
                                         )
                                     })
-                                        : <div className="listOut"><div className="listRank">loading...</div><div className="listName">loading...</div></div>}
+                                        : <div className="listOut"><div className="listRank">{sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div><div className="listName">{sideSettings.isAuthTwitch ? "loading..." : "disconnected"}</div></div>}
                                 </div>
-                                <form action="">
-                                    
-                                        <input className="inputs" type="text" placeholder="Username" />
-                                        <input className="inputs" type="text" placeholder="Grund" />
-                                    
+                                <form onSubmit={getBannedUser}>
+                                        <input ref={banUserRef} className="inputs" type="text" placeholder="Username" />
+                                        <input ref={banReasonRef} className="inputs" type="text" placeholder="Grund" />
                                     <div className="banBTN">
-                                        <button>Bannen</button>
+                                        <button type="submit">Bannen</button>
                                     </div>
                                 </form>
                             </div>

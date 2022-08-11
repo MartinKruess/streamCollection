@@ -4,6 +4,7 @@ import { Membership } from "./membership"
 import { Navigate } from "react-router-dom"
 import { AppContext } from "./context/userContext";
 import { useContext } from "react";
+import { Donation } from "./logedIn/paypal/donation";
 
 
 export const Home = () => {
@@ -18,6 +19,7 @@ export const Home = () => {
                 <Startpanel />
                 <About />
                 <Membership />
+                <Donation />
             </>
             )
         }   

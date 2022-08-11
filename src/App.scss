@@ -85,7 +85,7 @@ nav a:hover:after {
 }
 
 nav {
-  background: var(--secondary);
+  background: #435573;
   color: var(--primary);
   width: 100%;
   height: 5rem;
@@ -223,7 +223,7 @@ ul li a:active {
     display: flex;
     align-items: center;
 
-    .settingsImgContainer{
+    .settingsImgContainer {
       width: 50%;
 
       img {
@@ -232,10 +232,10 @@ ul li a:active {
         margin: auto;
       }
     }
-    
+
   }
 
-  
+
 
   label {
     float: left;
@@ -388,10 +388,11 @@ footer {
   justify-content: center;
   padding: var(--normalSpacer) var(--bigSpacer);
   margin: 0;
+  z-index: 2;
 }
 
 .content01 {
-  width: 40rem;
+  width: 50%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -399,16 +400,16 @@ footer {
 .content01 ul {
   font-size: 2rem;
   list-style: none;
-  margin: var(--bigSpacer) var(--smallSpacer);
-  line-height: 2.5rem;
-}
-
-.smallSpacer {
-  width: clamp(0.5rem, 50%, 30rem);
+  margin: var(--smallSpacer) var(--bigSpacer);
+  line-height: 4.5rem;
 }
 
 .spacer {
-  width: 50%;
+  width: 15%;
+}
+
+.minspace {
+  min-width: 20rem;
 }
 
 .icons {
@@ -503,8 +504,8 @@ input[type="checkbox"] {
 }
 
 aside {
-  background-color: var(--secondary);
-  height: 100%;
+  background-color: #435573;
+  height: 91%;
   display: flex;
   font-size: 2rem;
   text-align: start;
@@ -522,11 +523,30 @@ aside {
     text-transform: none;
   }
 
+  .liSpacer {
+    height: var(--normalSpacer);
+  }
+
+  ul li:hover .tooltiptext {
+    display: flex;
+  }
+
+  .tooltiptext {
+    background-color: var(--secondary);
+    display: none;
+    font-size: 1rem;
+    position: fixed;
+    left: 6rem;
+    padding: 0.1rem 0.3rem;
+    border: solid 1px;
+    z-index: 2;
+  }
+
   .active {
     color: red;
   }
 
-  i{
+  i {
     width: 2rem;
     font-size: 1.5rem;
     margin: 1.3rem;
@@ -534,27 +554,27 @@ aside {
   }
 }
 
-.menuChanger{
+.menuChanger {
   width: 0;
   height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
-  border-left: 2rem solid var(--secondaryShaddow);
+
+
+  border-left: 2rem solid #435573; //var(--secondaryShaddow);
   border-bottom: 1rem solid transparent;
   border-top: 1rem solid transparent;
   z-index: 1;
 
-  i{
+  i {
     font-size: 1rem;
     position: relative;
-    left:-1rem;
+    left: -1rem;
   }
 }
 
-.menuChanger:hover{
+.menuChanger:hover {
   border-left: 2rem solid #ededed11;
 }
 
@@ -584,7 +604,7 @@ aside ul li:hover {
 
 .upgardeButton {
   background-color: var(--hightlight);
-  width: 70%;
+  width: 60%;
   text-align: center;
   margin: 3rem 1.5rem;
   padding: 0.5rem 1.5rem;
@@ -592,9 +612,14 @@ aside ul li:hover {
   border-radius: 1rem;
 }
 
-.ugSmall{
+.ugSmall {
   margin: 3rem 0;
-  padding: var(--smallSpacer)
+  padding: 0.1rem 0.2rem;
+
+  i {
+    font-size: 1.2rem;
+    margin: var(--normalSpacer);
+  }
 }
 
 .pArticle {
@@ -657,7 +682,7 @@ aside ul li:hover {
   padding-bottom: var(--bigSpacer);
   border-bottom: solid;
 
-  .smallBox{
+  .smallBox {
     width: 20rem;
   }
 }
@@ -670,24 +695,25 @@ aside ul li:hover {
   padding-bottom: var(--bigSpacer);
   border-bottom: solid;
 
-  .smallBox{
+  .smallBox {
     min-width: 16.44rem;
     max-width: 19rem;
     padding: var(--bigSpacer) var(--smallSpacer);
   }
 
-  .topList, .banList{
-    background-color:var(--secondaryShaddow);
+  .topList,
+  .banList {
+    background-color: var(--secondaryShaddow);
     height: 40rem;
     padding: var(--smallSpacer);
   }
-  
+
 }
 
-.topList{
+.topList {
   width: 30rem;
 
-  .listOut{
+  .listOut {
     background-color: #435573;
     width: 90%;
     display: flex;
@@ -699,25 +725,25 @@ aside ul li:hover {
     padding: 0.2rem var(--normalSpacer);
     border-radius: 0.3rem 1.3rem;
 
-    .listRank{
+    .listRank {
       width: 20%;
     }
 
-    .listName{
+    .listName {
       width: 60%;
       overflow: hidden;
     }
 
-    .listNumber{
+    .listNumber {
       width: 20%;
     }
   }
 }
 
-.banList{
+.banList {
   width: 45rem;
-  
-  .banListBox{
+
+  .banListBox {
     width: 90%;
     height: 65%;
     margin: auto;
@@ -725,7 +751,7 @@ aside ul li:hover {
     overflow-x: hidden;
     border: solid var(--hightlight) 0.5px;
 
-    .listOut{
+    .listOut {
       background-color: #435573;
       width: 90%;
       display: flex;
@@ -737,18 +763,18 @@ aside ul li:hover {
       padding: 0.2rem;
       border-radius: 0.3rem 1.3rem;
     }
-  
-    .listName{
+
+    .listName {
       width: 50%;
       overflow: hidden;
     }
-  
-    .listNumber{
+
+    .listNumber {
       width: 40%;
     }
   }
 
-  form{
+  form {
     width: 90%;
     height: 8rem;
     display: flex;
@@ -757,24 +783,24 @@ aside ul li:hover {
     margin: var(--smallSpacer) auto;
     padding: 0 var(--smallSpacer);
 
-    .inputs{
+    .inputs {
       width: 33%;
     }
 
-    .banBTN{
+    .banBTN {
       width: 19%;
     }
 
-    input{
+    input {
       width: 15rem;
       height: 2rem;
       font-size: 1.3rem;
-      margin:var(--smallSpacer);
+      margin: var(--smallSpacer);
     }
-  
-    button{
+
+    button {
       height: 3.5rem;
-      margin:0;
+      margin: 0;
       padding: var(--smallSpacer);
     }
   }
@@ -789,7 +815,7 @@ aside ul li:hover {
   padding-bottom: var(--bigSpacer);
   border-bottom: solid;
 
-  
+
 }
 
 .dashboardChartFooter {
@@ -804,15 +830,12 @@ aside ul li:hover {
   border-style: none;
 }
 
-
-
 .viewerContainer {
   min-height: 30rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 1rem;
-  border: solid red;
 
   canvas {
     color: var(--primary);
@@ -836,7 +859,7 @@ aside ul li:hover {
 
 // Activity Feed
 
-.feedBox{
+.feedBox {
   width: 100%;
 
   .feedReset {
@@ -844,7 +867,7 @@ aside ul li:hover {
     display: flex;
     justify-content: end;
 
-    .activityFilter{
+    .activityFilter {
       width: 9rem;
       padding: 0;
       border: solid red;
@@ -861,16 +884,19 @@ aside ul li:hover {
   flex-direction: column;
   align-items: center;
   overflow: auto;
-    
+
   .feedContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 35rem;
+    max-width: 50%;
+
     max-height: 5rem;
     padding: var(--smallSpacer);
     margin: var(--smallSpacer);
-    
-    .feed{
+
+    .feed {
       background-color: var(--secondaryShaddow);
       width: 85%;
       height: 5rem;
@@ -879,7 +905,7 @@ aside ul li:hover {
       align-items: center;
       padding: var(--smallSpacer);
     }
-    
+
     .arrow {
       width: 0;
       height: 0;
@@ -984,7 +1010,7 @@ input[type="range"] {
   padding: 0;
 }
 
-.imagesCon {
+.imagesBox {
   width: 100%;
   height: 50rem;
   display: flex;
@@ -1175,53 +1201,162 @@ input[type="range"] {
 
 // ChatManager
 
-.chatManagerContainer{
+.chatManagerContainer {
+  background-color: var(--secondaryShaddow);
   width: 100%;
-  height: 60rem;
+  //height: 60rem;
 
-  .chatBoxContainer{
-    background-color:var(--secondaryShaddow);
-    width: 80%;
-    height: 50rem;
-    margin: auto;
-  }
-
-  .chatBox{
-    width: 95%;
-    height: 35.5rem;
-    margin: auto;
-    border: solid 1px var(--hightlight);
-  }
-
-  .chatLine{
-    background-color: #435573;
+  .chatBoxContainer {
     width: 90%;
-    font-size: 1.3rem;
-    text-align: left;
-    line-height: 2rem;
-    margin: var(--normalSpacer) auto;
-    padding: 0.3rem var(--normalSpacer);
-    border-radius: 0.3rem 1.3rem;
+    height: 55rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: var(--normalSpacer);
+
+    .chatBox {
+      //background-color: #131939;
+      width: 68%;
+      min-width: 30rem;
+      height: 85%;
+      overflow-y: scroll;
+      padding: var(--bigSpacer) 0;
+      border: solid 5px var(--secondary);
+      box-shadow:
+       2px 2px 2px var(--hightlight),
+       -2px 2px 2px var(--hightlight),
+       2px -2px 2px var(--hightlight),
+       -2px -2px 2px var(--hightlight);
+
+      .chatLine:hover .msgConfigBar {
+        display: flex;
+      }
+
+      .chatLine {
+        background-color: #435573;
+        width: 92%;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.3rem;
+        text-align: left;
+        line-height: 2rem;
+        margin: var(--normalSpacer) auto;
+        padding: 0.3rem var(--normalSpacer);
+        border-radius: 0.3rem 1.3rem;
+
+        .chatMSG {
+          min-width: 80%;
+          max-width: 80%;
+          margin-right: var(--smallSpacer);
+          border: solid 1px;
+        }
+
+        .msgConfigBar {
+          background-color: transparent;
+          color: var(--secondary);
+          width: 14%;
+          height: 2rem;
+          display: none;
+          justify-content: center;
+          font-weight: 600;
+          margin: auto;
+          position: relative;
+
+          
+
+          .msg {
+            background-color: var(--primary);
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.1rem;
+            padding: 0.1rem;
+            border: solid 1px var(--secondary);
+          }
+
+          .msg:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .chatManager {
+      width: 28%;
+      min-width: 25rem;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 1.5rem;
+      padding: var(--normalSpacer);
+      border: solid 1px;
+  
+      .userSearchbar {
+        width: 80%;
+        height: 2.5rem;
+        margin: var(--smallSpacer) auto;
+      }
+  
+      .filteredBox {
+        //background-color: ;
+        width: 90%;
+        min-width: 20rem;
+        height: 35rem;
+        margin: var(--smallSpacer) auto;
+        padding: var(--smallSpacer);
+        border: solid;
+
+        .chatLine {
+          background-color: #435573;
+          width: 92%;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 1.3rem;
+          text-align: left;
+          line-height: 2rem;
+          margin: var(--normalSpacer) auto;
+          padding: 0.3rem var(--normalSpacer);
+          border-radius: 0.3rem 1.3rem;
+  
+          .chatMSG {
+            min-width: 100%;
+            max-width: 100%;
+            margin-right: 2rem;
+            border: solid 1px;
+          }
+        }
+      }
+    }
   }
 
-  textarea{
-    width: 95%;
-    min-width: 92%;
-    max-width: 92%;
-    min-height: 6rem;
-    max-height: 6rem;
-    font-size: 1.2rem;
-    margin: var(--normalSpacer);
-    padding: var(--smallSpacer);
-    border-radius: 0.5rem;
-    outline: none;
-    resize: none;
+  .textareaContainer{
+    width: 90%;
+    height: 10rem;
+    margin: var(--normalSpacer) auto;
+
+    textarea {
+      width: 90%;
+      min-width: 95%;
+      max-width: 95%;
+      min-height: 90%;
+      max-height: 90%;
+      font-size: 1.2rem;
+      
+      padding: var(--smallSpacer);
+      border-radius: 0.5rem;
+      outline: none;
+      resize: none;
+    }
   }
+  
 }
 
 // Chat Commands
 
-.botCommandContainer{
+.botCommandContainer {
   background-color: var(--secondaryShaddow);
   width: 90%;
   height: 80rem;
@@ -1233,12 +1368,12 @@ input[type="range"] {
   border: solid var(--primary) 2px;
   border-radius: 0.3rem;
   box-shadow:
-  inset 3px 3px 6px var(--secondary),
-  inset -3px 3px 6px var(--secondary),
-  inset 3px -3px 6px var(--secondary),
-  inset -3px -3px 6px var(--secondary);
+    inset 3px 3px 6px var(--secondary),
+    inset -3px 3px 6px var(--secondary),
+    inset 3px -3px 6px var(--secondary),
+    inset -3px -3px 6px var(--secondary);
 
-  .commandContainer{
+  .commandContainer {
     background-color: #272B37;
     width: 100%;
     max-height: 50%;
@@ -1250,7 +1385,7 @@ input[type="range"] {
     gap: var(--smallSpacer);
     border-bottom: solid var(--primary) 0.1rem;
 
-    .commandLine{
+    .commandLine {
       background-color: var(--secondaryShaddow);
       width: 98%;
       display: flex;
@@ -1261,25 +1396,25 @@ input[type="range"] {
       gap: 0.1rem;
     }
 
-    .head{
+    .head {
       background-color: var(--secondary);
       font-weight: 600;
     }
 
-    .commandValue{
+    .commandValue {
       background-color: #434343;
       width: 14rem;
       height: 100%;
       margin: auto;
       padding: var(--smallSpacer) 0;
-      border: solid 0.1rem var(--primary); 
+      border: solid 0.1rem var(--primary);
     }
 
-    .plus{
+    .plus {
       width: 40rem;
     }
 
-    .minus{
+    .minus {
       width: 10rem;
     }
   }
@@ -1326,15 +1461,16 @@ hr {
 .h4 {
   padding: var(--bigSpacer) 0;
 }
-.errorIMG{
+
+.errorIMG {
   width: 60%;
 }
 
-.errorIMG img{
+.errorIMG img {
   margin: var(--bigSpacer),
 }
 
-#game{
+#game {
   background: url("./assets/images/game/desertBG.jpg") center/cover;
   width: 60rem;
   height: 30rem;
@@ -1343,7 +1479,7 @@ hr {
   overflow: hidden;
 }
 
-#character{
+#character {
   background: url("./assets/images/game/player.gif")center/cover;
   width: 10rem;
   height: 6rem;
@@ -1351,32 +1487,51 @@ hr {
   top: 25rem;
 }
 
-.animate{
+.animate {
   animation: jump 500ms;
 }
 
-@keyframes jump{
-  0%{top: 25rem;}
-  30%{top: 19rem;}
-  50%{top: 16rem;}
-  60%{top: 20rem;}
-  100%{top: 25rem;}
+@keyframes jump {
+  0% {
+    top: 25rem;
+  }
+
+  30% {
+    top: 19rem;
+  }
+
+  50% {
+    top: 16rem;
+  }
+
+  60% {
+    top: 20rem;
+  }
+
+  100% {
+    top: 25rem;
+  }
 }
 
 
-#block{
+#block {
   background: url("./assets/images/game/kaktus01.png") center/cover;
   width: 2.2rem;
   height: 3.5rem;
   position: relative;
   top: 21.5rem;
-  left:58rem;
+  left: 58rem;
   animation: block 3s infinite linear;
 }
 
-@keyframes block{
-  0%{left: 58rem;}
-  100%{left:-2rem;}
+@keyframes block {
+  0% {
+    left: 58rem;
+  }
+
+  100% {
+    left: -2rem;
+  }
 }
 
 // Responsive
