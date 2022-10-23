@@ -42,12 +42,12 @@ Streamer haben oft 3-6 verschiedene Webseiten um die verschiedennen Tools zu hab
 
 ### Frontend:
 | Style | Framework | Statemanagement | Livechat |
-|----------|---------------|---------------|---------------|
+|-------|-------|-------|-------|
 | SCSS | React | useContext | Client-socket-io |
 
 ### Backend:
 | Server | Security | Datenverwaltung | Deployment |
-|----------|---------------|---------------|---------------|
+|-------|-------|-------|-------|
 | Node | Bcrypt | MongoDB | Heroku |
 |Express|JWT|Cloudinary|
 |Socket.io|oAuth|| |
