@@ -41,15 +41,13 @@ Streamer haben oft 3-6 verschiedene Webseiten um die verschiedennen Tools zu hab
 ## Verwendete Technologien
 
 ### Frontend:
-<<< Beispiel 1 >>>
 | Style | Framework | Statemanagement | Livechat |
 --------|-------------|------------------|
-|SCSS|React|useContext|Client-socket-io |*|
+| SCSS | React | useContext | Client-socket-io |
 
 ### Backend:
-<<< Beispiel 1 >>>
 | Server | Security | Datenverwaltung | Deployment |
 --------|-------------|------------------|
-|Node|Bcrypt|MongoDB|Heroku|*|
-|Express|JWT|Cloudinary| |*|
-|Socket.io|oAuth|| |*|
+| Node | Bcrypt | MongoDB | Heroku |
+|Express|JWT|Cloudinary|
+|Socket.io|oAuth|| |
