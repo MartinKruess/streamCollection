@@ -47,7 +47,7 @@ Streamer haben oft 3-6 verschiedene Webseiten um die verschiedennen Tools zu hab
 
 ### Backend:
 | Testing | Server | Security | Datenverwaltung | Deployment |
-|-------|-------|-------|-------|
+|-------|-------|-------|-------|-------|
 | Rest | Node | Bcrypt | MongoDB | Heroku (old) |
 | |Express|JWT|Cloudinary| cyclic.sh |
 | |Socket.io|oAuth| | |
