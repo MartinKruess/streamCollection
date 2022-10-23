@@ -41,9 +41,9 @@ Streamer haben oft 3-6 verschiedene Webseiten um die verschiedennen Tools zu hab
 ## Verwendete Technologien
 
 ### Frontend:
-| Style | Framework | Statemanagement | Livechat |
-|-------|-------|-------|-------|
-| SCSS | React | useContext | Client-socket-io |
+| Style | Framework | Statemanagement | Livechat | Visualisierung | Paymentsystem |
+|-------|-------|-------|-------|-------|-------|
+| SCSS | React | useContext | Client-socket-io | ChartJS | Paypal |
 
 ### Backend:
 | Server | Security | Datenverwaltung | Deployment |
