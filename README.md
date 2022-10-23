@@ -41,13 +41,13 @@ Streamer haben oft 3-6 verschiedene Webseiten um die verschiedennen Tools zu hab
 ## Verwendete Technologien
 
 ### Frontend:
-| Style | Framework | Statemanagement | Livechat | Visualisierung | Paymentsystem |
-|-------|-------|-------|-------|-------|-------|
-| SCSS | React | useContext | Client-socket-io | ChartJS | Paypal |
+| Style | Framework | Statemanagement | Livechat | Visualisierung | Paymentsystem | Deployment |
+|-------|-------|-------|-------|-------|-------|-------|
+| SCSS | React | useContext | Client-socket-io | ChartJS | Paypal | Netlify |
 
 ### Backend:
 | Server | Security | Datenverwaltung | Deployment |
 |-------|-------|-------|-------|
-| Node | Bcrypt | MongoDB | Heroku |
-|Express|JWT|Cloudinary|
+| Node | Bcrypt | MongoDB | Heroku (old) |
+|Express|JWT|Cloudinary| cyclic.sh |
 |Socket.io|oAuth|| |
