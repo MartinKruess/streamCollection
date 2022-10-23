@@ -46,8 +46,8 @@ Streamer haben oft 3-6 verschiedene Webseiten um die verschiedennen Tools zu hab
 | SCSS | React | useContext | Client-socket-io | ChartJS | Paypal | Netlify |
 
 ### Backend:
-| Server | Security | Datenverwaltung | Deployment |
+| Testing | Server | Security | Datenverwaltung | Deployment |
 |-------|-------|-------|-------|
-| Node | Bcrypt | MongoDB | Heroku (old) |
-|Express|JWT|Cloudinary| cyclic.sh |
-|Socket.io|oAuth|| |
+| Rest || Node | Bcrypt | MongoDB | Heroku (old) |
+| |Express|JWT|Cloudinary| cyclic.sh |
+| |Socket.io|oAuth| | |
