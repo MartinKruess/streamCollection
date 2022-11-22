@@ -41,4 +41,11 @@ export const inputTemp = [
         placeholder: "Confirm Password",
         label: "Confirm Password"
     },
+    {
+        id: 7,
+        name: "confirmPassword",
+        type: "text",
+        placeholder: "Confirm Password",
+        label: "Confirm Password"
+    },
 ]

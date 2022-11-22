@@ -950,13 +950,6 @@ aside ul li:hover {
   justify-content: center;
 }
 
-.mediaSettings {
-  background-color: red;
-  width: 15rem;
-  height: 100%;
-  margin: 0;
-}
-
 .uploadSpace {
   background-color: var(--secondaryShaddow);
   width: 100%;
@@ -1006,21 +999,18 @@ aside ul li:hover {
   }
 }
 
-input[type="range"] {
-  padding: 0;
-}
-
 .imagesBox {
   width: 100%;
-  height: 50rem;
+  height: 43rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: var(--normalSpacer);
   overflow-y: scroll;
+  border: solid;
 
   .imgCard {
-    background-color: var(--secondaryShaddow);
+    background-color: #ccc;
     width: 13rem;
     height: 13rem;
     display: flex;
@@ -1031,9 +1021,9 @@ input[type="range"] {
     border: solid 0.2rem;
     border-radius: 0.5rem;
 
-    .imgName {
-      width: 80%;
-      height: 2rem;
+    marquee {
+      width: 83%;
+      height: 2.5rem;
       font-size: 1.2rem;
       overflow: hidden;
       border-bottom: solid 1px;
@@ -1047,8 +1037,8 @@ input[type="range"] {
       justify-content: center;
       align-items: center;
       position: relative;
-      top: -0.3rem;
-      right: -0.3rem;
+      top: -1.5rem;
+      right: -1.5rem;
       border: solid 0.2rem;
       border-radius: 2rem;
       z-index: 1;
@@ -1058,7 +1048,69 @@ input[type="range"] {
       width: 75%;
       padding: var(--smallSpacer)
     }
+  }
+}
 
+.soundBox {
+  width: 100%;
+  height: 43rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: var(--normalSpacer);
+  overflow-y: scroll;
+  border: solid;
+
+  .soundCard {
+    background-color: rgb(91, 91, 91);
+    width: 13rem;
+    height: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: var(--smallSpacer);
+    padding: var(--smallSpacer);
+    border: solid 0.2rem;
+    border-radius: 0.5rem;
+
+    marquee {
+      width: 83%;
+      height: 2.5rem;
+      overflow: hidden;
+      border-bottom: solid 1px;
+    }
+
+    .deleteBtn {
+      background-color: var(--hightlight);
+      width: 1.8rem;
+      height: 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: -1.5rem;
+      right: -1.5rem;
+      border: solid 0.2rem;
+      border-radius: 2rem;
+      z-index: 1;
+    }
+
+    .soundControlls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 1.2rem;
+        margin: 0 0 var(--normalSpacer) 0;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        padding: 0;
+      }
+    }
   }
 }
 
@@ -1224,10 +1276,10 @@ input[type="range"] {
       padding: var(--bigSpacer) 0;
       border: solid 5px var(--secondary);
       box-shadow:
-       2px 2px 2px var(--hightlight),
-       -2px 2px 2px var(--hightlight),
-       2px -2px 2px var(--hightlight),
-       -2px -2px 2px var(--hightlight);
+        2px 2px 2px var(--hightlight),
+        -2px 2px 2px var(--hightlight),
+        2px -2px 2px var(--hightlight),
+        -2px -2px 2px var(--hightlight);
 
       .chatLine:hover .msgConfigBar {
         display: flex;
@@ -1249,7 +1301,6 @@ input[type="range"] {
           min-width: 80%;
           max-width: 80%;
           margin-right: var(--smallSpacer);
-          border: solid 1px;
         }
 
         .msgConfigBar {
@@ -1263,7 +1314,7 @@ input[type="range"] {
           margin: auto;
           position: relative;
 
-          
+
 
           .msg {
             background-color: var(--primary);
@@ -1285,54 +1336,64 @@ input[type="range"] {
         }
       }
     }
-    .chatManager {
+
+    .chatFilter {
       width: 28%;
       min-width: 25rem;
-      display: flex;
-      flex-wrap: wrap;
       font-size: 1.5rem;
       padding: var(--normalSpacer);
       border: solid 1px;
-  
-      .userSearchbar {
-        width: 80%;
-        height: 2.5rem;
-        margin: var(--smallSpacer) auto;
+
+      .visableChanger {
+        width: 5rem;
+        height: 5rem;
+        border: solid;
       }
-  
-      .filteredBox {
-        //background-color: ;
-        width: 90%;
-        min-width: 20rem;
-        height: 35rem;
-        margin: var(--smallSpacer) auto;
-        padding: var(--smallSpacer);
+
+      .isVisable {
+        display: flex;
+        flex-wrap: wrap;
         border: solid;
 
-        .chatLine {
-          background-color: #435573;
-          width: 92%;
+        .userSearchbar {
+          width: 80%;
+          height: 2.5rem;
+          margin: var(--smallSpacer) auto;
+        }
+
+        .filteredBox {
           display: flex;
-          flex-wrap: wrap;
-          font-size: 1.3rem;
-          text-align: left;
-          line-height: 2rem;
-          margin: var(--normalSpacer) auto;
-          padding: 0.3rem var(--normalSpacer);
-          border-radius: 0.3rem 1.3rem;
-  
-          .chatMSG {
-            min-width: 100%;
-            max-width: 100%;
-            margin-right: 2rem;
-            border: solid 1px;
+          width: 90%;
+          min-width: 20rem;
+          height: 35rem;
+          margin: var(--smallSpacer) auto;
+          padding: var(--smallSpacer);
+          border: solid;
+
+          .chatLine {
+            background-color: #435573;
+            width: 92%;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 1.3rem;
+            text-align: left;
+            line-height: 2rem;
+            margin: var(--normalSpacer) auto;
+            padding: 0.3rem var(--normalSpacer);
+            border-radius: 0.3rem 1.3rem;
+
+            .chatMSG {
+              min-width: 100%;
+              max-width: 100%;
+              margin-right: 2rem;
+            }
           }
         }
       }
     }
   }
 
-  .textareaContainer{
+  .textareaContainer {
     width: 90%;
     height: 10rem;
     margin: var(--normalSpacer) auto;
@@ -1344,14 +1405,14 @@ input[type="range"] {
       min-height: 90%;
       max-height: 90%;
       font-size: 1.2rem;
-      
+
       padding: var(--smallSpacer);
       border-radius: 0.5rem;
       outline: none;
       resize: none;
     }
   }
-  
+
 }
 
 // Chat Commands

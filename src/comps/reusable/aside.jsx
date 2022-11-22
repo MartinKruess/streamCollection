@@ -31,6 +31,9 @@ export const Aside = () => {
                     <Link to="/activityfeed">
                         <li><i className="fa-solid fa-clock-rotate-left"></i><span className="tooltiptext">Aktivitäten</span></li>
                     </Link>
+                    <Link to="/chatmanager">
+                        <li><i className="fa-solid fa-clock-rotate-left"></i><span className="tooltiptext">Chatmanager</span></li>
+                    </Link>
                         <li className="liSpacer"></li>
                     <Link to="/media">
                         <li><i className="fa-solid fa-play"></i><span className="tooltiptext">Media</span></li>

@@ -4,6 +4,7 @@ import { fetchURL } from "../../App";
 import { AppContext } from '../context/userContext'
 import { MediaContext } from "../context/mediaContext";
 
+
 export const Alerts = () => {
     const [imgSelect, setImgSelect] = useState([])
     const loginToken = localStorage.getItem('loginToken')
@@ -89,6 +90,8 @@ export const Alerts = () => {
                         </div>
                         <button>Save</button>
                     </div>
+
+
                     <canvas className="buildCanvas" ref={canvasRef} value={imgSelect}>
                         {imgSelect}
                     </canvas>
