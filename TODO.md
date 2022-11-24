@@ -57,14 +57,39 @@ noch keine Ahnung: ???
 - Alerts verwendbar machen ✘
 - Verwendung: via Drag and Drop und frei platzierbar ??? ✘
 - Ergebnise zusammenführen und speichern in overlayDB ✘
+<<<<<<< HEAD
 
 ## Chat
+=======
+=======
+- img Button -> img Upload -> BackEnd -> imageDB ✔
+- show all images of user
+- sound Upload and save -> BackEnd -> musicDB ???
+- show all sounds of user
+- Video Upload an save -> BackEnd -> videoDB ???
+- show all videos of user
+
+### Alerts
+
+- load images, videos and sounds to build alerts
+- Verwendung via Drag and Drop und frei platzierbar ???
+- Ergebnis speichern in alertDB ???
+
+### My Overlays
+
+- Alerts verwendbar machen
+- Verwendung: via Drag and Drop und frei platzierbar ???
+- Ergebnise zusammenführen und speichern in overlayDB
+
+### Activity Feed / Dashboard
+>>>>>>> 1c7126fd891e6362366c0fc69ea3a6ce181e2c3d
 
 - Twitch token Auth + Handy ??? ✘
 - Twitch Account auslesen ✘
 - Daten Ausgeben ✘
 - Datan mit Chart verbinden ??? ✘
 
+<<<<<<< HEAD
 - read Chat
 - react on "!" and "commandline" (!commands)
 - create New Command
@@ -90,5 +115,8 @@ noch keine Ahnung: ???
 ### OBS Controller
 
 ### StreamDeck
+=======
+### Learn Side
+>>>>>>> 1c7126fd891e6362366c0fc69ea3a6ce181e2c3d
 
 ### Mod Controller
