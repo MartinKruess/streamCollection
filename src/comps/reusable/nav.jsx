@@ -16,12 +16,12 @@ export const Navi = () => {
     const savedLogedUserData = JSON.parse(localStorage.getItem("logedUserData"))
     const twitchXAuthURL = 'http://localhost:3232/auth/twitch'
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.setItem('sideSettings', JSON.stringify(sideSettings))
         // console.log("sideSettings", sideSettings)
     }, [sideSettings])
-    
-    if(dropDown === false && settings === true){setSettings(false)}
+
+    if (dropDown === false && settings === true) { setSettings(false) }
 
     const logout = () => {
         setLoginToken(false)
@@ -101,8 +101,8 @@ export const Navi = () => {
                     </div>)
                     : (<div className="blendOut"></div>)}
                     <Link to="/">
-                        <input type="button" value="Logout" onClick={logout}/>
-                    </Link> 
+                        <input type="button" value="Logout" onClick={logout} />
+                    </Link>
                 </>)
             }
         </nav>

@@ -11,7 +11,6 @@ export const Alerts = () => {
         <section className="pSection">
             <Aside />
             <article className="pArticle">
-
                 <div className="buildContainer">
                     <div className="assetsPanel">
                         <div className="soundSelect">

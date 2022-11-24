@@ -2,9 +2,17 @@
 
 geschafft: ✔
 
-aufgegeben: ✘
+nicht geschafft: ✘
 
 noch keine Ahnung: ???
+
+## Landingpage
+
+- Content
+
+### Learn Side
+
+- Learn Seite erstellen und mit allen Einstellungs- Tips und Videos
 
 ## User Management
 
@@ -12,11 +20,12 @@ noch keine Ahnung: ???
 - Paypal feinschliff: Zahlungsfunktion ✔
 - update userGroup bei Donation oder Abo response an Backend und DB geben ✘
 
-### Login Complete
+### Login / Registration
 
 - nav update nach Login (User-/Accountverwaltung) ✔
 - login -> dashboard ✔
 - delete Account after time ✘
+- JWT einrichten und im LocalStorage speichern ✔
 
 ### Side Settings
 
@@ -25,6 +34,7 @@ noch keine Ahnung: ???
 - verknüpfe Dashboard randomization mit SettingsObject ✔
 - twitch oAuth by Click ✘
 
+## Data
 
 ### Media
 
@@ -48,14 +58,37 @@ noch keine Ahnung: ???
 - Verwendung: via Drag and Drop und frei platzierbar ??? ✘
 - Ergebnise zusammenführen und speichern in overlayDB ✘
 
-### Activity Feed / Dashboard
+## Chat
 
 - Twitch token Auth + Handy ??? ✘
 - Twitch Account auslesen ✘
 - Daten Ausgeben ✘
 - Datan mit Chart verbinden ??? ✘
 
+- read Chat
+- react on "!" and "commandline" (!commands)
+- create New Command
 
-### Learn Side
+### Filter
 
-- Learn Seite erstellen und mit allen Einstellungs- Tips und Videos
+- read Chat
+- react on filtered Words
+- create new Filter
+
+### Giveaway
+
+- read Chat
+- react on !giveme
+- pick random user
+
+## OBS
+
+### OBS Chatbox
+
+### OBS Activity
+
+### OBS Controller
+
+### StreamDeck
+
+### Mod Controller

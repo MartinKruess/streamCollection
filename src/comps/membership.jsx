@@ -10,7 +10,7 @@ const featureIn = " ✔"
       <h2 id="membership">Membership</h2>
       <div className="card">
         <img src={img01} alt="" />
-        <h3>Login, legen los!</h3>
+        <h3>Login Free</h3>
         <ul>
           <li>Stream Analyze {featureIn}</li>
           <li>OBS Docks {featureIn}</li>
@@ -19,7 +19,9 @@ const featureIn = " ✔"
           <li>Sounds: mp3 {featureIn}</li>
           <li>Images: png, jpg, jpeg, gif {featureIn}</li>
         </ul>
+        <Link to="register">
         <input style={{height: "4rem", maxHeight: "4rem"}} type="button" value="Sign Up"/>
+        </Link>
       </div>
       <div className="card">
         <img src={img01} alt="" />
@@ -35,7 +37,9 @@ const featureIn = " ✔"
           <li>+50 MB {featureIn}</li>
           <li>+ Feature 1 {featureIn}</li>
         </ul>
+        <Link to="donation">
         <input style={{height: "4rem", maxHeight: "4rem"}} type="button" value="Donation"/>
+        </Link>
       </div>
       <div className="card">
         <img src={img01} alt="" />

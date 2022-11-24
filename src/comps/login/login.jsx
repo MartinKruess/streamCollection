@@ -12,7 +12,7 @@ const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(
   const loginPasswordRef = useRef()
   const navigate = useNavigate()
 
-  const getLoginData = async (e)  => {
+  const getLoginData = async (e) => {
     e.preventDefault()
     const loginData = {
       username: loginRef.current.value,
@@ -26,24 +26,24 @@ const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(loginData)
-    })
+      })
     const data = await response.json()
     setLoginToken(data.generateToken)
     setLogedUserData(data.userData)
     navigate( "/dashboard", {replace:true})
   }
 
-    return (
-        <section>
-          <article className="signArticle">
-            <form className="form" onSubmit={getLoginData}>
-              <label htmlFor="ln">LoginName</label>
-              <input ref={loginRef} type="text" id="ln"/>
-              <label htmlFor="lp">LoginPassword</label>
-              <input ref={loginPasswordRef} type="password" id="lp" />
-              <input type="submit" value="SignIn" ></input>
-            </form> 
-          </article>
-        </section>
-    )
+  return (
+    <section>
+      <article className="signArticle">
+        <form className="form" onSubmit={getLoginData}>
+          <label htmlFor="ln">LoginName</label>
+          <input ref={loginRef} type="text" id="ln" />
+          <label htmlFor="lp">LoginPassword</label>
+          <input ref={loginPasswordRef} type="password" id="lp" />
+          <input type="submit" value="SignIn" ></input>
+        </form>
+      </article>
+    </section>
+  )
 }

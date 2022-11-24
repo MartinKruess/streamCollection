@@ -29,7 +29,7 @@ export const AboDonation = () => {
 
     return (
         <section className="pSection">
-        <Aside />
+            <Aside />
             <article className="pArticle paypalContainer">
                 <div className="donationContainer">
                     <h2>Donation</h2>
@@ -38,7 +38,7 @@ export const AboDonation = () => {
                         <li>+ 50MB Speicherplatz</li>
                         <li>Vorteil A (free)</li>
                     </ul>
-                    <input type="number" ref={paymentValueRef} defaultValue={4.99}/>
+                    <input type="number" ref={paymentValueRef} defaultValue={4.99} />
                     <button onClick={() => buy("Donation", paymentValueRef.current.value)}>Donation</button>
                 </div>
                 <div className="aboContainer">
@@ -50,14 +50,12 @@ export const AboDonation = () => {
                         <li>Vorteil B (free)</li>
                         <li>Vorteil C (free)</li>
                     </ul>
-                    <button onClick={() => buy("Abo")}>monatliches Abo</button> 
+                    <button onClick={() => buy("Abo")}>monatliches Abo</button>
                 </div>
                 
                 <PaypalModal open={paypalIsOpen} paymentValueRef={paymentValueRef} usage={usage} rythm={rythm} onClose={() => setPaypalIsOpen(false)}>
                     <div className="paypalBg" />
                 </PaypalModal>
-                
-                
             </article>
         </section>
     )

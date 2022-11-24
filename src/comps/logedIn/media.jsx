@@ -47,7 +47,7 @@ export const Media = () => {
         if (image) {
             const reader = new FileReader()
             reader.onloadend = () => {
-                setPreview(reader.result) // ???
+                setPreview(reader.result)
             }
             reader.readAsDataURL(image)
         } else {

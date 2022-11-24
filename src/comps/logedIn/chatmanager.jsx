@@ -1,12 +1,13 @@
 import { Aside } from "../reusable/aside"
+import { ChatWidget } from "./chatmanagertools/chatWidget";
 
+export const ChatManager = () => {  
 
-export const Overlays = () => {
     return (
-            <section className="pSection">
+        <section className="pSection">
             <Aside />
             <article className="pArticle">
-                <h1>Im Bau</h1>
+                <ChatWidget />
             </article>
         </section>
     )
