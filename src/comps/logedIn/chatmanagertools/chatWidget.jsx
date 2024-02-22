@@ -1,8 +1,9 @@
 import { useContext, useEffect, useRef, useState } from "react"
-import { AppContext } from "../context/userContext";
-import { fetchURL } from "../../App";
-import { socketMessageData } from "./chatbots/chatdata"
+import { AppContext } from "../../context/userContext";
+import { fetchURL } from "../../../App";
+import { socketMessageData } from "../chatbots/chatdata"
 import io from 'socket.io-client'
+import { ChatSearch } from "./chatsearch";
 
 
 export const ChatWidget = () => {
@@ -92,28 +93,7 @@ export const ChatWidget = () => {
         });
 
     }, [socketMessages])
-
-
     console.log("SocketMSG", socketMessages)
-
-      // the value of the search field 
-    const [userMessages, setUserMessages] = useState([]);
-
-    // the search result
-    const [foundUsers, setFoundUsers] = useState(socketMessages);
-
-    const findUserMessages = (e) => {
-        const keyword = e.target.value
-
-        if(keyword !== ""){
-            const result = socketMessages.filter((message) => {
-                return message.username.toLowerCase().startsWith(keyword.toLowerCase())
-            })
-            console.log(result)
-            setUserMessages(result)
-        }
-        setFoundUsers(keyword)
-    }
 
     return(
         <div className="chatManagerContainer">
@@ -134,19 +114,7 @@ export const ChatWidget = () => {
                         )
                     })}
                 </div>
-                <div className="chatManager">
-                    <div><button></button></div>
-                    <input className="userSearchbar" type="text" placeholder="username" onChange={findUserMessages}/>
-                    <div className="filteredBox">
-                        {userMessages.length > 0 && userMessages.map((message, i) => {
-                            return(
-                                <div className="chatLine" key={i} ref={bottomRef}>
-                                    <div className="chatMSG">{message.timestamp} | <strong>{message.username}</strong> : <span>{message.message}</span></div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
+                <ChatSearch socketMessages={socketMessages} />
             </div>
             <div className="textareaContainer">
                 <textarea rows="5" cols="50" maxLength={220} placeholder="Nachricht..." onKeyUp={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()} ref={textAreaRef} />

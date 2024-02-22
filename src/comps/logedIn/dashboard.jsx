@@ -3,7 +3,7 @@ import TTV_YTLinechart from "./charts/yt_twitch_chart"
 import { useState, useEffect, useContext, useRef } from "react";
 import { AppContext, SettingsContext } from "../context/userContext";
 import { fetchURL } from "../../App";
-import { TwitchContext } from "../context/mediaContext";
+import { TwitchContext } from "../context/twitchContext";
 import { banTwitchUser } from "./dashboard/banTwitchUser";
 
 export const Dashboard = () => {

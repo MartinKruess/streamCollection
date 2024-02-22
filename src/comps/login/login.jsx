@@ -5,7 +5,8 @@ import { AppContext } from '../context/userContext'
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-const { setLoginToken, loginToken, logedUserData, setLogedUserData } = useContext(AppContext)
+
+const {setLoginToken, loginToken, logedUserData, setLogedUserData} = useContext(AppContext)
 
   const loginRef = useRef();
   const loginPasswordRef = useRef()
@@ -17,11 +18,9 @@ const { setLoginToken, loginToken, logedUserData, setLogedUserData } = useContex
       username: loginRef.current.value,
       password: loginPasswordRef.current.value
     }
-    const response = await fetch(`${fetchURL}/user/login`,
-      {
-        method: "post",
-        withCredentials: true,
-
+    const response = await fetch(`${fetchURL}/login`,
+    {
+        method: "POST",
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'

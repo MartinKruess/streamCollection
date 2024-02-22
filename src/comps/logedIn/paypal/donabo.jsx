@@ -52,7 +52,7 @@ export const AboDonation = () => {
                     </ul>
                     <button onClick={() => buy("Abo")}>monatliches Abo</button>
                 </div>
-
+                
                 <PaypalModal open={paypalIsOpen} paymentValueRef={paymentValueRef} usage={usage} rythm={rythm} onClose={() => setPaypalIsOpen(false)}>
                     <div className="paypalBg" />
                 </PaypalModal>

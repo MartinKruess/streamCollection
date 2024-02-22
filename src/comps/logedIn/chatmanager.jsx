@@ -1,5 +1,5 @@
 import { Aside } from "../reusable/aside"
-import { ChatWidget } from "./chatWidget";
+import { ChatWidget } from "./chatmanagertools/chatWidget";
 
 export const ChatManager = () => {  
 
