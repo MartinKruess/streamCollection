@@ -1,6 +1,6 @@
-import { Aside } from "./aside";
+import { Aside } from "../../reusable/aside"
 
-export const AlertDock = () => {
+export const ChatCommands = () => {
     return (
             <section className="pSection">
             <Aside />

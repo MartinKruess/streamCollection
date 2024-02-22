@@ -34,20 +34,20 @@ export const options = {
     },
 };
 
-const labels = ['01', 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+const labels = ['01.05', '02.05','03.05', '04.05','05.05', '06.05','07.05', '08.05', '09.05', '10.05', '11.05', '12.05', '13.05', '14.05', ' '];
 
 export const data = {
     labels,
     datasets: [
         {
             label: 'Twitch',
-            data: [80, 140, 160, 100, 170, 110, 130, 210, 830, 478],
+            data: [8, 14, 16, 10, 17, 11, 30, 21, 30, 48],
             borderColor: "violet",
             fill: false
         },
         {
             label: 'Youtube',
-            data: [160, 170, 170, 190, 200, 270, 400, 930, 350, 200],
+            data: [16, 17, 17, 19, 20, 27, 40, 29, 35, 20],
             borderColor: "red",
             fill: false
         },
@@ -64,6 +64,5 @@ export const data = {
 const TTV_YTLinechart = () => {
     return <Line options={options} data={data} />;
 }
-
 
 export default TTV_YTLinechart;

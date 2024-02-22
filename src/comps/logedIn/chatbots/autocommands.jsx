@@ -1,6 +1,6 @@
-import { Aside } from "./aside";
+import { Aside } from "../../reusable/aside"
 
-export const YourFilter = () => {
+export const AutoCommands = () => {
     return (
             <section className="pSection">
             <Aside />

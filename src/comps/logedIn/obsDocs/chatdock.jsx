@@ -1,6 +1,7 @@
-import { Aside } from "./aside";
+import "../../../App.scss";
+import { Aside } from "../../reusable/aside"
 
-export const SpamFilter = () => {
+export const ChatDock = () => {
     return (
             <section className="pSection">
             <Aside />
