@@ -1,38 +1,40 @@
 import "../../App.scss";
-import { useRef, useContext } from 'react';
+import { useRef, useContext } from "react";
 import { fetchURL } from "../../App";
-import { AppContext } from '../context/userContext'
+import { AppContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-const { setLoginToken, loginToken, logedUserData, setLogedUserData } = useContext(AppContext)
+  const { setLoginToken, loginToken, logedUserData, setLogedUserData } =
+    useContext(AppContext);
 
   const loginRef = useRef();
-  const loginPasswordRef = useRef()
-  const navigate = useNavigate()
+  const loginPasswordRef = useRef();
+  const navigate = useNavigate();
 
   const getLoginData = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const loginData = {
       username: loginRef.current.value,
-      password: loginPasswordRef.current.value
-    }
-    const response = await fetch(`${fetchURL}/user/login`,
-      {
-        method: "post",
-        withCredentials: true,
+      password: loginPasswordRef.current.value,
+    };
 
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(loginData)
-      })
-    const data = await response.json()
-    setLoginToken(data.generateToken)
-    setLogedUserData(data.userData)
-    navigate( "/dashboard", {replace:true})
-  }
+    const response = await fetch(`${fetchURL}/user/login`, {
+      method: "post",
+      Credentials: "include",
+
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginData),
+    });
+    console.log(response);
+    const data = await response.json();
+    setLoginToken(data.generateToken);
+    setLogedUserData(data.userData);
+    navigate("/dashboard", { replace: true });
+  };
 
   return (
     <section>
@@ -42,9 +44,9 @@ const { setLoginToken, loginToken, logedUserData, setLogedUserData } = useContex
           <input ref={loginRef} type="text" id="ln" />
           <label htmlFor="lp">LoginPassword</label>
           <input ref={loginPasswordRef} type="password" id="lp" />
-          <input type="submit" value="SignIn" ></input>
+          <input type="submit" value="SignIn"></input>
         </form>
       </article>
     </section>
-  )
-}
+  );
+};
