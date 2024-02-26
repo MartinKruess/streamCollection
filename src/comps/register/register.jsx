@@ -1,5 +1,9 @@
 import "../../App.scss";
+<<<<<<< HEAD
 import { Link, useNavigate } from "react-router-dom";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> f37bd2f030bfc0e8b3db55868a1676e744773d9c
 import { useState } from "react";
 import { inputTemp } from "./registerInputs";
 import { FormInputs } from "./formInputs";
@@ -10,7 +14,10 @@ export const Register = () => {
   const onChange = (e) => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value });
   };
+<<<<<<< HEAD
   const navigate = useNavigate();
+=======
+>>>>>>> f37bd2f030bfc0e8b3db55868a1676e744773d9c
 
   const [registerData, setRegisterData] = useState({
     email: "",
@@ -21,6 +28,7 @@ export const Register = () => {
     confirmPassword: "",
   });
 
+  // Generate random Password
   const getPassword = async () => {
     const newPassword = await generatePassword();
     setRegisterData({

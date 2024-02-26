@@ -18,17 +18,17 @@ export const Login = () => {
       username: loginRef.current.value,
       password: loginPasswordRef.current.value,
     };
-    console.log(loginData);
+
     const response = await fetch(`${fetchURL}/user/login`, {
       method: "post",
-      // credentials: "include",
+      credentials: "include",
 
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(loginData),
     });
+    console.log(response);
     const data = await response.json();
     setLoginToken(data.generateToken);
     setLogedUserData(data.userData);
