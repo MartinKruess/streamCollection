@@ -21,7 +21,7 @@ export const Login = () => {
 
     const response = await fetch(`${fetchURL}/user/login`, {
       method: "post",
-      Credentials: "include",
+      credentials: "include",
 
       headers: {
         Accept: "application/json",
