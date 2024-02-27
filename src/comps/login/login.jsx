@@ -21,12 +21,12 @@ export const Login = () => {
 
     const response = await fetch(`${fetchURL}/user/login`, {
       method: "post",
-      credentials: "include",
-
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(loginData),
+      credentials: "include",
     });
     console.log(response);
     const data = await response.json();

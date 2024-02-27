@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom"
-import img01 from "../assets/images/logo.svg"
-const paypal = "https://www.paypal.com/sdk/js?client-id=AajHqvewdsR8OZ5hqKA14nV3Zd9uX38pNu3NUBf9rcuFk_A5yFLg2iM8jZexnxpLQLF1v63SXdg47Cp6&currency=EUR"
+import { Link } from "react-router-dom";
+import img01 from "../assets/images/logo.svg";
+const paypal =
+  "https://www.paypal.com/sdk/js?client-id=AajHqvewdsR8OZ5hqKA14nV3Zd9uX38pNu3NUBf9rcuFk_A5yFLg2iM8jZexnxpLQLF1v63SXdg47Cp6&currency=EUR";
 
 export const Membership = () => {
-const featureIn = " ✔"
+  const featureIn = " ✔";
 
   return (
-    <article className="cardContainer" >
-      <h2 id="membership">Membership</h2>
+    <article className="cardContainer panel" id="membership">
+      <h2>Membership</h2>
       <div className="card">
         <img src={img01} alt="" />
         <h3>Login Free</h3>
@@ -20,7 +21,11 @@ const featureIn = " ✔"
           <li>Images: png, jpg, jpeg, gif {featureIn}</li>
         </ul>
         <Link to="register">
-        <input style={{height: "4rem", maxHeight: "4rem"}} type="button" value="Sign Up"/>
+          <input
+            style={{ height: "4rem", maxHeight: "4rem" }}
+            type="button"
+            value="Sign Up"
+          />
         </Link>
       </div>
       <div className="card">
@@ -38,7 +43,11 @@ const featureIn = " ✔"
           <li>+ Feature 1 {featureIn}</li>
         </ul>
         <Link to="donation">
-        <input style={{height: "4rem", maxHeight: "4rem"}} type="button" value="Donation"/>
+          <input
+            style={{ height: "4rem", maxHeight: "4rem" }}
+            type="button"
+            value="Donation"
+          />
         </Link>
       </div>
       <div className="card">
@@ -58,12 +67,15 @@ const featureIn = " ✔"
           <li>+ Feature 3 {featureIn}</li>
         </ul>
         <Link to="donations">
-          <input style={{height: "4rem", maxHeight: "4rem"}} type="button" value="Monatsabo"/>
+          <input
+            style={{ height: "4rem", maxHeight: "4rem" }}
+            type="button"
+            value="Monatsabo"
+          />
         </Link>
-        
 
         <div id="paypal"></div>
       </div>
     </article>
-  )
-}
+  );
+};
