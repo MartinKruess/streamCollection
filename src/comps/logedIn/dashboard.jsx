@@ -38,25 +38,25 @@ export const Dashboard = () => {
                 'authToken': loginToken,
             }
         })
-        console.log("Loading...")
+        console.log("Dashboard: Loading...")
         const data = await res.json();
-        console.log("Data", data)
+        console.log("Dashbaord: data", data)
         !data.error && setTwitchData(data)
     }
 
     useEffect(() => {
         if (!twitchData) {
-            console.log(twitchData)
+            console.log("Dashbaord: twitchData (if)", twitchData)
             fetchTwitchData()
         } else {
-            console.log(twitchData)
+            console.log("Dashbaord: twitchData (else)", twitchData)
             setCheers(1231)
             setSubs(twitchData.subList.length)
             setDonations(57)
             setMerches(38.98)
             const money = cheers/100 + subs*2 + donations + merches
             setMoneyOut(money)
-            console.log("twitchData is full")
+            console.log("Dashbaord: twitchData complete!")
         }
     }, [twitchData])
 

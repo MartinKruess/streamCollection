@@ -41,9 +41,9 @@ export const Register = () => {
     registerData.username.length > 5;
 
   if (password === true && isFilled === true) {
-    console.log("YES");
+    console.log("Confirm Password is correct");
   } else {
-    console.log("NO");
+    console.log("Confirm Password is not correct");
   }
 
   const getUserId = async (e) => {

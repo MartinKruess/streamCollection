@@ -40,11 +40,11 @@ export const Media = () => {
         })
         
         try {
-            console.log("Loading...")
+            console.log("Media: Loading...")
             const data = await res.json();
             setMediaData({...mediaData, images: data.ImagesFromDB})
             setMDI(mediaData.images)
-            console.log("MDI", MDI)
+            console.log("Media: MDI", MDI)
             
         } catch (error) {
             console.log("Leider ein Fail", error)
@@ -92,7 +92,7 @@ export const Media = () => {
     }
 
     const deleteHandler = async (id, type) => {
-        console.log("lösche IMG", id)
+        console.log("Media: lösche IMG", id)
         const res = await fetch(`${fetchURL}/media/delete`, {
             method: "DELETE",
             headers: {

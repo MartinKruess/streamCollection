@@ -28,7 +28,7 @@ export const Login = () => {
       body: JSON.stringify(loginData),
       credentials: "include",
     });
-    console.log(response);
+    console.log("Login: response", response);
     const data = await response.json();
     setLoginToken(data.generateToken);
     setLogedUserData(data.userData);
